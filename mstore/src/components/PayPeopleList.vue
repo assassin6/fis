@@ -1,0 +1,38 @@
+<template>
+	<div class="ms-user-pay ms-positon-relative">
+		<p class="ms-list-new-title">赞助排行</p>
+		<ul class="ms-user-list">
+			<div class="ms-loading ms-height" v-show="loading" style="display: none;"></div>
+			<template v-for="(item,index) in payList">
+				<li class="ms-user-share-list ms-fl" v-if="index < 25">
+					<img v-if="item.upgraderOrderPeopleNickName != '匿名'" :src="item.upgraderOrderPeopleIcon" onerror="this.src='http://cdn.mingsoft.net/global/images/msheader.png'"
+					/>
+					<img v-else src='http://cdn.mingsoft.net/global/images/msheader.png' />
+					<p class="ms-fl">{{item.upgraderOrderPeopleNickName}}</p>
+				</li>
+			</template>
+		</ul>
+		<div class="ms-drop-down-button" style="bottom:-7px;" @click="peopleList.showPeopleList(payList,'pay')">
+			<span class="glyphicon glyphicon-resize-vertical"></span>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		name: 'PayPeopleList',
+		data() {
+			return {
+				loading: true,
+				payList: [], //列表
+			}
+		},
+		beforeMount: function () { //加载执行
+			var target = this;
+			mmstore.mstore.topSponsor(function (data) { //赞助者信息
+				target.payList = data;
+				target.loading = false;
+			});
+		}
+	}
+</script>

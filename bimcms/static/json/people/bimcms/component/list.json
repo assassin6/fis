@@ -1,0 +1,40 @@
+[
+    {
+        "componentName": "组件2",
+        "componentSet": "集合2",
+        "componentStructureId": "1234",
+        "componentType": 2,
+        "componentValue": "值修改",
+        "createBy": 2,
+        "createDate": "2018-08-13 14:37:06",
+        "delFlag": 0,
+        "id": "5",
+        "projectId": 1,
+        "updateBy": 0
+    },
+    {
+        "componentName": "组件",
+        "componentSet": "集合",
+        "componentStructureId": "5412",
+        "componentType": 1,
+        "componentValue": "值",
+        "createBy": 2,
+        "createDate": "2018-08-13 14:29:00",
+        "delFlag": 0,
+        "id": "4",
+        "projectId": 1,
+        "updateBy": 0
+    },
+    {
+        "componentName": "3",
+        "componentSet": "3",
+        "componentStructureId": "2",
+        "componentType": 3,
+        "componentValue": "3",
+        "createBy": 0,
+        "delFlag": 0,
+        "id": "3",
+        "projectId": 1,
+        "updateBy": 0
+    }
+]

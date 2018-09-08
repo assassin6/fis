@@ -1,0 +1,61 @@
+<template>
+    <div class="col-sm-8 col-md-8" id="vue-list-new">
+        <p class="ms-list-new-title">最新分享</p>
+        <template v-for="item in list">
+            <div class="col-sm-6 col-md-6 ms-overflow-hidden">
+                <div class="thumbnail ms-overflow-hidden" @click="vueList.jumpContent(item.id,item.upgraderVersionUrl)">
+                    <div class="ms-position-relative">
+                        <span class="ms-mobile-images" v-if="item.upgraderVersionMobileImg!=null&&item.upgraderVersionMobileImg!=''" style="background: url(../templets/86/cms/images/mobile.png) no-repeat;">
+                            <div class="ms-mobile-div">
+                                <img class="ms-mobile-img ms-model-img" @mouseout="vueList.imgMoutY()" @mouseover="vueList.imgMoverY()" :src="'http://mstore.mingsoft.net/'+item.upgraderVersionMobileImg"
+                                />
+                            </div>
+                        </span>
+                    </div>
+                    <a class="ms-overflow-hidden ms-loading ms-position-relative ms-model-img-container">
+                        <img class="ms-model-img" @mouseout="vueList.imgMout()" @mouseover="vueList.imgMover()" :src="'http://mstore.mingsoft.net/'+item.upgraderVersionImg"
+                        />
+                    </a>
+                    <div class="ms-model-detail ms-overflow-hidden">
+                        <div class="ms-model-title">
+                            <span v-text="item.upgraderVersionName"></span>
+                        </div>
+                        <!--头像和昵称-->
+                        <div class="ms-overflow-hidden ms-head">
+                            <img class="ms-fl ms-header-icon" :title="item.upgraderVersionPeopleName" v-if="item.upgraderVersionPeopleIcon != 0" :src="item.upgraderVersionPeopleIcon"
+                                onerror="this.src='http://cdn.mingsoft.net/global/images/msheader.png'">
+                            <img class="ms-fl ms-header-icon" :title="item.upgraderVersionPeopleName" v-else src="http://cdn.mingsoft.net/global/images/msheader.png">
+                            <div class="ms-fl mstore-star ms-overflow-hidden">
+                                <img v-for="n in item.upgraderVersionStart" src="../templets/86/cms/images/star.png" />
+                                <img v-for="n in (5-item.upgraderVersionStart)" src="../templets/86/cms/images/star-empty.png" />
+                            </div>
+                            <span class="ms-fr ms-model-monry" v-if="item.upgraderVersionPrice == 0">免费</span>
+                            <span class="ms-fr ms-model-monry" v-else>￥{{item.upgraderVersionPrice}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'NewList',
+        data() {
+            return {
+                loading: true,
+                list: new Array() //列表
+            }
+
+        },
+        beforeMount: function () { //加载执行
+            var target = this;
+            var data = "upgraderVersionIndustry=0&orderBy=uv_id&pageSize=6";
+            mmstore.mstore.list(data, function (json) { //模板列表
+                target.list = json.list;
+                target.loading = false;
+            });
+        }
+    }
+</script>

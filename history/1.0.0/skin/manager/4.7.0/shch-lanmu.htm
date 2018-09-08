@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <!--线上特殊字体文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/iconfont/1.0.0/iconfont.css" />
+    <!--线上jquery文件-->
+    <script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <!--线上bootstrap文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--线上tmpl文件-->
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.tmpl/1.4.2/jquery.tmpl.min.js"></script>
+
+    <!--easyUI-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/icon.css">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/jquery.easyui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/ms.manager.js"></script>
+</head>
+<body>
+    <!--右边开始-->
+    <div class="ms-content-body">
+        <div class="ms-content-body-title">
+            <div class="btn-topgroup">
+                <button type="button" class="btn btn-success">生成栏目</button>
+            </div>
+        </div>
+        
+        <div class="ms-content-body-panel">
+            <p class="alert alert-info" role="alert">
+                <span class="glyphicon glyphicon-pushpin text-lef "></span>
+                <a class="alert-link text-lef" style="margin-left: 12px;">
+                    更新栏目列表，推荐使用指定栏目更新。系统提示“更新中...”请不要刷新页面或点击其他菜单。
+                </a>
+            </p>
+            <form role="form" method="post" action="" target="_self" id="generateColumn" name="generateColumn" class="form-horizontal" style="width: 100%; background-color: white;">
+                <div class="form-group">    
+                    <label class="col-sm-3 control-label">
+                        选择要生成栏目
+                    </label>        
+                    <div class="col-sm-9 ms-from-group-input" style="line-height:30px; width:300px;"> 
+
+                        <!-- 初始化样式开始 -->
+                        <div class="dropdown" id="inputTree">
+                            <button type="text" id="treeLabelinputTree" class="form-control dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="text-align:left">
+                                选择更新的栏目
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>

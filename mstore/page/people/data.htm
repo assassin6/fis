@@ -1,0 +1,66 @@
+<script type="text/javascript">
+	var vueData;
+	ms.load(["ms", "ms.mstore.min"], function(ms, mmstore) {
+		vueData = new Vue({
+			el: "#vue-data",
+			data: {
+				dataShare: 0, //分享数
+				dataUser: 0, //用户数
+				dataIncome: "￥" + 0, //分享收益
+				dataProject: "￥" + 0, //众包收益
+				dataDown: 0, //我的下载
+				dataPay: "￥" + 0, //我的赞助
+			},
+			//获取数量
+			mounted: function() {
+				var target = this;
+				var ajaxCfg = {
+						"type": "post",
+						"dataType": "json",
+					};
+				ajaxCfg.url = "http://mstore.mingsoft.net/people/mstore/data.do";
+				ms.ajax(ajaxCfg, function(json) {
+					if(json.success == false) {
+						return;
+					}
+					target.dataShare = json.share;
+					target.dataUser = json.user;
+					target.dataIncome = "￥" + json.income;
+					target.dataProject = "￥" + json.project;
+					target.dataDown = json.down;
+					target.dataPay = "￥" + json.pay;
+				});
+			},
+		})
+	})
+</script>
+<div class="user_cententdata" id="vue-data">
+	<ul>
+		<li>
+			<a href="http://mstore.mingsoft.net/people/center.do?c=ms">
+				<div class="data_share" v-text="dataShare">0</div>分享数</a>
+		</li>
+		<li>
+			<a href="http://mstore.mingsoft.net/people/userList.do?c=ms">
+				<div class="data_user" v-text="dataUser">0</div>用户数</a>
+		</li>
+		<li>
+			<a href="http://mstore.mingsoft.net/people/order.do?c=ms">
+				<div class="data_income" :title="dataIncome" v-text="dataIncome" style="overflow: hidden;">￥0</div>分享收益</a>
+		</li>
+		<!--<li>
+			<a href="http://mstore.mingsoft.net/people/crowdsourceIncome.do?c=ms">
+				<div class="data_project" v-text="dataProject">￥0</div>众包收益</a>
+		</li>-->
+	</ul>
+	<ul class="user_dataright user_downPay">
+		<li>
+			<a href="http://mstore.mingsoft.net/people/download.do?c=ms">
+				<div class="data_down" v-text="dataDown">0</div>我的下载</a>
+		</li>
+		<li>
+			<a href="http://mstore.mingsoft.net/people/support.do?c=ms">
+				<div class="data_pay" v-text="dataPay">￥0</div>我的赞助</a>
+		</li>
+	</ul>
+</div>

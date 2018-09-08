@@ -1,0 +1,1323 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <!--线上特殊字体文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/iconfont/1.0.0/iconfont.css" />
+    <!--线上jquery文件-->
+    <script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <!--线上bootstrap文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--线上tmpl文件-->
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.tmpl/1.4.2/jquery.tmpl.min.js"></script>
+
+    <!--easyUI-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/icon.css">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/jquery.easyui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/ms.manager.js"></script>
+</head>
+<script type="text/javascript">
+    $(function(){
+        //收缩筛选
+        var clickTimes = 1;
+        var searchFormheight=$("#searchForm").height();
+        //初始化顶住筛选部分的空白div
+        $(".search-form-div").height(searchFormheight+15);
+        var _height = parseInt(searchFormheight)-46;
+        $("#searchForm").find(".close").click(function(){
+            var obj = $(this);
+            if (clickTimes % 2 == 1) {
+                //空白div与筛选同时往上缩
+                $(".search-form-div").animate({height:"0px"},"slow");
+                $("#searchForm").animate({top:"-"+_height+"px"},"slow");
+                obj.find("span").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+            } else {
+                //空白div与筛选同时展开
+                $(".search-form-div").animate({height:searchFormheight+15+"px"},"slow");
+                $("#searchForm").animate({top:"46px"},"slow");
+                obj.find("span").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+            }
+            clickTimes++
+
+        })
+
+    })
+</script>
+
+<body style="overflow-y: auto">
+    <!--右边开始-->
+    <div class="ms-content-menu">
+        <div class="easyui-panel">
+            <ul class="easyui-tree">
+                <li>首页幻灯</li>
+                <li>联系我们</li>
+                <li>
+                    <span>新闻</span>
+                    <ul>
+                        <li>公司新闻</li>
+                        <li>行业新闻</li>
+                    </ul>
+                </li>
+                <li>关于我们</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ms-content-body" style="width:85%;">
+        <div class="ms-content-body-title" style="width:85%;">
+            <strong>周边环境</strong>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+            </div>
+        </div>
+
+        <form role="form" method="post" action="" target="_self" id="searchForm" name="searchForm" class="searchForm form-inline bv-form" novalidate="novalidate">
+            <button type="submit" class="bv-hidden-submit"></button>
+            <input type="hidden" name="redirect">
+            <div class="form-group ms-form-group col-sm-4"> 
+                <label for="articleType" class="control-label col-sm-4">
+                    文章属性
+                </label>
+                <div class="ms-form-control ms-from-group-input col-sm-8">      
+                    <select id="forumSelect" name="articleType" class="form-control">                       
+                        <option value="f">幻灯</option>                       
+                        <option value="c">推荐</option>                       
+                        <option value="p">图片</option>                       
+                        <option value="h">头条</option>       
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group ms-form-group col-sm-4"> 
+                <label for="keyWord" class="control-label col-sm-4">
+                    关键字
+                </label>
+                <div class="ms-from-group-input ms-form-input col-sm-8" style="">       
+                    <input type="text" autocomplete="off" name="keyWord" class="form-control" title="请输入关键字" placeholder="请输入关键字">  
+                </div>
+            </div>
+            <div class="bottom" style="clear:both">
+                <div class="close"><span class="glyphicon glyphicon-chevron-up"></span></div>
+                <button type="button" class="btn btn-warning" title="" data-toggle="tooltip" data-target="bottom" id="resetButton1479201996038" data-placement="bottom" data-original-title="重置">
+                    重置 
+                    <span class="glyphicon glyphicon-retweet" style="margin-right:5px"></span>
+                </button>
+                <button type="button" class="btn btn-info" title="" data-toggle="tooltip" data-target="bottom" id="submitSearch" data-placement="bottom" data-original-title="查询">
+                    查询 
+                    <span class="glyphicon glyphicon-search" style="margin-right:5px"></span>
+                </button>       
+            </div>
+        </form>
+        <div class="search-form-div"></div>
+
+        <div class="ms-content-body-panel">
+
+            <table class="table table-hover">
+                <thead>
+                    <!--<tr>
+                        <td colspan="7"><i class="glyphicon glyphicon-pushpin"></i> 栏目管理列表</td>
+                    </tr>-->
+                    <tr>
+                        <th class="text-center">
+                            <input type="checkbox" id="allCheck" value="全选" data-original-title="点击全选" data-toggle="tooltip">
+                        </th>
+                        <th class="col-md-1 text-center">编号</th>
+                        <th class="col-md-5 text-left">文章标题</th>
+                        <th class="col-md-3 text-left">栏目名</th>
+                        <th class="col-md-1 text-center">作者</th>
+                        <th class="col-md-1 text-center">排序</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">周边环境</a></span></td>
+                        <td class="text-left">列表</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <nav class="pageNav">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <!--线上特殊字体文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/iconfont/1.0.0/iconfont.css" />
+    <!--线上jquery文件-->
+    <script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <!--线上bootstrap文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--线上tmpl文件-->
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.tmpl/1.4.2/jquery.tmpl.min.js"></script>
+
+    <!--easyUI-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/icon.css">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/jquery.easyui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/ms.manager.js"></script>
+</head>
+<script type="text/javascript">
+    $(function(){
+        //收缩筛选
+        var clickTimes = 1;
+        var searchFormheight=$("#searchForm").height();
+        //初始化顶住筛选部分的空白div
+        $(".search-form-div").height(searchFormheight+15);
+        var _height = parseInt(searchFormheight)-46;
+        $("#searchForm").find(".close").click(function(){
+            var obj = $(this);
+            if (clickTimes % 2 == 1) {
+                //空白div与筛选同时往上缩
+                $(".search-form-div").animate({height:"0px"},"slow");
+                $("#searchForm").animate({top:"-"+_height+"px"},"slow");
+                obj.find("span").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+            } else {
+                //空白div与筛选同时展开
+                $(".search-form-div").animate({height:searchFormheight+15+"px"},"slow");
+                $("#searchForm").animate({top:"46px"},"slow");
+                obj.find("span").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+            }
+            clickTimes++
+
+        })
+
+    })
+</script>
+
+<body style="overflow-y: auto">
+    <!--右边开始-->
+    <div class="ms-content-menu">
+        <div class="easyui-panel">
+            <ul class="easyui-tree">
+                <li>首页幻灯</li>
+                <li>联系我们</li>
+                <li>
+                    <span>新闻</span>
+                    <ul>
+                        <li>公司新闻</li>
+                        <li>行业新闻</li>
+                    </ul>
+                </li>
+                <li>关于我们</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ms-content-body" style="width:85%;">
+        <div class="ms-content-body-title" style="width:85%;">
+            <strong>周边环境</strong>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+            </div>
+        </div>
+
+        <form role="form" method="post" action="" target="_self" id="searchForm" name="searchForm" class="searchForm form-inline bv-form" novalidate="novalidate">
+            <button type="submit" class="bv-hidden-submit"></button>
+            <input type="hidden" name="redirect">
+            <div class="form-group ms-form-group col-sm-4"> 
+                <label for="articleType" class="control-label col-sm-4">
+                    文章属性
+                </label>
+                <div class="ms-form-control ms-from-group-input col-sm-8">      
+                    <select id="forumSelect" name="articleType" class="form-control">                       
+                        <option value="f">幻灯</option>                       
+                        <option value="c">推荐</option>                       
+                        <option value="p">图片</option>                       
+                        <option value="h">头条</option>       
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group ms-form-group col-sm-4"> 
+                <label for="keyWord" class="control-label col-sm-4">
+                    关键字
+                </label>
+                <div class="ms-from-group-input ms-form-input col-sm-8" style="">       
+                    <input type="text" autocomplete="off" name="keyWord" class="form-control" title="请输入关键字" placeholder="请输入关键字">  
+                </div>
+            </div>
+            <div class="bottom" style="clear:both">
+                <div class="close"><span class="glyphicon glyphicon-chevron-up"></span></div>
+                <button type="button" class="btn btn-warning" title="" data-toggle="tooltip" data-target="bottom" id="resetButton1479201996038" data-placement="bottom" data-original-title="重置">
+                    重置 
+                    <span class="glyphicon glyphicon-retweet" style="margin-right:5px"></span>
+                </button>
+                <button type="button" class="btn btn-info" title="" data-toggle="tooltip" data-target="bottom" id="submitSearch" data-placement="bottom" data-original-title="查询">
+                    查询 
+                    <span class="glyphicon glyphicon-search" style="margin-right:5px"></span>
+                </button>       
+            </div>
+        </form>
+        <div class="search-form-div"></div>
+
+        <div class="ms-content-body-panel">
+
+            <table class="table table-hover">
+                <thead>
+                    <!--<tr>
+                        <td colspan="7"><i class="glyphicon glyphicon-pushpin"></i> 栏目管理列表</td>
+                    </tr>-->
+                    <tr>
+                        <th class="text-center">
+                            <input type="checkbox" id="allCheck" value="全选" data-original-title="点击全选" data-toggle="tooltip">
+                        </th>
+                        <th class="col-md-1 text-center">编号</th>
+                        <th class="col-md-5 text-left">文章标题</th>
+                        <th class="col-md-3 text-left">栏目名</th>
+                        <th class="col-md-1 text-center">作者</th>
+                        <th class="col-md-1 text-center">排序</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">周边环境</a></span></td>
+                        <td class="text-left">列表</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-left">封面</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <nav class="pageNav">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
+>>>>>>> commit

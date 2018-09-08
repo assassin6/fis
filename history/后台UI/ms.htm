@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="ms-main">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>bootstrap</title>
+    <link rel="stylesheet" type="text/css" href="http://v.ming-soft.net/js/mobile/iconfont.css" />
+    <link href="plugins/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/ms.component.css">
+    <script src="js/ms.manager.js"></script>
+    <script type="text/javascript" src="http://v.ming-soft.net/jquery/jquery.tmpl.min.js"></script>
+</head>
+
+<body>
+    <div class="lideshow">
+        <ul class="lideshow-img" id="slider_wrap">  
+ 
+            <li style="z-index: 9; display: block;" class="">
+                <a style="background:url(images/logo.png) no-repeat top center" target="_blank"></a>
+            </li>
+ 
+            <li style="z-index: 1; display: none;" class="">
+                <a style="background:url(images/loading.png) no-repeat top center" target="_blank"></a>
+            </li>
+ 
+            <li style="z-index: 1; display: none;" class="">
+                <a style="background:url(images/sj.png) no-repeat top center" target="_blank"></a>
+            </li>
+
+            <!--<li style="z-index: 1; display: none;" class="">
+                <a style="background:url(http://www.loanfun.cn//templets/1528/lefen//pic/19.jpg) no-repeat top center #9a0120;" href="http://www.loanfun.cn///borrow.do"  title="再也不缺钱 随时借点花！" target="_blank"></a>
+            </li>-->
+        </ul><ul class="js-slider-nav lideshow-num"><li data-index="0" class="on"></li><li data-index="1" class=""></li><li data-index="2" class=""></li></ul>
+    </div>
+</body>
+
+</html>
+<script>
+    // JavaScript Document
+//幻灯片切换效果
+        function Slider(options){
+            this.defaults={container:'',navClassName:'',navEvent:'click',speed:5000,isAutoPlay:true};
+            this.size=0;
+            this.index=0;
+            this.timer=null;
+            
+            if($.isPlainObject(options)){
+                
+                $.extend(this.defaults,options);
+            }
+        }
+        Slider.prototype={
+            show:function(){
+            var wrap=$(this.defaults.container),list=wrap.find('li'),nav=wrap.siblings('.js-slider-nav'),index=this.index;
+            nav.find('li.on').removeClass('on');
+            $.each(list,function(k,v){
+                if(index==k){
+                    list.eq(k).fadeIn('normal',function(){
+                        $(this).css('z-index',9);
+                    });
+                    nav.find('li').eq(k).addClass('on');
+                }else{
+                    list.eq(k).fadeOut('normal',function(){
+                        $(this).css('z-index',1);
+                    });
+                }
+            });
+            this.index++;
+            if(this.index==this.size){
+                this.index=0;
+            }
+        },play:function(){
+            var that=this;
+            if(this.defaults.isAutoPlay){
+                this.timer=setInterval(function(){
+                        that.show();
+                        },
+                        this.defaults.speed);}},
+                bind:function(){
+                    var that=this,wrap=$(this.defaults.container),nav=wrap.siblings('.js-slider-nav');
+                    nav.delegate('li',this.defaults.navEvent,function(e){
+                        var self=$(this),index=parseInt(self.data('index'),10);
+                        if(self.hasClass('on')){return false;}
+                        clearInterval(that.timer);
+                        that.timer=null;
+                        that.index=isNaN(index)?0:index;
+                        that.show();
+                        return false;
+                    });
+                    wrap.hover(function(){
+                        clearInterval(that.timer);
+                        that.timer=null;
+                    },function(){that.play();});},
+                    init:function(){
+                        var wrap=$(this.defaults.container);
+                        
+                        this.size=wrap.find('li').size();
+                        var str='<ul class="js-slider-nav '+this.defaults.navClassName+'">';
+                        var cls='';
+                        for(var i=0;i<this.size;i++){
+                            cls=(i===0)?'on':'';
+                            str+='<li data-index="'+i+'" class="'+cls+'"></li>';
+                        }
+                        str+='</ul>';
+                        if(this.size>1){
+                            $(str).insertAfter(this.defaults.container);
+                        }
+                    this.bind();
+                    this.play();
+                    }
+                };
+                
+//数码分期幻灯JS   
+$(function(){
+var slideObj = new Slider({container:'#slider_thumb',navClassName:'lideshow-num'});
+slideObj.init();
+})
+</script>

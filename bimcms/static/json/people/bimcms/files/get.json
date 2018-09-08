@@ -1,0 +1,27 @@
+{
+    "createBy": 2,
+    "createDate": 1534241069000,
+    "delFlag": 0,
+    "fileVersions": [ 
+        {
+            "createBy": 0,
+            "delFlag": 0,
+            "filesId": 16,
+            "fvDate": 1534247926000,
+            "fvDefault": 0,
+            "fvInfo": "ss",
+            "fvName": "rr",
+            "fvPeopleMail": "tanwhui@163.com",
+            "fvPeopleId": 1,
+            "fvSize": "1",
+            "id": "2",
+            "updateBy": 0
+        }
+    ],
+    "filesCode": "541236",
+    "filesName": "rr",
+    "filesSize": "3",
+    "filesState": 1,
+    "id": "16",
+    "updateBy": 0
+}

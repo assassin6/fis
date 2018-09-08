@@ -1,0 +1,367 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <!--线上特殊字体文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/iconfont/1.0.0/iconfont.css" />
+    <!--线上jquery文件-->
+    <script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <!--线上bootstrap文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--线上tmpl文件-->
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.tmpl/1.4.2/jquery.tmpl.min.js"></script>
+
+    <!--easyUI-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/icon.css">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/jquery.easyui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/ms.manager.js"></script>
+</head>
+
+<body style="overflow-y: auto">
+    <div class="ms-content-body">
+
+        <div class="ms-content-body-title">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+            </div>
+        </div>
+
+        <div class="ms-content-body-panel">
+
+            <table class="table table-hover">
+                <thead>
+                    <!--<tr>
+                        <td colspan="7"><i class="glyphicon glyphicon-pushpin"></i> 栏目管理列表</td>
+                    </tr>-->
+                    <tr>
+                        <th class="col-md-1 text-center">
+                            <input type="checkbox" id="allCheck" value="全选" data-original-title="点击全选" data-toggle="tooltip">
+                        </th>
+                        <th class="col-md-3 text-left">名称</th>
+                        <th class="col-md-4 text-left">模板路径</th>
+                        <th class="col-md-4 text-left">访问路径</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+        <nav class="pageNav">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <!--线上特殊字体文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/iconfont/1.0.0/iconfont.css" />
+    <!--线上jquery文件-->
+    <script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <!--线上bootstrap文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--线上tmpl文件-->
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.tmpl/1.4.2/jquery.tmpl.min.js"></script>
+
+    <!--easyUI-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/icon.css">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/jquery.easyui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/ms.manager.js"></script>
+</head>
+
+<body style="overflow-y: auto">
+    <div class="ms-content-body">
+
+        <div class="ms-content-body-title">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+            </div>
+        </div>
+
+        <div class="ms-content-body-panel">
+
+            <table class="table table-hover">
+                <thead>
+                    <!--<tr>
+                        <td colspan="7"><i class="glyphicon glyphicon-pushpin"></i> 栏目管理列表</td>
+                    </tr>-->
+                    <tr>
+                        <th class="col-md-1 text-center">
+                            <input type="checkbox" id="allCheck" value="全选" data-original-title="点击全选" data-toggle="tooltip">
+                        </th>
+                        <th class="col-md-3 text-left">名称</th>
+                        <th class="col-md-4 text-left">模板路径</th>
+                        <th class="col-md-4 text-left">访问路径</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">代码生成器</a></span></td>
+                        <td class="text-left">people/code-generation.htm</td>
+                        <td class="text-left">people/codeGeneration</td>
+                    </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+        <nav class="pageNav">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
+>>>>>>> commit

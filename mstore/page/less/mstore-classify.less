@@ -1,0 +1,208 @@
+.ms-classift-fixed {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+}
+.mstore-tabs {
+    .nav-tabs {
+        justify-content: center;
+        padding: 0 !important;
+        border: none;
+		border-bottom: 1px solid #fafafa;
+		max-width: 1200px;
+		margin: auto;
+        li {
+            padding: 20px 10px 0 10px;
+            font-size: 16px;
+            color: #555555;
+        }
+        a {
+            color: #555555;
+            padding: 0 0 5px 0;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid transparent;
+            &:hover {
+                border: 1px solid #ffffff;
+                background: none;
+            }
+        }
+        .ms-model {
+            text-align: right;
+        }
+        .ms-plug {
+            text-align: left;
+        }
+    }
+}
+.mstore-tabs .nav-tabs .active a,.mstore-tabs .nav-tabs .active a:hover,.mstore-tabs .nav-tabs .active a:focus,.mstore-tabs .nav-tabs a:focus,.mstore-tabs .nav-tabs a:hover {
+    color: #3497db;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid #3497db;
+}
+.ms-vertical-center {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+.ms-classification {
+    color: #999999;
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+	.ms-classification-list{
+        height: 80px;
+        transition: height .6s;
+		li{
+			margin: 5px 0;
+			&:first-child{
+				height: 50px;
+			}
+		}
+	}
+    .ms-color-list {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #fafafa;
+        height: 62px;
+        li {
+            padding: 0 4px;
+        }
+    }
+    .ms-sort {
+        padding: 20px 10px;
+    }
+    .ms-active {
+        color: #3497db;
+    }
+    .ms-color-title {
+        line-height: 15px;
+        margin-right: 2px;
+        padding: 0 10px !important;
+    }
+    p {
+        margin: 0;
+    }
+    .ms-color-red {
+        background-color: #fe0000;
+    }
+    .ms-color-blur {
+        background-color: #349cff;
+    }
+    .ms-color-green {
+        background-color: #2dbf52;
+    }
+    .ms-color-orange {
+        background-color: #f39801;
+    }
+    .ms-color-black {
+        background-color: #000000;
+    }
+    .ms-color-gray {
+        background-color: #b5b5b5;
+    }
+    .ms-sort-button {
+        width: 60px;
+        height: 24px;
+        line-height: 22px;
+        text-align: center;
+        font-size: 12px;
+        border: 1px solid #999999;
+        margin-right: 10px;
+        justify-content: center;
+        .ms-sort-text {
+            margin-right: 2px;
+        }
+        .glyphicon {
+            font-size: 12px;
+        }
+    }
+}
+.nav-tabs,.ms-classification {
+    background-color: #ffffff;
+}
+.ms-classification-list-title {
+    width: 7% !important;
+	padding: 0 10px !important;
+}
+.ms-classification-list .ms-cursor:hover,.ms-classification-list .ms-cursor:focus {
+    color: #3497db;
+}
+.ms-classification .ms-color-list,.ms-classification .ms-padding-bottom,.ms-classification .ms-sort {
+    padding-top: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.ms-classification .ms-no-color,
+.ms-classification .ms-color-red,
+.ms-classification .ms-color-blur,
+.ms-classification .ms-color-green,
+.ms-classification .ms-color-orange,
+.ms-classification .ms-color-black,
+.ms-classification .ms-color-gray {
+    width: 20px;
+    height: 15px;
+    display: block;
+}
+.ms-classification .ms-no,
+.ms-classification .ms-red,
+.ms-classification .ms-blur,
+.ms-classification .ms-green,
+.ms-classification .ms-orange,
+.ms-classification .ms-black,
+.ms-classification .ms-gray,
+.ms-classification .ms-no:hover,
+.ms-classification .ms-red:hover,
+.ms-classification .ms-blur:hover,
+.ms-classification .ms-green:hover,
+.ms-classification .ms-orange:hover,
+.ms-classification .ms-black:hover,
+.ms-classification .ms-gray:hover {
+    border: 1px solid transparent;
+    padding: 3px;
+}
+.ms-classification .ms-color-no-active .ms-no,.ms-classification .ms-no:hover {
+    border: 1px solid #777777;
+}
+.ms-classification .ms-color-red-active .ms-color-red,
+.ms-classification .ms-color-blur-active .ms-color-blur,
+.ms-classification .ms-color-green-active .ms-color-green,
+.ms-classification .ms-color-orange-active .ms-color-orange,
+.ms-classification .ms-color-black-active .ms-color-black,
+.ms-classification .ms-color-gray-active .ms-color-gray,
+.ms-classification .ms-red:hover .ms-color-red,
+.ms-classification .ms-blur:hover .ms-color-blur,
+.ms-classification .ms-green:hover .ms-color-green,
+.ms-classification .ms-orange:hover .ms-color-orange,
+.ms-classification .ms-black:hover .ms-color-black,
+.ms-classification .ms-gray:hover .ms-color-gray {
+    margin: 0;
+}
+.ms-classification .ms-color-red-active .ms-red,.ms-classification .ms-red:hover {
+    border: 1px solid #fe0000;
+}
+.ms-classification .ms-color-blur-active .ms-blur,.ms-classification .ms-blur:hover {
+    border: 1px solid #349cff;
+}
+.ms-classification .ms-color-green-active .ms-green,.ms-classification .ms-green:hover {
+    border: 1px solid #2dbf52;
+}
+.ms-classification .ms-color-orange-active .ms-orange,.ms-classification .ms-orange:hover {
+    border: 1px solid #f39801;
+}
+.ms-classification .ms-color-black-active .ms-black,.ms-classification .ms-black:hover {
+    border: 1px solid #000000;
+}
+.ms-classification .ms-color-gray-active .ms-gray,.ms-classification .ms-gray:hover {
+    border: 1px solid #b5b5b5;
+}
+.ms-classification .ms-sort-active,.ms-classification .ms-sort-button:hover {
+    background-color: #3497db;
+    color: #ffffff;
+    border: none !important;
+    line-height: 26px !important;
+}

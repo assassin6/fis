@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mstore</title>
+        {ms:include filename=head-file.htm/}
+        <script src="http://cdn.mingsoft.net/plugins/less/2.5.3/less.min.js"></script>
+    </head>
+    <body>
+        <div class="mstore-show ms-gray-background ms-position-relative" id="mstore">
+            <!-- 幻灯 -->
+            {ms:include filename=mstore-banner.htm/}
+            <div id="ms-list-new" class="ms-overflow-hidden ms-list-new ms-gray-background ms-width-show">
+                {ms:include filename=mstore-new-list.htm/}
+                <div class="col-sm-4 col-md-4">
+                    {ms:include filename=mstore-share-people-list.htm/} {ms:include filename=mstore-pay-people-list.htm/}
+                </div>
+            </div>
+            {ms:include filename=mstore-all-people-list.htm/}
+            <!-- 标签页 -->
+            <div class="mstore-tabs">
+                {ms:include filename=mstore-classify.htm/}
+                <div class="tab-content ms-mstore-list ms-overflow-hidden ms-width-show">
+                    {ms:include filename=mstore-list.htm/}
+                </div>
+            </div>
+            <form id="mstoreModelId" method="post" target="_self" action="mstoreContent.do">
+                <input type="hidden" name="detailId" />
+                <input type="hidden" name="modelUrl" />
+            </form>
+            {ms:include filename=mstore-hover-button.htm/}
+        </div>
+        <!-- <div id="footer"></div> -->
+    </body>
+    <script>
+        window.onscroll = function() { //绑定scroll事件
+            var currentHeight = document.documentElement.scrollTop || document.body.scrollTop; //获取滚动距离
+            var currentHeightY = $(".mstore-banner").height() + $("#ms-list-new").height();
+            if(currentHeight >= 400) {
+                $(".ms-top").fadeIn()
+            } else {
+                $(".ms-top").fadeOut()
+            }
+            $("#people-list").css({
+                top: currentHeight + "px",
+            });
+            if(currentHeight >= currentHeightY) { //判断
+                $('.ms-classification').addClass("ms-classift-fixed");
+                if(classification.upgraderVersionType == 2) {
+                    $('.ms-mstore-list').addClass("ms-model-margin");
+                } else {
+                    $('.ms-mstore-list').addClass("ms-plug-margin");
+                }
+            } else {
+                $('.ms-classification').removeClass("ms-classift-fixed");
+                if(classification.upgraderVersionType == 2) {
+                    $('.ms-mstore-list').removeClass("ms-model-margin");
+                } else {
+                    $('.ms-mstore-list').removeClass("ms-plug-margin");
+                }
+            }
+            var scrollHeight = $(document).height();
+            var windowHeight = $(this).height();
+            if(classification.pageNo == "no") {
+                return;
+            }
+            if(Math.abs(parseInt(currentHeight) + windowHeight - scrollHeight) < 3) {
+                if(!vueList.loadNum) {
+                    return
+                }
+                if(vueList.listDownLoadText == "无") {
+                    return;
+                }
+                vueList.loadNum = false;
+                vueList.listDownLoadText = "正在载入....";
+                vueList.mstoreListLoad();
+            }
+        }
+    </script>
+</html>

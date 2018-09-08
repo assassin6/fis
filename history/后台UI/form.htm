@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+     <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://v.ming-soft.net/js/mobile/iconfont.css" /> <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all" /> 
+  <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all" /> 
+  <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all" /> 
+  <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-datetimepicker.min.css" media="all" />
+  
+  <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+  <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script> 
+  <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--时间插件-->
+  <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script> 
+  <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-datetimepicker.min.css" media="all" />
+  <script type="text/javascript" src="http://cdn.mingsoft.net/skin/manager/4.5.7/js/ms.manager.min.js"></script>
+  <script src="http://cdn.mingsoft.net/plugins/ms/mstore/mstore-client.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/skin/manager/4.5.7/css/ms.manager.min.css" media="all" />
+</head>
+<style>         
+                     
+</style>
+<body style="overflow:hidden">
+    <!--右边开始-->
+        <div class="ms-content-menu">
+        </div>
+        <div class="ms-content-body" style="width:85%;margin-top:40px;">
+            <div class="ms-content-body-title" style="position: fixed;width: 85%;">
+                <span>周边环境</span>
+                <div class="btn-topgroup">
+                    
+                    <button type="button" class="btn btn_orange">保存 <span class="glyphicon glyphicon-saved openMenu"></span></button>
+                    <button type="button" class="btn btn-default">返回文章列表 <span class="glyphicon glyphicon-share-alt openMenu"></span></button>
+                </div>
+            </div>
+            <div style="width:100%; height:45px;"></div>
+            <div class="ms-content-body-panel">
+                <form>
+                    <div class="form-group">
+                        <label>文章标题:</label>
+                        <input type="text" class="form-control" placeholder="请输入文章标题">
+                    </div>
+                    <div class="form-group">
+                        <label>自定义排序:</label>
+                        <input type="text" class="form-control" style="width:100px;" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label>文章属性:</label>
+                        <div class="ms-form-control">
+                            <label>
+                                <input type="checkbox" id="inlineCheckbox1" value="option1">幻灯(f)</label>
+                            <label>
+                                <input type="checkbox" id="inlineCheckbox2" value="option2">推荐(c)</label>
+                            <label>
+                                <input type="checkbox" id="inlineCheckbox3" value="option3">图片(p)</label>
+                            <label>
+                                <input type="checkbox" id="inlineCheckbox4" value="option1">跳转(j)</label>
+                            <label>
+                                <input type="checkbox" id="inlineCheckbox5" value="option2">头条(h)</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>文章来源:</label>
+                        <input type="text" class="form-control" placeholder="请输入文章标题">
+                    </div>
+                    <div class="form-group">
+                        <label>文章作者:</label>
+                        <input type="text" class="form-control" placeholder="请输入文章标题">
+                    </div>
+                </form>
+                <form role="form" method="post" action="/manager/staging/stagingOrder/off.do" target="_self" id="searchForm" name="searchForm" class="searchForm">
+                    <div class="row">
+                        <!--图片集样式-->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6" style="">
+                            <div class="form-group">
+                                <label for="orderUsername">姓名</label>
+                                <input type="text" name="orderUsername" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6" style="">
+                            
+                            <div class="form-group input-append date">
+                                <input size="16" type="text" value="2012-06-15 14:45" readonly class="form_datetime form-control">
+                                <span class="add-on"><i class="icon-th"></i></span>
+                            </div>
+                            <script type="text/javascript">
+                                $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+                            </script>     
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6" style="">
+                            <div class="form-group ms-form-group">
+                                <label for="stagingOrderRepaymentDay">还款日</label>
+                                <div class="ms-form-control" style="height:auto">
+                                    <select id="stagingOrderRepaymentDay" name="stagingOrderRepaymentDay" class="form-control" style="width:100%">
+                                        <option value="">请选择</option>
+                                        <option value="01">每月01日</option>
+                                        <option value="15">每月15日</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6" style="">
+                            <div class="form-group ms-form-group">
+                                <label for="stagingOrderRepaymentWay">还款方式</label>
+                                <div class="ms-form-control" style="height:auto">
+                                    <select id="stagingOrderRepaymentWay" name="stagingOrderRepaymentWay" class="form-control" style="width:100%">
+                                        <option value="">请选择</option>
+                                        <option value="0">分期付款</option>
+                                        <option value="1">一次性选购</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>

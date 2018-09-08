@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<title>铭飞MS平台官方网站－会员中心</title>
+		{ms:include filename=head-file-people.htm/} {ms:include filename=people/check-login.htm/}
+		<link rel="stylesheet" type="text/css" href="http://mstore.mingsoft.net/templets/86/cms//less/user.center.css">
+		<script src="http://mstore.mingsoft.net/templets/86/cms//js/base.js"></script>
+	</head>
+	<body>
+		<div id="head"></div>
+		<div class="user_center">
+		{ms:include filename=people/menu.htm/}
+			<div class="user_centent">
+				<!--个人中心内容部分头部固定数据-->
+				{ms:include filename=people/data.htm/}
+				<!--更新提示-->
+				<div class="user_cententbody ms-user-paddend" id="vue-center">
+					<div class="loading-pic" v-show="loading"></div>
+					<div class="alert alert-info listNone hide-default" role="alert" v-if="List.length == 0" v-show="!loading">
+						<p>铭飞MS平台给您提供崭新的开源分享模式，相信开源的力量，快快分享一个。
+							<a class="label label-primary" href="http://mstore.mingsoft.net/people/share.do">立即分享</a>
+						</p>
+						<p>温馨提示：在我们向别人索取的同时，我们应该也要懂得分享，平台才会更美好</p>
+					</div>
+					<div class="share_list" v-show="!loading" style="display:none">
+						<div class="user_cententbodynav">我分享的模板</div>
+						<div class="thumbnail myshare_template" v-for="(skin,index) in List" v-if="skin.upgraderVersionType == 2">
+							<div class="ms_templateTitle" v-text="skin.upgraderVersionName"></div>
+							<div class="ms_templatePic">
+								<img class="lazy" :src="baseHost+skin.upgraderVersionImg" onerror='this.src="http://cdn.mingsoft.net/global/images/msheader.png"' />
+								<div class="tipMsg" v-if="skin.upgraderVersionProgress == 0">发布审核中</div>
+								<!--<a class="tipMsg" data-container="body" data-toggle="popover" data-placement="bottom" style="width: 93%;" v-else-if="skin.upgraderVersionProgress == 1" v-on:click="mstoreKey">
+									<span style="font-size: 13px;" :class="{'none':keyt == 'hide'}">{{skin.upgraderVersionKey}}</span>
+									<span :class="{'none':keyt == 'show'}"><i class="icon iconfont icon-logo">&#xe724; </i>申请通过，点击查看mstore-key</span>
+								</a>
+								<div class="tipMsg" v-else-if="skin.upgraderVersionProgress == 2">开发中...</div>-->
+								<div class="tipMsg" v-else-if="skin.upgraderVersionProgress == 3">发布审核中</div>
+								<div class="tipMsg" v-else-if="skin.upgraderVersionProgress == 4">发布成功</div>
+								<a tabindex="0" class="tipMsg" data-trigger="focus" data-toggle="popover" data-placement="bottom" data-content="模板文件结构不符合要求，请按照SDK模板进行开发" v-else="skin.upgraderVersionProgress == 30">
+									<i class="icon iconfont icon-logo">&#xe724; </i>发布审核失败
+								</a>
+							</div>
+							<div class="priceAndNum">
+								<span class="thumbnail_price" v-if="skin.upgraderVersionPrice == 0">免费分享</span>
+								<span class="thumbnail_price" v-else>赞助费：￥{{skin.upgraderVersionPrice}}</span>
+							</div>
+							<a class="btn btn-default" style="width:100%;" disabled="disabled" v-if="skin.upgraderVersionProgress == 0"> 请耐心等待审核 </a>
+							<!--<a class="btn btn-default down_sdk" :id="skin.upgraderVersionId" style="width:100%;" v-else-if="skin.upgraderVersionProgress == 1" v-on:click="downSdk(skin.upgraderVersionId)"> 下载SDK </a>-->
+							<!--<a class="btn btn-success" :href="'http://mstore.mingsoft.net/people/shareApply.do?id='+skin.upgraderVersionId" style="width:100%;" v-else-if="skin.upgraderVersionProgress == 2">发布</a>-->
+							<a class="btn btn-default" style="width:100%;" disabled="disabled" v-else-if="skin.upgraderVersionProgress == 3"> 请耐心等待审核 </a>
+							<a :href="'http://mstore.mingsoft.net/people/shareUpgrader.do?id='+skin.upgraderVersionId" class="btn btn-info" style="width:100%;" v-else-if="skin.upgraderVersionProgress == 4">更新版本</a>
+							<!--<a class="btn btn-default" style="width:100%;" v-else-if="skin.upgraderVersionProgress == 10" disabled="disabled"> 申请失败 </a>-->
+							<a class="btn btn-default" style="width:100%;" v-else-if="skin.upgraderVersionProgress == 30" disabled="disabled"> 发布审核失败 </a>
+						</div>
+						<div class="thumbnail myshare_template" style="margin-right: 0px;">
+							<!--<div class="myshare_price">价值源自于分享</div>-->
+							<div class="myshare_new">
+								<a href="http://mstore.mingsoft.net/people/share.do?upgraderVersionType=2" data-toggle="tooltip" data-placement="top" title="立即分享">+</a>
+							</div>
+						</div>
+						<div class="user_cententbodynav">我分享的插件</div>
+						<div class="thumbnail myshare_thumbnail" v-for="plug in List" v-if="plug.upgraderVersionType == 1">
+							<div class="ms_plugPic">
+								<img class="lazy" :src="baseHost+plug.upgraderVersionImg" onerror='this.src="http://cdn.mingsoft.net/global/images/msheader.png"'>
+								<div class="tipMsg" v-if="plug.upgraderVersionProgress == 0">发布审核中</div>
+								<!--<div class="tipMsg" v-else-if="plug.upgraderVersionProgress == 1">申请通过</div>-->
+								<!--<div class="tipMsg" v-else-if="plug.upgraderVersionProgress == 2">开发中</div>-->
+								<div class="tipMsg" v-else-if="plug.upgraderVersionProgress == 3">发布审核中</div>
+								<div class="tipMsg" v-else-if="plug.upgraderVersionProgress == 4">发布成功</div>
+								<!--<a tabindex="0" class="tipMsg" data-trigger="focus" data-toggle="popover" data-placement="bottom" data-content="企业模板建议免费发布" v-else-if="plug.upgraderVersionProgress == 10"><i class="icon iconfont icon-logo">&#xe724; </i>申请失败</a>-->
+								<a tabindex="0" class="tipMsg" data-trigger="focus" data-toggle="popover" data-placement="bottom" data-content="模板文件结构不符合要求，请按照SDK模板进行开发" v-else><i class="icon iconfont icon-logo">&#xe724; </i>发布审核失败</a>
+							</div>
+							<div class="caption">
+								<div class="ms_plugTitle" v-text="plug.upgraderVersionName"></div>
+								<div class="ms_plugDescription" v-text="plug.upgraderVersionDescription"></div>
+								<div class="priceAndNum">
+									<span class="thumbnail_price" v-if="plug.upgraderVersionPrice == 0">免费分享</span>
+									<span class="thumbnail_price" v-else>赞助费：￥{{plug.upgraderVersionPrice}}</span>
+								</div>
+								<button type="button" class="btn btn-default" style="width:100%;" disabled="disabled" v-if="plug.upgraderVersionProgress == 0"> 请耐心等待审核 </button>
+								<!--<a class="btn btn-success" style="width:100%;" v-else-if="plug.upgraderVersionProgress == 2" :href="'http://mstore.mingsoft.net/people/shareApply.do?id='+plug.upgraderVersionId">发布</a>-->
+								<button type="button" class="btn btn-default" style="width:100%;" disabled="disabled" v-else-if="plug.upgraderVersionProgress == 3"> 请耐心等待审核 </button>
+								<a class="btn btn-info" style="width:100%;" v-else-if="plug.upgraderVersionProgress == 4" :href="'http://mstore.mingsoft.net/people/shareUpgrader.do?id='+plug.upgraderVersionId">更新版本</a>
+								<!--<button type="button" class="btn btn-default" style="width:100%;" v-else-if="plug.upgraderVersionProgress == 10" disabled="disabled"> 申请失败 </button>-->
+								<button type="button" class="btn btn-default" style="width:100%;" v-else disabled="disabled"> 发布审核失败 </button>
+							</div>
+						</div>
+						<div class="thumbnail myshare_thumbnail" style="margin-right: 0px;">
+							<!--<div class="myshare_price">价值源自于分享</div>-->
+							<div class="myshare_new">
+								<a href="http://mstore.mingsoft.net/people/share.do?upgraderVersionType=1" data-toggle="tooltip" data-placement="top" title="立即分享">+</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<form id="upgraderVersionForm" method="post">
+	<input type="hidden" name="projectId" v-model="vueCenter.projectId" />
+	<input type="hidden" name="projectUpgraderVersionId" v-model="vueCenter.projectUpgraderVersionId" />
+</form>
+<script src="http://mstore.mingsoft.net/templets/86/cms//js/headAndFoter.js"></script>
+<script>
+	var vueCenter;
+	ms.load(["ms", "ms.mstore.min", "ms.people", "ms.mcode"], function(ms, mstore, people, mcode) {
+		vueCenter = new Vue({
+			el: "#vue-center",
+			data: {
+				List: "", //插件列表
+				create: false, //插件生成按钮禁用
+				projectId: "",
+				action: "{ms:global.host/}/people/codeGeneration.do",
+				projectUpgraderVersionId: "",
+				baseHost: "{ms:global.host/}/", //定义一个基础地址，主要用于加在返回图片地址前
+				baseUrl: "{ms:global.url/}/", //定义一个基础地址，主要用于加在返回页面地址前
+				keyt:"hide",//显示秘钥
+				loading:true,//加载
+				base:"http://mstore.mingsoft.net/",
+			},
+			methods: {
+				//插件代码生成
+				build: function(id) {
+					var _this = event.target;
+					var target = this;
+					_this.text("跳转中...").attr("disabled", true);
+					mcode.people.mcode.project.get(id, function(json) {
+						target.projectId = json.projectId;
+						target.projectUpgraderVersionId = json.projectUpgraderVersionId;
+						$("#upgraderVersionForm").submit();
+						_this.text("在线生成代码").attr("disabled", false);
+					})
+				},
+				//下载SDK
+				downSdk: function(id) {
+					var _this = event.target;
+					$(_this).hide();
+					$("#upgraderVersionForm").attr("action", this.base + "/people/upgrader/version/" + id + "/sdk.do");
+					$("#upgraderVersionForm").submit();
+					$(_this).after('<a class="btn btn-success" href="'+this.base+'/people/shareApply.do?id=' + id + '" style="width:100%;" >发布</a>')
+				},
+				//显示秘钥
+				mstoreKey:function(){
+					this.keyt = "show";
+				}
+			},
+			mounted: function() {
+				var target = this;
+				this.loading = true;
+				var ajaxCfg = {
+						"type": "post",
+						"dataType": "json",
+					};
+				ajaxCfg.url = "http://mstore.mingsoft.net/people/upgrader/version/list.do";
+				ms.ajax(ajaxCfg, function(data) {
+					if(data.length > 0) {
+						target.List = data;
+						$(".share_list").fadeIn();
+						$('[data-toggle="popover"]').popover();
+					} else {
+						$(".listNone").fadeIn();
+					}
+					target.loading = false;
+				})
+
+			},
+		})
+	})
+</script>

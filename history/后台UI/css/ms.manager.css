@@ -1,0 +1,1222 @@
+html {
+  height: 100%;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(50, 50, 50, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(50, 50, 50, 0.6);
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(50, 50, 50, 0.1);
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(50, 50, 50, 0.2);
+}
+.topDiv {
+  height: 125px;
+  width: 100%;
+  display: none;
+}
+.has-feedback label ~ .form-control-feedback {
+  top: 0;
+}
+.form-horizontal .checkbox,
+.form-horizontal .checkbox-inline,
+.form-horizontal .radio,
+.form-horizontal .radio-inline {
+  padding-top: 4px;
+}
+body {
+  height: 100%;
+  width: 100%;
+  background: #fcfcfc;
+  line-height: 21px;
+  color: #555;
+  overflow: hidden;
+  /*mstore改版后*/
+}
+body .btn-group .btn {
+  margin-right: 0px;
+}
+body ul,
+body ul li,
+body dl,
+body dl dt,
+body dl dd,
+body input,
+body ol,
+body ol li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body .row {
+  margin: 0px;
+}
+body a,
+body a:link,
+body a:visited,
+body a:active {
+  text-decoration: none;
+  color: #2a6496;
+}
+body .modal-dialog {
+  width: 35%;
+  margin: 15px auto;
+}
+body .modal-dialog .modal-content {
+  border-radius: 4px;
+}
+body .modal-dialog .modal-content .modal-body {
+  overflow: hidden;
+}
+body .modal-dialog .modal-content .modal-header {
+  padding: 10px;
+  background-color: #f5f5f5;
+  color: #333;
+  border-radius: 4px;
+}
+body .modal-dialog .modal-content-show {
+  min-height: 450px;
+}
+body .ms-upgrader-number {
+  display: none;
+}
+body .ms-text-hide {
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .ms-text2-hide {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+body .ms-text3-hide {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+body .ms-text8-hide {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+}
+body .email-login {
+  width: 472px;
+  border: 1px #eaeaea solid;
+  padding-top: 20px;
+  background: #fff;
+  box-shadow: 0px 0px 15px -5px #888888;
+  position: absolute;
+  top: 15%;
+  left: 32%;
+}
+body .email-login form {
+  width: 300px;
+  margin: 0px auto;
+}
+body .email-login .title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+body .email-login .email-login-tit {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+body .weixin-login {
+  position: absolute;
+  top: 15%;
+  left: 32%;
+}
+body #login_container {
+  margin: 0 auto;
+  width: 472px;
+  background: url(http://static.ming-soft.net/images/scorback.jpg) no-repeat #fcfcfc;
+  text-align: center;
+  padding-top: 51px;
+}
+body .small-font {
+  font-size: 12px;
+}
+body .padding-clear {
+  padding: 0px;
+}
+body .pageNav {
+  text-align: right;
+  margin-bottom: 30px;
+  padding-right: 8px;
+  overflow: hidden;
+}
+body .fixed-top {
+  position: fixed;
+  top: -10px;
+  background: #fff;
+  z-index: 1000;
+  left: 0px;
+  margin-left: -15px;
+  padding-left: 15px;
+}
+body .fixed-filter {
+  position: fixed;
+  top: 42px;
+  z-index: 1000;
+  background: #fff;
+  width: 100%;
+  left: 15px;
+  margin-left: -15px;
+  padding: 10px 15px;
+  box-shadow: 0 5px 10px #d3d3d3;
+}
+body .ms-top {
+  height: 40px;
+  width: 100%;
+  min-width: 500px;
+  background-color: #283649;
+}
+body .ms-top .ms-top-logo {
+  width: 164px;
+  float: left;
+  padding: 8px 0px 0px 14px;
+}
+body .ms-top .ms-top a:hover,
+body .ms-top .ms-top a:focus {
+  background: #e6e6e6;
+  color: #1d2939;
+}
+body .ms-top .ms-top-menu {
+  height: 100%;
+}
+body .ms-top .ms-top-menu .btn-group .btn-group .ms-rg-top-bt {
+  box-shadow: none;
+  border: none;
+  height: 40px;
+  text-shadow: none;
+  color: #e4e4e4;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background-image: none;
+  background-repeat: repeat-x;
+}
+body .ms-top .ms-top-menu .btn-group .btn-group .ms-rg-top-bt .caret {
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+body .ms-top .ms-top-menu .btn-group .btn-group .dropdown-menu {
+  background-color: #1d2939;
+}
+body .ms-top .ms-top-menu .btn-group .btn-group .dropdown-menu li > a {
+  color: #e4e4e4;
+}
+body .ms-top .ms-top-menu .btn-group .btn-group .dropdown-menu a:hover,
+body .ms-top .ms-top-menu .btn-group .btn-group .dropdown-menu a:focus {
+  color: #1caf9a;
+  text-decoration: none;
+  padding-left: 20px;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background-image: none;
+  background-repeat: repeat-x;
+}
+body .ms-top .ms-top-menu .btn-group .ms-top-menuchild {
+  float: right;
+  position: relative;
+}
+body .ms-top .ms-top-menu .btn-group .ms-top-menuchild .ms-top-menuchildtext {
+  width: 45px;
+  height: 40px;
+  color: #e4e4e4;
+  float: right;
+  text-align: center;
+  cursor: pointer;
+  line-height: 40px;
+}
+body .ms-top .ms-top-menu .btn-group .ms-top-menuchild .ms-top-menuchildTit {
+  display: block;
+  top: 41px;
+  left: 8px;
+  width: 120px;
+  color: #333;
+}
+body .ms-top .ms-top-menu .btn-group .ms-top-menuchild .badge {
+  position: absolute;
+  right: 45px;
+  top: 4px;
+  padding: 2px 5px;
+  background-color: red;
+}
+body .ms-top .ms-top-menu .btn-group .ms-top a:hover,
+body .ms-top .ms-top-menu .btn-group .ms-top a:focus,
+body .ms-top .ms-top-menu .btn-group .ms-top-menuchild a:hover,
+body .ms-top .ms-top-menu .btn-group .ms-top-menuchild a:focus {
+  background: #e6e6e6;
+  color: #1d2939;
+}
+body .ms-menu {
+  background-color: #1d2939;
+  width: 13%;
+  height: 100%;
+  float: left;
+  padding: 0px 15px;
+  min-width: 160px;
+  overflow-y: auto;
+}
+body .ms-menu .ms-menu-parent {
+  background: #1d2939;
+  border: none;
+  color: #e4e4e4;
+  padding-top: 1px;
+  border-radius: 2px;
+}
+body .ms-menu .ms-menu-parent .ms-menu-parent-header {
+  background: #1d2939;
+  border: none;
+  color: #e4e4e4;
+  padding: 6px;
+  border-radius: 2px;
+}
+body .ms-menu .ms-menu-parent .ms-menu-parent-header .icon-logo {
+  margin-right: 10px;
+  display: block;
+  float: left;
+  position: relative;
+  color: #e4e4e4;
+  font-size: 16px;
+  height: 25px;
+}
+body .ms-menu .ms-menu-parent .ms-menu-parent-header .ms-menu-parent-title {
+  font-size: 14px;
+  color: #e4e4e4;
+  cursor: pointer;
+}
+body .ms-menu .ms-menu-parent .ms-menu-parent-header .openMenu {
+  display: block;
+  float: right;
+  font-size: 17px;
+  line-height: 24px;
+}
+body .ms-menu .ms-menu-parent .nav-title {
+  background: #ffffff;
+  border: none;
+  color: #e4e4e4;
+  padding: 6px;
+  border-radius: 2px;
+}
+body .ms-menu .ms-menu-parent .nav-title .icon-logo {
+  margin-right: 10px;
+  display: block;
+  float: left;
+  position: relative;
+  color: #1d2939;
+  font-size: 16px;
+  height: 25px;
+}
+body .ms-menu .ms-menu-parent .nav-title .ms-menu-parent-title {
+  font-size: 14px;
+  color: #1d2939;
+  cursor: pointer;
+}
+body .ms-menu .ms-menu-parent .nav-title .openMenu {
+  display: block;
+  float: right;
+  font-size: 17px;
+  line-height: 24px;
+}
+body .ms-menu .ms-menu-parent .ms-menu-child {
+  display: none;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  background: #1d2939;
+  margin: 0px;
+  border-radius: 0px;
+}
+body .ms-menu .ms-menu-parent .ms-menu-child li {
+  border: none;
+  padding: 5px 16px;
+  padding-right: 0px;
+}
+body .ms-menu .ms-menu-parent .ms-menu-child li a {
+  color: #e4e4e4;
+}
+body .ms-menu .ms-menu-parent .ms-menu-child li a .caret {
+  border-left: 4px dashed;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+body .ms-menu .ms-menu-parent .ms-menu-child li a:hover,
+body .ms-menu .ms-menu-parent .ms-menu-child li a:focus {
+  color: #1caf9a;
+  text-decoration: none;
+  padding-left: 0px;
+}
+body .ms-menu .panel-group .panel-heading + .panel-collapse > .panel-body,
+body .ms-menu .panel-group .panel-heading + .panel-collapse > .list-group {
+  border: none;
+}
+body .ms-menu .panel-group {
+  width: 100%;
+  float: left;
+  padding: 0px;
+}
+body .ms-menu .panel-group .panel {
+  margin-top: 1px;
+  background-color: #1d2939;
+}
+body .ms-menu .panel-group .panel-default {
+  position: relative;
+  border: none;
+  box-shadow: none;
+}
+body .ms-menu .panel-group .panel-default .panel-heading {
+  background: #1d2939;
+  border: none;
+  color: #e4e4e4;
+  padding: 0px;
+  border-radius: 2px;
+}
+body .ms-menu .panel-group .panel-default .panel-heading .icon-logo {
+  margin-right: 10px;
+  display: block;
+  float: left;
+  position: relative;
+  color: #e4e4e4;
+  font-size: 16px;
+  height: 25px;
+}
+body .ms-menu .panel-group .panel-default .panel-heading .panel-title {
+  font-size: 14px;
+  color: #e4e4e4;
+  cursor: pointer;
+}
+body .ms-menu .panel-group .panel-default .panel-heading .openMenu {
+  display: block;
+  float: right;
+  font-size: 17px;
+  line-height: 24px;
+}
+body .ms-menu .panel-group .panel-default .panel-heading a:hover,
+body .ms-menu .panel-group .panel-default .panel-default > .panel-heading a:focus {
+  color: #1d2939;
+  border-radius: 2px;
+}
+body .ms-menu .panel-group .panel-default .nav-active {
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+body .ms-menu .panel-group .panel-default .nav-active .panel-title {
+  color: #1d2939;
+}
+body .ms-menu .panel-group .panel-default .nav-active .icon-logo {
+  color: #1d2939;
+}
+body .ms-menu .panel-group .panel-default .collapse .panel-body {
+  padding: 0px;
+}
+body .ms-menu .panel-group .panel-default .panel-body {
+  padding: 0px;
+}
+body .ms-menu .panel-group .panel-default .panel-body .ms-leftMenu {
+  display: block;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  background: #1d2939;
+  margin: 0px;
+  border-radius: 0px;
+}
+body .ms-menu .panel-group .panel-default .panel-body .dropdown-menu {
+  background: #1d2939;
+}
+body .ms-menu .panel-group .panel-default .panel-body .dropdown-menu li {
+  border: none;
+}
+body .ms-menu .panel-group .panel-default .panel-body .dropdown-menu li a {
+  color: #e4e4e4;
+  padding: 5px 24px;
+}
+body .ms-menu .panel-group .panel-default .panel-body .dropdown-menu li a .caret {
+  border-left: 4px dashed;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+body .ms-menu .panel-group .panel-default .panel-body .dropdown-menu li a:hover,
+body .ms-menu .panel-group .panel-default .panel-body .dropdown-menu li a:focus {
+  color: #1caf9a;
+  text-decoration: none;
+  padding-left: 24px;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background-image: none;
+  background-repeat: repeat-x;
+}
+body .ms-content {
+  background-color: #fcfcfc;
+  height: 100%;
+  overflow: hidden;
+  padding: 0px;
+}
+body .row .caption {
+  text-align: center;
+}
+body .row .caption p {
+  height: 22px;
+  overflow: hidden;
+}
+body .ms-content-body-title {
+  border-bottom: 1px solid #d3d7db;
+  border-top: 1px solid #eee;
+  background: #ffffff;
+  color: #666666;
+  height: 44px;
+  line-height: 42px;
+  padding-left: 14px;
+  width: 100%;
+  z-index: 1000;
+  text-align: right;
+}
+body .ms-content-body-title span {
+  text-align: left;
+  float: left;
+  font-weight: bold;
+  font-size: 16px;
+}
+body .ms-content-body-title .btn {
+  margin-bottom: 4px;
+  margin-right: 10px;
+}
+body .ms-content-body-panel {
+  padding: 10px;
+  padding-bottom: 30px;
+  width: 100%;
+  min-width: 800px;
+  z-index: 999;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+body .ms-content-body-panel .ms-content-body-panel-nav {
+  background: #fff;
+  padding: 10px 8px;
+  border-top: 2px #8296be solid;
+}
+body .ms-content-body-panel .ms-panel-nav {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+body .ms-content-body-panel .ms-panel-nav .btn {
+  float: left;
+  margin-right: 5px;
+}
+body .ms-content-body-panel .ms-panel-nav .form-control {
+  width: 125px;
+  float: left;
+  margin-right: 5px;
+}
+body .ms-content-body-panel .ms-panel-nav .form-seach {
+  width: 200px;
+  float: left;
+  margin-right: 5px;
+}
+body .ms-content-body-panel .goods-norms {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+body .ms-content-body-panel .goods-norms .norms-group {
+  margin-bottom: 10px;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-title {
+  background: #f3f3f3;
+  padding: 5px;
+  position: relative;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-title .delete-norms {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  font-size: 14px;
+  line-height: 16px;
+  background: rgba(153, 153, 153, 0.6);
+  border-radius: 10px;
+  text-indent: 0;
+  display: none;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-list {
+  padding: 10px 5px;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-list .add-norms {
+  color: #38f;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 10px;
+  position: relative;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-list .add-norms-content {
+  margin-top: 10px;
+  display: none;
+  border: 1px #ddd solid;
+  width: 440px;
+  position: absolute;
+  left: -194px;
+  top: 26px;
+  background: #fff;
+  border-radius: 2px;
+  z-index: 2;
+  -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-list .add-norms-content .norms-select {
+  position: relative;
+  background: #fff;
+  border-radius: 2px;
+  padding: 10px;
+  z-index: 2;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-list .add-norms-content .norms-select select {
+  width: 300px;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-list .add-norms-content .arrow {
+  left: 50%;
+  top: 0;
+  -webkit-transform: rotate(45deg) translateX(-50%) translateY(-50%);
+  -moz-transform: rotate(45deg) translateX(-50%) translateY(-50%);
+  -ms-transform: rotate(45deg) translateX(-50%) translateY(-50%);
+  transform: rotate(45deg) translateX(-50%) translateY(-50%);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-list .norms-detail {
+  border: 1px solid #AAA;
+  padding: 4px;
+  display: inline-block;
+  margin: 5px 10px 5px 0px;
+  line-height: 13px;
+  height: 25px;
+  width: 80px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  border-radius: 4px;
+  cursor: pointer;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-list .norms-detail span {
+  width: 74px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  display: block;
+}
+body .ms-content-body-panel .goods-norms .norms-group .norms-list .norms-detail .delete-norms {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  font-size: 14px;
+  line-height: 16px;
+  background: rgba(153, 153, 153, 0.6);
+  border-radius: 10px;
+  text-indent: 0;
+  display: none;
+}
+body .ms-content-menu {
+  width: 15%;
+  float: left;
+  color: #666666;
+  background: #ffffff;
+  height: 100%;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+body .ms-content-body {
+  height: 100%;
+  float: left;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+body .ms-content-body .updatePrompt {
+  margin: 20px;
+  border: 1px #e0e0e0 solid;
+  padding: 10px;
+  border-radius: 5px;
+}
+body .ms-content-body .updatePrompt span {
+  color: #0096fb;
+  margin-right: 10px;
+}
+body .ms-content-body h3 {
+  padding-left: 20px;
+}
+body .ms-content-body .ms-content-msPlug {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
+}
+body .ms-content-body .ms-content-msPlug .thumbnail {
+  margin-bottom: 30px;
+}
+body .ms-content-body .ms-content-msPlug .thumbnail img.lazy {
+  width: 100%;
+}
+body .ms-content-body .ms-content-msTemplet,
+body .ms-content-body .ms-content-msPlug {
+  margin: 15px 0px;
+  padding: 0px 10px;
+}
+body .ms-content-body .ms-content-msTemplet div,
+body .ms-content-body .ms-content-msPlug div {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail,
+body .ms-content-body .ms-content-msPlug div .thumbnail {
+  margin-bottom: 20px;
+  padding: 5px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle {
+  text-align: left;
+  font-size: 20px;
+  color: #333;
+  height: 55px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle span,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle span,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle span,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle span {
+  font-size: 12px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-templateShareHead,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-templateShareHead,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-templateShareHead,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-templateShareHead,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-plugShareHead,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-plugShareHead,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-plugShareHead,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-plugShareHead {
+  padding: 0px;
+  float: left;
+  margin-right: 10px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-templateShareHead img,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-templateShareHead img,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-templateShareHead img,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-templateShareHead img,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-plugShareHead img,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-plugShareHead img,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-plugShareHead img,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-plugShareHead img {
+  width: 50px;
+  border-radius: 100%;
+  height: 50px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-templateShareHead .lazy,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-templateShareHead .lazy,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-templateShareHead .lazy,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-templateShareHead .lazy,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-plugShareHead .lazy,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-plugShareHead .lazy,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-plugShareHead .lazy,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-plugShareHead .lazy {
+  background: url(http://static.ming-soft.net/msheader.jpg);
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-templateShareName p,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-templateShareName p,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-templateShareName p,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-templateShareName p,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-plugShareVersion p,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-plugShareVersion p,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-plugShareVersion p,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-plugShareVersion p {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-plugShareName p,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-plugShareName p,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-plugShareName p,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-plugShareName p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-plugShareBb,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-plugShareBb,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-plugShareBb,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-plugShareBb {
+  float: left;
+  padding: 0px;
+  font-size: 12px;
+  color: #999;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templateTitle .ms-plugShareNew,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templateTitle .ms-plugShareNew,
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugTitle .ms-plugShareNew,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugTitle .ms-plugShareNew {
+  float: right;
+  color: #fff;
+  background: red;
+  border-radius: 4px;
+  padding: 0px 3px;
+  margin-top: 0px;
+  border-bottom: #bb0000 2px solid;
+  margin-right: -10px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templatePic,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templatePic {
+  height: 180px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: 0px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-templatePic img,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-templatePic img {
+  width: 100%;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .sharePic,
+body .ms-content-body .ms-content-msPlug div .thumbnail .sharePic {
+  height: 225px;
+  margin-bottom: 0px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .ms-plugDescription,
+body .ms-content-body .ms-content-msPlug div .thumbnail .ms-plugDescription {
+  height: 60px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  word-break: break-all;
+  padding: 0px;
+  text-align: left;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .shareTitle,
+body .ms-content-body .ms-content-msPlug div .thumbnail .shareTitle {
+  text-align: center;
+  font-size: 20px;
+}
+body .ms-content-body .ms-content-msTemplet div .thumbnail .shareWelcome,
+body .ms-content-body .ms-content-msPlug div .thumbnail .shareWelcome {
+  height: 26px;
+  text-align: center;
+  font-size: 12px;
+}
+body .ms-content table,
+body .ms-content-body table {
+  width: 100%;
+  color: #666666;
+  border: none;
+  background-color: #ffffff;
+  padding: 10px 0px;
+  *box-shadow: 0 0px 1px #ccc;
+}
+body .ms-content table tbody tr,
+body .ms-content-body table tbody tr {
+  height: 30px;
+}
+body .ms-content table tbody tr .text-left,
+body .ms-content-body table tbody tr .text-left,
+body .ms-content table tbody tr .text-center,
+body .ms-content-body table tbody tr .text-center {
+  padding: 5px;
+  line-height: 26px;
+  font-size: 12px;
+}
+body .ms-content .searchForm,
+body .ms-content-body .searchForm {
+  margin-bottom: 10px;
+  padding: 10px 0px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 5px #A1A1A1;
+}
+body .ms-content .searchForm .row,
+body .ms-content-body .searchForm .row {
+  margin-right: 0px;
+}
+body .ms-content .searchForm .row .col-md-3,
+body .ms-content-body .searchForm .row .col-md-3 {
+  padding: 0px 10px;
+}
+body .ms-content .searchForm .col-sm-2,
+body .ms-content-body .searchForm .col-sm-2 {
+  width: auto;
+}
+body .ms-content .searchForm .ms-form-input,
+body .ms-content-body .searchForm .ms-form-input {
+  line-height: 35px;
+}
+body .ms-content .searchForm .ms-from-group-input,
+body .ms-content-body .searchForm .ms-from-group-input {
+  padding-left: 0;
+  padding-right: 0;
+}
+body .ms-content .searchForm .ms-from-group-input input,
+body .ms-content-body .searchForm .ms-from-group-input input {
+  width: 100%;
+}
+body .ms-content .searchForm .ms-from-group-input input[type="radio"],
+body .ms-content-body .searchForm .ms-from-group-input input[type="radio"] {
+  width: auto;
+}
+body .ms-content .searchForm .ms-from-group-input input[type="checkbox"],
+body .ms-content-body .searchForm .ms-from-group-input input[type="checkbox"] {
+  width: auto;
+}
+body .ms-content .searchForm .ms-from-group-input select,
+body .ms-content-body .searchForm .ms-from-group-input select {
+  width: 100%;
+}
+body .ms-content .searchForm .ms-from-group-input .input-group,
+body .ms-content-body .searchForm .ms-from-group-input .input-group {
+  width: 100%;
+}
+body .ms-content .searchForm .control-label,
+body .ms-content-body .searchForm .control-label {
+  line-height: 35px;
+}
+body .ms-content .searchForm .form-group,
+body .ms-content-body .searchForm .form-group {
+  margin-bottom: 10px;
+}
+body .ms-content .searchForm .radio,
+body .ms-content-body .searchForm .radio {
+  margin-top: 4px;
+}
+body .ms-content .searchForm .checkbox,
+body .ms-content-body .searchForm .checkbox {
+  margin-top: 4px;
+}
+body .ms-content .searchForm .bottom,
+body .ms-content-body .searchForm .bottom {
+  text-align: right;
+  padding: 10px 10px 0 0;
+  border-top: 1px solid #EAE7E7;
+}
+body .ms-content .searchForm .bottom .close,
+body .ms-content-body .searchForm .bottom .close {
+  float: left;
+}
+body .select2-container .select2-choice {
+  height: 34px;
+}
+body .select2-container {
+  border: none;
+  padding: 0;
+}
+body .mstore-content {
+  overflow: auto;
+  padding: 15px;
+  min-width: 1100px;
+  /*免费字体*/
+  /*收费字体*/
+  /*模板的星级显示*/
+  /*解答人的心级显示*/
+  /*宽度100%*/
+}
+body .mstore-content .free-font {
+  color: #1E8BDD;
+  font-weight: bold;
+}
+body .mstore-content .price-font {
+  color: #FB803C;
+  font-weight: bold;
+}
+body .mstore-content .glyphicon-star,
+body .mstore-content .glyphicon-star-empty {
+  color: #fb803c;
+}
+body .mstore-content .glyphicon-heart {
+  color: #d9534f;
+}
+body .mstore-content .carousel {
+  height: 240px;
+}
+body .mstore-content .item img {
+  margin: 0px auto;
+  max-width: 100%;
+}
+body .mstore-content .group-button-active {
+  background-color: #e6e6e6;
+}
+body .mstore-content .mswidth {
+  width: 100%;
+  /*margin: 0px auto;*/
+}
+body .mstore-content .content-new {
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  border-bottom: 0px;
+  /*最新更新*/
+  /*分享者排名*/
+}
+body .mstore-content .content-new .new-upload {
+  width: 78%;
+  float: left;
+}
+body .mstore-content .content-new .new-upload .table-title {
+  padding: 10px;
+  height: 40px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px #ddd solid;
+  clear: both;
+  font-weight: bold;
+  font-size: 18px;
+}
+body .mstore-content .content-new .new-upload ul li {
+  height: 260px;
+  border-radius: 0px;
+  margin: 0px;
+  border-left: none;
+  border-top: none;
+  float: left;
+  cursor: pointer;
+}
+body .mstore-content .content-new .new-upload ul li .pic {
+  display: block;
+  height: 74%;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+body .mstore-content .content-new .new-upload ul li .share-info {
+  min-width: 220px;
+  width: 80%;
+  float: left;
+}
+body .mstore-content .content-new .new-upload ul li .share-info .share-title {
+  margin: 5px 0px;
+}
+body .mstore-content .content-new .new-upload ul li .share-user {
+  width: 40px;
+  float: right;
+  height: 62px;
+  overflow: hidden;
+}
+body .mstore-content .content-new .new-upload ul li .share-user img {
+  width: 100%;
+}
+body .mstore-content .content-new .new-upload ul li .share-user p {
+  font-size: 12px;
+  line-height: 25px;
+}
+body .mstore-content .content-new .order-user-list {
+  width: 22%;
+  float: left;
+  overflow: hidden;
+  height: 520px;
+}
+body .mstore-content .content-new .order-user-list .list-title {
+  border-bottom: 1px solid #ddd;
+  margin: 10px;
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+body .mstore-content .order-user {
+  width: 33%;
+  max-width: 90px;
+  float: left;
+  height: 95px;
+  overflow: hidden;
+  line-height: 38px;
+}
+body .mstore-content .order-user p {
+  font-size: 12px;
+}
+body .mstore-content .content-people {
+  border: 1px solid #ddd;
+  overflow: hidden;
+  border-top: 0px;
+  /*解答人*/
+}
+body .mstore-content .content-people .solve-user-list {
+  width: 78%;
+  float: left;
+}
+body .mstore-content .content-people .solve-user-list .table-title {
+  padding: 10px;
+  height: 40px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px #ddd solid;
+  clear: both;
+  font-weight: bold;
+  font-size: 18px;
+}
+body .mstore-content .content-people .solve-user-list .solve-user-detail {
+  border-radius: 0px;
+  margin: 0px;
+  border-left: none;
+  height: 295px;
+  border-top: none;
+  border-bottom: none;
+}
+body .mstore-content .content-people .solve-user-list .solve-user-detail .solve-user-head {
+  width: 50px;
+  float: left;
+  padding-right: 5px;
+}
+body .mstore-content .content-people .solve-user-list .solve-user-detail .solve-user-info {
+  float: left;
+}
+body .mstore-content .content-people .solve-user-list .solve-user-detail .solve-user-info .solve-heart {
+  margin-top: 5px;
+}
+body .mstore-content .content-people .solve-user-list .solve-user-detail .solve-descrip {
+  height: 60%;
+  overflow: hidden;
+  width: 100%;
+  padding: 5px;
+  line-height: 23px;
+}
+body .mstore-content .content-people .solve-user-list .solve-user-detail .solve-bottom {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+body .mstore-content .content-people .solve-user-list .solve-user-detail .solve-bottom .solve-btn {
+  padding: 0px 10px;
+}
+body .mstore-content .content-people .download-top {
+  width: 22%;
+  float: left;
+}
+body .mstore-content .content-people .download-top .list-title {
+  border-bottom: 1px solid #ddd;
+  margin: 10px;
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+body .mstore-content .content-people .download-top .download-info {
+  width: 100%;
+  margin-bottom: 9px;
+  float: left;
+}
+body .mstore-content .content-people .download-top .download-info .download-head {
+  width: 40px;
+  float: left;
+  margin: 0px 10px;
+}
+body .mstore-content .content-people .download-top .download-info strong {
+  cursor: pointer;
+}
+body .mstore-content .model-all {
+  margin: 10px 0px;
+}
+body .mstore-content .model-filter {
+  margin-bottom: 10px;
+}
+body .mstore-content .nav-pills li {
+  cursor: pointer;
+}
+body .mstore-content .nav-pills li a {
+  padding: 1px 20px;
+}
+body .mstore-content .share-detail {
+  padding: 0px 5px;
+}
+body .mstore-content .share-detail .thumbnail {
+  height: 260px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+body .mstore-content .share-detail .pic {
+  display: block;
+  height: 74%;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+body .mstore-content .share-detail .pic .tit {
+  position: absolute;
+  padding: 5px;
+  top: 5px;
+  right: 10px;
+  text-align: center;
+  color: #fff;
+  background: #868686;
+}
+body .mstore-content .share-detail .pic .describe {
+  color: #666;
+  line-height: 25px;
+  margin-top: 4px;
+  font-size: 12px;
+  text-decoration: none;
+}
+body .mstore-content .share-detail .pic .describe:hover {
+  text-decoration: none;
+}
+body .mstore-content .share-detail .pic:hover {
+  text-decoration: none;
+}
+body .mstore-content .share-detail .share-info {
+  width: 70%;
+  float: left;
+}
+body .mstore-content .share-detail .share-info .share-title {
+  margin: 5px 0px;
+}
+body .mstore-content .share-detail .share-user {
+  width: 40px;
+  float: right;
+  height: 62px;
+  overflow: hidden;
+}
+body .mstore-content .share-detail .share-user img {
+  width: 100%;
+}
+body .mstore-content .share-detail .share-user p {
+  font-size: 12px;
+  line-height: 25px;
+}
+body .mstore-content .share-detail-user {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+body .mstore-content .share-detail-user img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+body .mstore-content .read-more {
+  margin-left: 20px;
+  color: #ffffff;
+}
+body .mstore-content .comment-info {
+  border-bottom: 1px dotted #ddd;
+  padding-bottom: 15px;
+}
+body .mstore-content .comment-info .comment-name {
+  color: #337ab7;
+  font-size: 14px;
+  font-weight: bold;
+}
+body .mstore-content #detail-comment {
+  max-height: 500px;
+  overflow-y: auto;
+}

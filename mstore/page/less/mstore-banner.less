@@ -1,0 +1,41 @@
+.mstore-banner {
+    .carousel-inner {
+        img {
+            width: 100%;
+        }
+    }
+    .carousel-control {
+        width: 4%;
+        opacity: 1;
+        text-shadow: none;
+    }
+    .glyphicon-menu-right {
+        right: 50%;
+    }
+}
+.mstore-banner .left,
+.mstore-banner .right {
+    background: none !important;
+}
+.mstore-banner .glyphicon-menu-left,
+.mstore-banner .glyphicon-menu-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+}
+@media screen and (min-width: 768px) {
+    .mstore-banner .glyphicon-menu-left,
+    .mstore-banner .glyphicon-menu-right {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        margin-top: -15px;
+        font-size: 25px;
+        background-color: #cce2f0;
+        border-radius: 50%;
+        opacity: 1;
+        color: #b4b5b9;
+    }
+}

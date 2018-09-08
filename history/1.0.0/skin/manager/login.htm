@@ -1,0 +1,200 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+	<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://202d234463057972.mb.mstore.mingsoft.net/cdn/skin/manager/4.6.0/css/ms.manager.min.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/iconfont/1.0.0/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script src="http://cdn.mingsoft.net/plugins/seajs/3.0.0/sea.js"></script>
+    <script src="http://cdn.mingsoft.net/model/1.0.0/main.min.js"></script>
+    <script>
+        //document.domain = 'mingsoft.net';
+        ms.config({
+            base:"{ms:global.host/}",
+            filter: {
+                people:{
+                   loginUrl:'http://ms.mingsoft.net/mbbs/main.do'
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+	<!--微信登录-->
+	<div class="weixin-login">
+		<div id="login_container"></div>
+		<p class="text-center"><a style="cursor: pointer;" class="change-login">账号登录</a></p>
+	</div>
+	<script>
+	var obj = new WxLogin({
+               id:"login_container", 
+               appid: "wx8c96aa3db4611395", 
+               scope: "snsapi_login", 
+               redirect_uri: "http%3A%2F%2Fms.mingsoft.net%2Fweixin%2Fopen%2Flogin%2FgetUser.do%3Fid%3D6", 
+               state:"http://localhost:8181/ms/index.do?url=http%3A%2F%2Fms.mingsoft.net%2Fms%2Fstore.do",
+               style: "black", 
+               href: "" 
+             });
+    </script>
+
+	<!--账号登录-->
+	<div class="email-login" style="display: none;">
+		<div class="title">账号登录</div>
+
+		<form class="form-horizontal" role="form" name="login">
+			<div class="alert alert-danger email-login-tit" role="alert">账号或者密码错误</div>
+			<div class="form-group">
+				<input class="form-control" id="inputEmail3" placeholder="邮箱" name="peopleName" required="true" data-bv-notempty-message="邮箱不能为空" type="text">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" id="inputPassword3" placeholder="密码" name="peoplePassword" required="true" data-bv-notempty-message="密码不能为空">
+			</div>
+			<div class="form-group">
+				<div class="col-sm-9" style="padding-left:0px">
+					<input type="text" class="form-control" placeholder=验证码 name="rand_code" required="true" data-bv-notempty-message="验证码不能为空">
+				</div>
+				<img id="loginCode" style="height: 34px;" src="/code?t='+new Date().getTime()" /> 
+			</div>
+
+			<div class="form-group">
+				<button class="btn btn-primary col-sm-12 login-button" type="button">登 录</button>
+			</div>
+			<div class="alert alert-success email-login-tit" role="alert"><span class="glyphicon glyphicon-hand-right"></span>温馨提示：账号登录为绑定成功的邮箱号与您在个人中心设置的密码</div>
+			
+
+		</form>
+		<p class="text-center"><a style="cursor: pointer;" class="change-login"><i class="icon iconfont" style="margin-right: 5px;font-size: 15px;">&#xe834;</i>微信登录</a></p>
+	</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$(".change-login").click(function(){
+			$(this).parent().parent().siblings().show();
+			$(this).parent().parent().hide();
+		});
+
+		$(".form-horizontal").bootstrapValidator({
+	        feedbackIcons: {
+	            valid: 'glyphicon glyphicon-ok',
+	            invalid: 'glyphicon glyphicon-remove',
+	            validating: 'glyphicon glyphicon-refresh'
+	        },
+	    })
+
+		$(".login-button").click(function(){
+			var valid = $(".form-horizontal").data('bootstrapValidator').isValid();
+			//alert(valid)
+			if (valid) {
+				
+			}
+		})
+			
+	})
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+	<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://202d234463057972.mb.mstore.mingsoft.net/cdn/skin/manager/4.6.0/css/ms.manager.min.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/iconfont/1.0.0/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script src="http://cdn.mingsoft.net/plugins/seajs/3.0.0/sea.js"></script>
+    <script src="http://cdn.mingsoft.net/model/1.0.0/main.min.js"></script>
+    <script>
+        //document.domain = 'mingsoft.net';
+        ms.config({
+            base:"{ms:global.host/}",
+            filter: {
+                people:{
+                   loginUrl:'http://ms.mingsoft.net/mbbs/main.do'
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+	<!--微信登录-->
+	<div class="weixin-login">
+		<div id="login_container"></div>
+		<p class="text-center"><a style="cursor: pointer;" class="change-login">账号登录</a></p>
+	</div>
+	<script>
+	var obj = new WxLogin({
+               id:"login_container", 
+               appid: "wx8c96aa3db4611395", 
+               scope: "snsapi_login", 
+               redirect_uri: "http%3A%2F%2Fms.mingsoft.net%2Fweixin%2Fopen%2Flogin%2FgetUser.do%3Fid%3D6", 
+               state:"http://localhost:8181/ms/index.do?url=http%3A%2F%2Fms.mingsoft.net%2Fms%2Fstore.do",
+               style: "black", 
+               href: "" 
+             });
+    </script>
+
+	<!--账号登录-->
+	<div class="email-login" style="display: none;">
+		<div class="title">账号登录</div>
+
+		<form class="form-horizontal" role="form" name="login">
+			<div class="alert alert-danger email-login-tit" role="alert">账号或者密码错误</div>
+			<div class="form-group">
+				<input class="form-control" id="inputEmail3" placeholder="邮箱" name="peopleName" required="true" data-bv-notempty-message="邮箱不能为空" type="text">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" id="inputPassword3" placeholder="密码" name="peoplePassword" required="true" data-bv-notempty-message="密码不能为空">
+			</div>
+			<div class="form-group">
+				<div class="col-sm-9" style="padding-left:0px">
+					<input type="text" class="form-control" placeholder=验证码 name="rand_code" required="true" data-bv-notempty-message="验证码不能为空">
+				</div>
+				<img id="loginCode" style="height: 34px;" src="/code?t='+new Date().getTime()" /> 
+			</div>
+
+			<div class="form-group">
+				<button class="btn btn-primary col-sm-12 login-button" type="button">登 录</button>
+			</div>
+			<div class="alert alert-success email-login-tit" role="alert"><span class="glyphicon glyphicon-hand-right"></span>温馨提示：账号登录为绑定成功的邮箱号与您在个人中心设置的密码</div>
+			
+
+		</form>
+		<p class="text-center"><a style="cursor: pointer;" class="change-login"><i class="icon iconfont" style="margin-right: 5px;font-size: 15px;">&#xe834;</i>微信登录</a></p>
+	</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$(".change-login").click(function(){
+			$(this).parent().parent().siblings().show();
+			$(this).parent().parent().hide();
+		});
+
+		$(".form-horizontal").bootstrapValidator({
+	        feedbackIcons: {
+	            valid: 'glyphicon glyphicon-ok',
+	            invalid: 'glyphicon glyphicon-remove',
+	            validating: 'glyphicon glyphicon-refresh'
+	        },
+	    })
+
+		$(".login-button").click(function(){
+			var valid = $(".form-horizontal").data('bootstrapValidator').isValid();
+			//alert(valid)
+			if (valid) {
+				
+			}
+		})
+			
+	})
+>>>>>>> commit
+</script>

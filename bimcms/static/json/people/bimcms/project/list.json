@@ -1,0 +1,74 @@
+[
+    {
+        "createBy": 2,
+        "createByIcon": "sss ",
+        "createByMail": "tanwhui@163.com",
+        "createByName": "123545",
+        "createDate": "2018-08-15",
+        "delFlag": 0,
+        "id": "6",
+        "projectInfo": "项目描述1",
+        "projectName": "项目名称1",
+        "projectPeoples": [],
+        "updateBy": 0
+    },
+    {
+        "createBy": 2,
+        "createByIcon": "sss ",
+        "createByMail": "tanwhui@163.com",
+        "createByName": "123545",
+        "createDate": "2018-08-15",
+        "delFlag": 0,
+        "id": "5",
+        "projectInfo": "项目描述1",
+        "projectName": "铭飞2344",
+        "projectPeoples": [],
+        "updateBy": 0
+    },
+    {
+        "createBy": 2,
+        "createByIcon": "sss ",
+        "createByMail": "tanwhui@163.com",
+        "createByName": "123545",
+        "createDate": "2018-08-15",
+        "delFlag": 0,
+        "id": "3",
+        "projectInfo": "项目描述1",
+        "projectName": "维护",
+        "projectPeoples": [],
+        "updateBy": 2,
+        "updateDate": "2018-08-15"
+    },
+    {
+        "createBy": 2,
+        "createByIcon": "sss ",
+        "createByMail": "tanwhui@163.com",
+        "createByName": "123545",
+        "createDate": "2018-08-15",
+        "delFlag": 0,
+        "id": "2",
+        "projectInfo": "项目描述1",
+        "projectName": "铭飞",
+        "projectPeoples": [
+            {
+                "createBy": 0,
+                "delFlag": 0,
+                "peopleAppId": 0,
+                "peopleAutoLogin": 0,
+                "peopleId": 4,
+                "peopleMail": "tanwhui@163.com",
+                "peopleMailCheck": -1,
+                "peopleName": "tanwhui@163.com",
+                "peoplePhone": "13357352289",
+                "peoplePhoneCheck": -1,
+                "puCity": 0,
+                "puDistrict": 0,
+                "puProvince": 0,
+                "puStreet": 0,
+                "updateBy": 0
+            }
+        ],
+        "updateBy": 2,
+        "updateDate": "2018-08-15"
+    }
+]

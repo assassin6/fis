@@ -1,0 +1,108 @@
+<template>
+  <div class="user_cententbody" id="vue-download">
+    <div class="loading-pic" v-show="show == 'loading'"></div>
+    <!--我的收益订单-->
+    <div class="user_cententbodynav" v-show="show == 'list' || show == 'title'" style="display:none;margin: 0;">我的下载</div>
+    <p class="tip" v-show="show == 'list' || show == 'title'" style="display:none;">提示：可以在后台管理右上角下载，赶快去MStore逛逛吧</p>
+    <div class="alert alert-info listNone none" role="alert" :class="{'block':show == 'title'}">
+      <p>您肯定是第一次使用MS平台，去MStore逛逛吧</p>
+      <p>温馨提示：模版（企业、商城、论坛....）插件(文章、商城、论坛、微信....)还有更多牛人的分享。</p>
+    </div>
+    <table id="downLoadList" data-show-export="true" data-method="get" data-pagination="true" data-page-size="10" data-side-pagination="server">
+    </table>
+    <!--<table class="table table-hovert none" :class="{'block':show == 'list'}">
+        <thead>
+          <tr>
+            <th>版本名称</th>
+            <th>分享用户昵称</th>
+            <th style="width:12%;text-align:center">价格</th>
+            <th style="text-align:center">下载时间</th>
+          </tr>
+        </thead>
+        <tbody id="downloadList">
+          <tr v-for="item in downLoadList">
+            <td style="width:30%">{{item.upgraderPeopleVersionName}}</td>
+            <td style="width:20%">{{item.upgraderPeopleVersionPeopleNickName}}</td>
+            <td style="text-align:center" v-if="item.upgraderPeopleVersionPrice == 0">免费</td>
+            <td style="text-align:center" v-else>￥{{item.upgraderPeopleVersionPrice}}</td>
+            <td style="text-align:center">{{item.upgraderPeopleVersionTime}}</td>
+          </tr>
+        </tbody>
+      </table>-->
+  </div>
+</template>
+<script>
+  export default {
+    name: "peopleDownload",
+    data() {
+      return {
+        downLoadList: "", //我的下载列表
+        show: "" //显示提示或列表
+      }
+    },
+    //获取我的下载列表
+    mounted: function () {
+      var target = this;
+      $("#downLoadList").bootstrapTable({
+        url: mstore.getBaseUrl()+"/people/mstore/downList"+mstore.getUrlExt(), //ms.base + "mstore/userList.do",
+        contentType: "application/x-www-form-urlencoded",
+        queryParamsType: "undefined",
+        toolbar: "#toolbar",
+        columns: [{
+          field: 'upgraderPeopleVersionPeopleIcon',
+          title: '用户头像',
+          align: 'center',
+          valign: 'middle',
+          width: '40px',
+          formatter: function (value, row) {
+            if (value == null || value == "") {
+              value = "http://cdn.mingsoft.net/global/images/msheader.png";
+            }
+            return "<img style='width:40px;border-radius:50%;' src=" + value + ">"
+          }
+        }, {
+          field: 'upgraderPeopleVersionPeopleNickName',
+          title: '分享用户昵称',
+          align: 'left',
+          valign: 'middle',
+          wight: '200px',
+        }, {
+          field: 'upgraderPeopleVersionName',
+          title: '版本名称',
+          align: 'left',
+          valign: 'middle',
+          wight: '400px',
+        }, {
+          field: 'upgraderPeopleVersionPrice',
+          title: '价格',
+          align: 'right',
+          valign: 'middle',
+          wight: '50px',
+          formatter: function (value, row) {
+            return "￥"+value;
+          }
+        }, {
+          field: 'upgraderPeopleVersionTime',
+          title: '下载时间',
+          align: 'center',
+          valign: 'middle',
+        },]
+      })
+      $('#downLoadList').on('load-success.bs.table', function () {
+        if ($('#downLoadList').bootstrapTable('getData').length <= 0) {
+          $(".listNone").fadeIn();
+        } else {
+          $(".bootstrap-table").fadeIn();
+        }
+        target.show = "list";
+      })
+      target.show = "loading";
+      $(".bootstrap-table").hide();
+    }
+  }
+</script>
+<style>
+  .fixed-table-pagination {
+    margin: 0 10px;
+  }
+</style>

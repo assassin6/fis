@@ -1,0 +1,816 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>铭飞MS平台官方网站－会员中心</title>
+	{ms:include filename=header.htm/}
+	{ms:include filename=people/header.htm/}
+</head>
+
+<body>
+	{ms:include filename=head.htm/}
+	<div class="user_center" style="background: #fff;"> 
+
+		<div class="user_centent" style="width: 100%;">
+			<div class="code-left">
+				<!--左侧头部 点击返回和项目名称-->
+				<div class="code-left-top">
+					<a class="back-home" href="{ms:global.host/}/people/center.do">
+						<i title="点击返回" class="icon iconfont">&#xe75b;</i>
+					</a>
+
+					<div class="pro-name">
+						<span>加载中...</span>
+						<div class="pro-btn">
+							<!--button type="button" class="btn btn-default generating-code">生成代码</button-->
+							<button type="button" style="width:127px;" class="btn btn-success down-code">下载代码</button>
+							<form action="{ms:global.host/}/people/mcode/project/code.do" id="down-code" method="post">
+								<input type="hidden" name="projectId" value="{projectId/}">
+							</form>
+						</div>
+					</div>
+						
+				</div>
+				<div class="project-loading">加载中...</div>
+				<div class="default-date">
+					<div class="data-title"><i class="icon iconfont">&#xe623;</i>数据库连接</a></div>
+					<form class="date-message" id="date-message">
+
+						<input type="hidden" name="pmProjectId" value="{projectId/}">
+						<input type="hidden" name="pmName">
+						<input type="hidden" name="pmPackageName">
+						<input type="hidden" name="pmDbType" value="mysql">
+						<input type="hidden" name="pmDescription" value="aaa">
+						<input type="hidden" name="pmDatetime" value="2016/08/30">
+						<div class="form-group">
+							<label>IP</label>
+							<input type="text" class="form-control" name="pmJdbc" required data-bv-notempty-message="IP不能为空">
+						</div>
+						<div class="form-group">
+							<label>名称</label>
+							<input type="text" class="form-control" name="pmDatabase" required data-bv-notempty-message="名称不能为空">
+						</div>
+						<div class="form-group">
+							<label>表前缀</label>
+							<input type="text" class="form-control" name="pmPrefix" required data-bv-notempty-message="表前缀不能为空">
+						</div>
+						<div class="form-group">
+							<label>账号</label>
+							<input type="text" class="form-control" name="pmUsername" required data-bv-notempty-message="账号不能为空">
+						</div>
+						<div class="form-group">
+							<label>密码</label>
+							<input type="password" class="form-control" name="pmPassword" required data-bv-notempty-message="密码不能为空">
+						</div>
+						<div class="form-group" style="text-align: right;">
+							<!--button type="button" class="btn btn-default test_date">连接测试</button-->
+							<button type="button" class="btn btn-success save_date">保存</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="date-form hide-default">
+					<!--数据库名称-->
+					<div class="data-title"></div>
+					
+					<!--数据库表列表-->
+					<ul class="date-list">
+
+					</ul>
+
+					<script type="text/x-jquery-tmpl" id="dateList">
+					<li data-pmoPmId=${pmoId}>
+						<span class="ms-text-hide" title="${pmoTableName}">${pmoTableName}</span>
+						<i title="编辑表信息" class="icon iconfont edit-form hide-default">&#xe607;</i>
+						<form class="form-message hide-default">
+							<input type="hidden" name="pmoId" value="${pmoId}">
+							<input type="hidden" name="pmoPmId">
+							<input type="hidden" name="pmoTableName" value="${pmoTableName}">
+							<input type="hidden" name="pmoName" value="a">
+							<div class="form-group">
+								<label>类名</label>
+								<input type="text" class="form-control" name="pmoObjectName" value="${pmoObjectName}">
+							</div>
+							<div class="form-group">
+								<label>说明</label>
+								<input type="text" class="form-control" name="pmoDescription" value="${pmoDescription}">
+							</div>
+							<div class="form-group">
+								<label>选择功能</label>
+								<div class="check-box">
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowUpdate" value="${pmoAllowUpdate}">更新</label>
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowList" value="${pmoAllowList}">查询</label>
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowRemove" value="${pmoAllowRemove}">删除</label>
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowInsert" value="${pmoAllowInsert}">新增</label>
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowGenerate" value="${pmoAllowGenerate}">生成</label>
+								</div>	
+							</div>
+							<button type="button" class="btn btn-primary save-form">保存</button>
+						</form>
+					</li>
+					</script>
+					
+				</div>
+			</div>
+
+
+			<!--更新提示-->
+			<div class="user_cententbody">
+				<!--没有表字段或者默认情况下显示提示信息-->
+				<div class="alert alert-info" role="alert">
+                    <p>温馨提示：代码生成器使用说明</p>
+                </div>
+
+                <!--表字段信息-->
+				<div class="releaseBody hide-default">
+					<div class="user_cententbodynav code-content-title">
+						<span style="float: left;">字段列表</span>
+						<button type="button" class="btn btn-primary save-field">保存</button>
+					</div>
+					<table class="table table-hover code-field">
+						<!--表格栏目属性 开始-->
+						<thead>
+							<tr>
+								<th width="200">字段名</th>
+								<th width="90">类型</th>
+								<th width="120">java属性名 </th>
+								<th class="text-center">主键</th>
+								<th class="text-center">可空 </th>
+								<th class="text-center">插入 </th>
+								<th class="text-center">编辑</th>
+								<th class="text-center">列表</th>
+							</tr>
+						</thead>
+						<!--表格栏目属性 结束-->
+						<tbody class="field-list">
+							
+						</tbody>
+						<script type="text/x-jquery-tmpl" id="fieldList">
+							<tr class="fieldList" data-field-id="${pmofId}">
+								<td>${pmofTypeName}</td>
+								<td>${pmofType}</td>
+								<td>${pmofJavaType}</td>
+								<input type="hidden" name="pmofName" value="${pmofTypeName}">
+								<input type="hidden" name="pmofTypeName" value="${pmofTypeName}">
+								<input type="hidden" name="pmofType" value="${pmofType}">
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofPrimaryKey" value="${pmofPrimaryKey}"></td>
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofAllowEmpty" value="${pmofAllowEmpty}"></td>
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofAllowRepet" value="${pmofAllowRepet}"></td>
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofAllowUpdate" value="${pmofAllowUpdate}"></td>
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofAllowValidator" value="${pmofAllowValidator}"></td>
+							</tr>
+						</script>
+					</table>
+					<!--表字段选中后显示对应的字段设置-->
+					<div class="field-detail">
+						<div class="field-title">字段设置</div>
+						<div class="field-other"></div>
+						<script type="text/x-jquery-tmpl" id="fieldForm">
+							<form class="field-form" data-field-id="${pmofId}">
+								<input type="hidden" name="pmofId" value="${pmofId}">
+								<input type="hidden" name="pmofPmoId" value="${pmofPmoId}">
+								<input type="hidden" name="pmofLength" value=200>
+								<input type="hidden" name="pmofAllowGenerater" value="0">
+								<div class="form-group">
+									<label>填写说明</label>
+									<input type="text" class="form-control" name="pmofDescription" value="${pmofDescription}">
+								</div>
+								<div class="form-group">
+									<label>默认值</label>
+									<input type="text" class="form-control" name="pmofDefault" value="${pmofDefault}">
+								</div>
+
+								<div class="form-group">
+									<label>值范围</label>
+									<input type="text" class="form-control small" placeholder="最大值" style="margin-right: 5px;">
+									<input type="text" class="form-control small" placeholder="最小值">
+								</div>
+
+							</form>
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{ms:include filename=footer.htm/}
+	<!--表信息设置-->
+	
+</body>
+</html>
+<script>
+	$(function(){
+		$('#date-message').bootstrapValidator();
+		//项目保存显示隐藏
+		$(".pro-name").hover(function(){
+			$(".pro-btn").slideToggle();
+		})
+
+		//表信息编辑
+		$(".date-list").delegate(".normal","mouseover",function(){
+			$(this).find('.iconfont').show();
+		})
+		$(".date-list").delegate(".normal","mouseout",function(){
+			$(this).find('.iconfont').hide();
+		})
+
+		//字段被修改勾选框的状态后，改变对应的值
+		$(".field-list,.date-list").delegate("input:checkbox","click",function(){
+			if($(this).prop("checked") == true){
+				$(this).next().val("0");
+			}else{
+				$(this).next().val("1");
+			}
+		})
+	})
+
+	//获取项目信息
+	ms.load(["ms","ms.mcode"], function(ms,mcode){
+		$(function() {
+			//获取项目信息
+			mcode.people.mcode.project.get("{projectId/}", function(json) {
+				$(".pro-name span").text(json.projectName);
+				$(".date-message input[name=pmName]").val(json.projectName);
+				$(".date-message input[name=pmPackageName]").val(json.projectPackage);
+			})
+
+			//获取该项目下的模块，如果没有的话，先链接数据库
+			mcode.people.mcode.projectModel.list("{projectId/}", function(json) {
+				if(json.length > 0){
+					//获取数据库表列表
+					$(".data-title").html('<i class="icon iconfont">&#xe623;</i>'+json[0].pmDatabase);
+					var dataPmId = json[0].pmId;
+					mcode.people.mcode.projectModelObject.list(""+dataPmId,function(json) {
+						$("#dateList").tmpl(json).appendTo(".date-list");
+						$(".form-message input[name=pmoPmId]").val(dataPmId);
+						$(".date-form").removeClass("hide-default");
+						$(".default-date").hide();
+						$(".project-loading").hide();
+					})
+				}else{
+					$(".default-date").show();
+					$(".project-loading").hide();
+				}
+			})
+
+			//链接到数据库
+			$(".save_date").click(function(){
+				var valid = $("#date-message").data('bootstrapValidator').validate().isValid();
+				if (valid) {
+					var obj = $(this);
+					obj.text("链接中").attr("disabled",true);
+					mcode.people.mcode.projectModel.save($(".date-message").serialize(), function(json) {
+						if(json.result != null){
+							ms.alert("链接数据库失败，请稍后重试！")
+							obj.attr("disabled",false).text("保存");
+							return;
+						}else{
+							$(".data-title").html('<i class="icon iconfont">&#xe623;</i>'+json.pmDatabase)
+							//获取数据库表列表
+							mcode.people.mcode.projectModelObject.list(""+json.pmId,function(json) {
+								$("#dateList").tmpl(json).appendTo(".date-list");
+								//$(".date-form").removeClass("hide-default");
+								$(".date-form").fadeIn();
+								$(".default-date").hide();
+
+							})
+							obj.attr("disabled",false).text("保存");
+						}
+					},function (){
+						ms.alert("链接数据库失败，请稍后重试！")
+						obj.text("保存").attr("disabled",false);
+						return;
+					})
+				}
+			});
+
+			//点击表名称 选中
+			$(".date-list").delegate("li","click",function(){
+				$(".date-list li").addClass("normal").removeClass("active").find('.iconfont').hide();
+				$(this).addClass("active").removeClass("normal");
+				$(this).find('.iconfont').show();
+				//获取表字段列表
+				var dataPomPmId = $(this).attr("data-pmoPmId");
+				mcode.people.mcode.projectModelObjectField.list(dataPomPmId,function(json) {
+					$(".field-list").html("");
+					$(".field-other").html("");
+					$("#fieldList").tmpl(json).appendTo(".field-list");
+					$("#fieldForm").tmpl(json).appendTo(".field-other");
+					//如果勾选框的值为0为选中
+					//表设置
+					$(".check-box").each(function(){
+						$(this).find("input").each(function(){
+							var obj = $(this);
+							if(obj.val() == "0"){
+								obj.prev().prop("checked",true);
+							}
+						})
+					});
+					//字段设置
+					$(".fieldList").each(function(){
+						$(this).find("input").each(function(){
+							var obj = $(this);
+							if(obj.val() == "0"){
+								obj.prev().prop("checked",true);
+							}
+						})
+					});
+
+					$(".releaseBody").fadeIn();
+					$(".alert-info").hide();
+
+					//右侧默认显示第一条字段信息
+					$(".fieldList:eq(0)").addClass("active");
+					var dataFieldId = $(".fieldList:eq(0)").attr("data-field-id");
+					$(".field-form").hide();
+					$(".field-form[data-field-id="+dataFieldId+"]").show();
+				});
+
+			});
+			//表信息显示隐藏
+			$(".date-list").delegate(".edit-form","click",function(){
+				$(this).parent().siblings().children(".form-message").hide()
+				$(this).next(".form-message").slideToggle();
+				var dataPomPmId = $(this).parent().attr("data-pmoPmId");
+				mcode.people.mcode.projectModelObjectField.list(dataPomPmId,function(json) {
+					$(".field-list").html("");
+					$("#fieldList").tmpl(json).appendTo(".field-list");
+					//如果勾选框的值为0为选中
+					//表设置
+					$(".check-box").each(function(){
+						$(this).find("input").each(function(){
+							var obj = $(this);
+							if(obj.val() == "0"){
+								obj.prev().prop("checked",true);
+							}
+						})
+					});
+				});
+			})
+
+
+			//保存表信息
+			$(".date-list").delegate(".save-form","click",function(){
+				var obj = $(this);
+				obj.text("保存中");
+				obj.attr("disabled",true);
+				mcode.people.mcode.projectModelObject.update(obj.parent().serialize(),function(json) {
+					if(json.result != null){
+						obj.attr("disabled",false).text("保存");
+						ms.alert("表设置保存成功");
+						return;
+					}else{
+						obj.attr("disabled",false).text("保存");
+						ms.alert("表设置保存成功");
+					}
+				})
+			})
+			//字段信息选中
+			$(".releaseBody").delegate(".code-field tr","click",function(){
+				$(".code-field tr").removeClass("active");
+				$(this).addClass("active");
+				var dataFieldId = $(this).attr("data-field-id");
+				$(".field-form").hide();
+				$(".field-form[data-field-id="+dataFieldId+"]").show(); 
+			});
+
+			//更新字段信息
+			$(".save-field").click(function(){
+				var obj = $(this);
+				obj.text("保存中");
+				obj.attr("disabled",true);
+				$(".fieldList").each(function(){
+					var _obj = $(this);
+					var dataFieldId = _obj.attr("data-field-id");
+					//保存每个字段信息
+					mcode.people.mcode.projectModelObjectField.update(_obj.find("input").serialize()+"&"+$(".field-form[data-field-id="+dataFieldId+"]").serialize(),function(json) {
+						if(json.result != null){
+							ms.alert("表字段设置保存失败，请稍后重试！");
+							obj.attr("disabled",false).text("保存");
+							return;
+						}else{
+							obj.attr("disabled",false).text("保存");
+						}
+					})
+				})
+				ms.alert("表字段设置保存成功")
+			});
+
+			//生成代码
+			$(".down-code").click(function(){
+				$(this).attr("disabled",true).text("代码生成中...")
+				$("#down-code").submit();
+			})
+		})
+	})
+
+	
+=======
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>铭飞MS平台官方网站－会员中心</title>
+	{ms:include filename=header.htm/}
+	{ms:include filename=people/header.htm/}
+</head>
+
+<body>
+	{ms:include filename=head.htm/}
+	<div class="user_center" style="background: #fff;"> 
+
+		<div class="user_centent" style="width: 100%;">
+			<div class="code-left">
+				<!--左侧头部 点击返回和项目名称-->
+				<div class="code-left-top">
+					<a class="back-home" href="{ms:global.host/}/people/center.do">
+						<i title="点击返回" class="icon iconfont">&#xe75b;</i>
+					</a>
+
+					<div class="pro-name">
+						<span>加载中...</span>
+						<div class="pro-btn">
+							<!--button type="button" class="btn btn-default generating-code">生成代码</button-->
+							<button type="button" style="width:127px;" class="btn btn-success down-code">下载代码</button>
+							<form action="{ms:global.host/}/people/mcode/project/code.do" id="down-code" method="post">
+								<input type="hidden" name="projectId" value="{projectId/}">
+							</form>
+						</div>
+					</div>
+						
+				</div>
+				<div class="project-loading">加载中...</div>
+				<div class="default-date">
+					<div class="data-title"><i class="icon iconfont">&#xe623;</i>数据库连接</a></div>
+					<form class="date-message" id="date-message">
+
+						<input type="hidden" name="pmProjectId" value="{projectId/}">
+						<input type="hidden" name="pmName">
+						<input type="hidden" name="pmPackageName">
+						<input type="hidden" name="pmDbType" value="mysql">
+						<input type="hidden" name="pmDescription" value="aaa">
+						<input type="hidden" name="pmDatetime" value="2016/08/30">
+						<div class="form-group">
+							<label>IP</label>
+							<input type="text" class="form-control" name="pmJdbc" required data-bv-notempty-message="IP不能为空">
+						</div>
+						<div class="form-group">
+							<label>名称</label>
+							<input type="text" class="form-control" name="pmDatabase" required data-bv-notempty-message="名称不能为空">
+						</div>
+						<div class="form-group">
+							<label>表前缀</label>
+							<input type="text" class="form-control" name="pmPrefix" required data-bv-notempty-message="表前缀不能为空">
+						</div>
+						<div class="form-group">
+							<label>账号</label>
+							<input type="text" class="form-control" name="pmUsername" required data-bv-notempty-message="账号不能为空">
+						</div>
+						<div class="form-group">
+							<label>密码</label>
+							<input type="password" class="form-control" name="pmPassword" required data-bv-notempty-message="密码不能为空">
+						</div>
+						<div class="form-group" style="text-align: right;">
+							<!--button type="button" class="btn btn-default test_date">连接测试</button-->
+							<button type="button" class="btn btn-success save_date">保存</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="date-form hide-default">
+					<!--数据库名称-->
+					<div class="data-title"></div>
+					
+					<!--数据库表列表-->
+					<ul class="date-list">
+
+					</ul>
+
+					<script type="text/x-jquery-tmpl" id="dateList">
+					<li data-pmoPmId=${pmoId}>
+						<span class="ms-text-hide" title="${pmoTableName}">${pmoTableName}</span>
+						<i title="编辑表信息" class="icon iconfont edit-form hide-default">&#xe607;</i>
+						<form class="form-message hide-default">
+							<input type="hidden" name="pmoId" value="${pmoId}">
+							<input type="hidden" name="pmoPmId">
+							<input type="hidden" name="pmoTableName" value="${pmoTableName}">
+							<input type="hidden" name="pmoName" value="a">
+							<div class="form-group">
+								<label>类名</label>
+								<input type="text" class="form-control" name="pmoObjectName" value="${pmoObjectName}">
+							</div>
+							<div class="form-group">
+								<label>说明</label>
+								<input type="text" class="form-control" name="pmoDescription" value="${pmoDescription}">
+							</div>
+							<div class="form-group">
+								<label>选择功能</label>
+								<div class="check-box">
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowUpdate" value="${pmoAllowUpdate}">更新</label>
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowList" value="${pmoAllowList}">查询</label>
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowRemove" value="${pmoAllowRemove}">删除</label>
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowInsert" value="${pmoAllowInsert}">新增</label>
+									<label><input type="checkbox"><input type="hidden" name="pmoAllowGenerate" value="${pmoAllowGenerate}">生成</label>
+								</div>	
+							</div>
+							<button type="button" class="btn btn-primary save-form">保存</button>
+						</form>
+					</li>
+					</script>
+					
+				</div>
+			</div>
+
+
+			<!--更新提示-->
+			<div class="user_cententbody">
+				<!--没有表字段或者默认情况下显示提示信息-->
+				<div class="alert alert-info" role="alert">
+                    <p>温馨提示：代码生成器使用说明</p>
+                </div>
+
+                <!--表字段信息-->
+				<div class="releaseBody hide-default">
+					<div class="user_cententbodynav code-content-title">
+						<span style="float: left;">字段列表</span>
+						<button type="button" class="btn btn-primary save-field">保存</button>
+					</div>
+					<table class="table table-hover code-field">
+						<!--表格栏目属性 开始-->
+						<thead>
+							<tr>
+								<th width="200">字段名</th>
+								<th width="90">类型</th>
+								<th width="120">java属性名 </th>
+								<th class="text-center">主键</th>
+								<th class="text-center">可空 </th>
+								<th class="text-center">插入 </th>
+								<th class="text-center">编辑</th>
+								<th class="text-center">列表</th>
+							</tr>
+						</thead>
+						<!--表格栏目属性 结束-->
+						<tbody class="field-list">
+							
+						</tbody>
+						<script type="text/x-jquery-tmpl" id="fieldList">
+							<tr class="fieldList" data-field-id="${pmofId}">
+								<td>${pmofTypeName}</td>
+								<td>${pmofType}</td>
+								<td>${pmofJavaType}</td>
+								<input type="hidden" name="pmofName" value="${pmofTypeName}">
+								<input type="hidden" name="pmofTypeName" value="${pmofTypeName}">
+								<input type="hidden" name="pmofType" value="${pmofType}">
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofPrimaryKey" value="${pmofPrimaryKey}"></td>
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofAllowEmpty" value="${pmofAllowEmpty}"></td>
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofAllowRepet" value="${pmofAllowRepet}"></td>
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofAllowUpdate" value="${pmofAllowUpdate}"></td>
+								<td class="text-center"><input type="checkbox"><input type="hidden" name="pmofAllowValidator" value="${pmofAllowValidator}"></td>
+							</tr>
+						</script>
+					</table>
+					<!--表字段选中后显示对应的字段设置-->
+					<div class="field-detail">
+						<div class="field-title">字段设置</div>
+						<div class="field-other"></div>
+						<script type="text/x-jquery-tmpl" id="fieldForm">
+							<form class="field-form" data-field-id="${pmofId}">
+								<input type="hidden" name="pmofId" value="${pmofId}">
+								<input type="hidden" name="pmofPmoId" value="${pmofPmoId}">
+								<input type="hidden" name="pmofLength" value=200>
+								<input type="hidden" name="pmofAllowGenerater" value="0">
+								<div class="form-group">
+									<label>填写说明</label>
+									<input type="text" class="form-control" name="pmofDescription" value="${pmofDescription}">
+								</div>
+								<div class="form-group">
+									<label>默认值</label>
+									<input type="text" class="form-control" name="pmofDefault" value="${pmofDefault}">
+								</div>
+
+								<div class="form-group">
+									<label>值范围</label>
+									<input type="text" class="form-control small" placeholder="最大值" style="margin-right: 5px;">
+									<input type="text" class="form-control small" placeholder="最小值">
+								</div>
+
+							</form>
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{ms:include filename=footer.htm/}
+	<!--表信息设置-->
+	
+</body>
+</html>
+<script>
+	$(function(){
+		$('#date-message').bootstrapValidator();
+		//项目保存显示隐藏
+		$(".pro-name").hover(function(){
+			$(".pro-btn").slideToggle();
+		})
+
+		//表信息编辑
+		$(".date-list").delegate(".normal","mouseover",function(){
+			$(this).find('.iconfont').show();
+		})
+		$(".date-list").delegate(".normal","mouseout",function(){
+			$(this).find('.iconfont').hide();
+		})
+
+		//字段被修改勾选框的状态后，改变对应的值
+		$(".field-list,.date-list").delegate("input:checkbox","click",function(){
+			if($(this).prop("checked") == true){
+				$(this).next().val("0");
+			}else{
+				$(this).next().val("1");
+			}
+		})
+	})
+
+	//获取项目信息
+	ms.load(["ms","ms.mcode"], function(ms,mcode){
+		$(function() {
+			//获取项目信息
+			mcode.people.mcode.project.get("{projectId/}", function(json) {
+				$(".pro-name span").text(json.projectName);
+				$(".date-message input[name=pmName]").val(json.projectName);
+				$(".date-message input[name=pmPackageName]").val(json.projectPackage);
+			})
+
+			//获取该项目下的模块，如果没有的话，先链接数据库
+			mcode.people.mcode.projectModel.list("{projectId/}", function(json) {
+				if(json.length > 0){
+					//获取数据库表列表
+					$(".data-title").html('<i class="icon iconfont">&#xe623;</i>'+json[0].pmDatabase);
+					var dataPmId = json[0].pmId;
+					mcode.people.mcode.projectModelObject.list(""+dataPmId,function(json) {
+						$("#dateList").tmpl(json).appendTo(".date-list");
+						$(".form-message input[name=pmoPmId]").val(dataPmId);
+						$(".date-form").removeClass("hide-default");
+						$(".default-date").hide();
+						$(".project-loading").hide();
+					})
+				}else{
+					$(".default-date").show();
+					$(".project-loading").hide();
+				}
+			})
+
+			//链接到数据库
+			$(".save_date").click(function(){
+				var valid = $("#date-message").data('bootstrapValidator').validate().isValid();
+				if (valid) {
+					var obj = $(this);
+					obj.text("链接中").attr("disabled",true);
+					mcode.people.mcode.projectModel.save($(".date-message").serialize(), function(json) {
+						if(json.result != null){
+							ms.alert("链接数据库失败，请稍后重试！")
+							obj.attr("disabled",false).text("保存");
+							return;
+						}else{
+							$(".data-title").html('<i class="icon iconfont">&#xe623;</i>'+json.pmDatabase)
+							//获取数据库表列表
+							mcode.people.mcode.projectModelObject.list(""+json.pmId,function(json) {
+								$("#dateList").tmpl(json).appendTo(".date-list");
+								//$(".date-form").removeClass("hide-default");
+								$(".date-form").fadeIn();
+								$(".default-date").hide();
+
+							})
+							obj.attr("disabled",false).text("保存");
+						}
+					},function (){
+						ms.alert("链接数据库失败，请稍后重试！")
+						obj.text("保存").attr("disabled",false);
+						return;
+					})
+				}
+			});
+
+			//点击表名称 选中
+			$(".date-list").delegate("li","click",function(){
+				$(".date-list li").addClass("normal").removeClass("active").find('.iconfont').hide();
+				$(this).addClass("active").removeClass("normal");
+				$(this).find('.iconfont').show();
+				//获取表字段列表
+				var dataPomPmId = $(this).attr("data-pmoPmId");
+				mcode.people.mcode.projectModelObjectField.list(dataPomPmId,function(json) {
+					$(".field-list").html("");
+					$(".field-other").html("");
+					$("#fieldList").tmpl(json).appendTo(".field-list");
+					$("#fieldForm").tmpl(json).appendTo(".field-other");
+					//如果勾选框的值为0为选中
+					//表设置
+					$(".check-box").each(function(){
+						$(this).find("input").each(function(){
+							var obj = $(this);
+							if(obj.val() == "0"){
+								obj.prev().prop("checked",true);
+							}
+						})
+					});
+					//字段设置
+					$(".fieldList").each(function(){
+						$(this).find("input").each(function(){
+							var obj = $(this);
+							if(obj.val() == "0"){
+								obj.prev().prop("checked",true);
+							}
+						})
+					});
+
+					$(".releaseBody").fadeIn();
+					$(".alert-info").hide();
+
+					//右侧默认显示第一条字段信息
+					$(".fieldList:eq(0)").addClass("active");
+					var dataFieldId = $(".fieldList:eq(0)").attr("data-field-id");
+					$(".field-form").hide();
+					$(".field-form[data-field-id="+dataFieldId+"]").show();
+				});
+
+			});
+			//表信息显示隐藏
+			$(".date-list").delegate(".edit-form","click",function(){
+				$(this).parent().siblings().children(".form-message").hide()
+				$(this).next(".form-message").slideToggle();
+				var dataPomPmId = $(this).parent().attr("data-pmoPmId");
+				mcode.people.mcode.projectModelObjectField.list(dataPomPmId,function(json) {
+					$(".field-list").html("");
+					$("#fieldList").tmpl(json).appendTo(".field-list");
+					//如果勾选框的值为0为选中
+					//表设置
+					$(".check-box").each(function(){
+						$(this).find("input").each(function(){
+							var obj = $(this);
+							if(obj.val() == "0"){
+								obj.prev().prop("checked",true);
+							}
+						})
+					});
+				});
+			})
+
+
+			//保存表信息
+			$(".date-list").delegate(".save-form","click",function(){
+				var obj = $(this);
+				obj.text("保存中");
+				obj.attr("disabled",true);
+				mcode.people.mcode.projectModelObject.update(obj.parent().serialize(),function(json) {
+					if(json.result != null){
+						obj.attr("disabled",false).text("保存");
+						ms.alert("表设置保存成功");
+						return;
+					}else{
+						obj.attr("disabled",false).text("保存");
+						ms.alert("表设置保存成功");
+					}
+				})
+			})
+			//字段信息选中
+			$(".releaseBody").delegate(".code-field tr","click",function(){
+				$(".code-field tr").removeClass("active");
+				$(this).addClass("active");
+				var dataFieldId = $(this).attr("data-field-id");
+				$(".field-form").hide();
+				$(".field-form[data-field-id="+dataFieldId+"]").show(); 
+			});
+
+			//更新字段信息
+			$(".save-field").click(function(){
+				var obj = $(this);
+				obj.text("保存中");
+				obj.attr("disabled",true);
+				$(".fieldList").each(function(){
+					var _obj = $(this);
+					var dataFieldId = _obj.attr("data-field-id");
+					//保存每个字段信息
+					mcode.people.mcode.projectModelObjectField.update(_obj.find("input").serialize()+"&"+$(".field-form[data-field-id="+dataFieldId+"]").serialize(),function(json) {
+						if(json.result != null){
+							ms.alert("表字段设置保存失败，请稍后重试！");
+							obj.attr("disabled",false).text("保存");
+							return;
+						}else{
+							obj.attr("disabled",false).text("保存");
+						}
+					})
+				})
+				ms.alert("表字段设置保存成功")
+			});
+
+			//生成代码
+			$(".down-code").click(function(){
+				$(this).attr("disabled",true).text("代码生成中...")
+				$("#down-code").submit();
+			})
+		})
+	})
+
+	
+>>>>>>> commit
+</script>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mstore</title> 
+        {ms:include filename=head-file.htm/}
+        <link rel="stylesheet/less" type="text/css" href="../templets/86/cms/less/mstore-content.less">
+        <script src="http://cdn.mingsoft.net/plugins/less/2.5.3/less.min.js" ></script>
+    </head>
+    <body style="overflow: hidden;">
+        <div class="mstore-content ms-gray-background ms-width-show">
+            <div class="ms-loading ms-height" v-show="loading == true"></div>
+            <div class="mstore-content-img ms-white-background" v-show="loading == false" style="display:none;">
+                <div v-for="img in picList" v-if="detail.upgraderVersionType == 2">
+                    <img v-if="img.error == false" :src="img.img" >
+                    <img v-else class="error-img" src="../templets/86/cms/images/no-img.png" >
+                </div>
+                <div class="plug-content" v-if="detail.upgraderVersionType == 1">
+                    <div v-html="detail.upgraderVersionReadme"></div>
+                </div>
+            </div>
+            <div class="mstore-content-detail" v-show="loading == false" style="display:none;">
+                <div class="mstore-content-detail-introduce ms-white-background">
+                    <div class="mstore-share-people ms-position-relative">
+                        <img :src="detail.upgraderVersionPeopleIcon" onerror="this.src='http://cdn.mingsoft.net/global/images/msheader.png'">
+                        <p v-text="detail.upgraderVersionPeopleName"></p>
+                    </div>
+                    <div class="mstore-content-classify">
+                        <p class="mstore-content-title" v-text="detail.upgraderVersionName" ></p>
+                        <p class="mstore-content-details mstore-content-classify-type" v-if="detail.upgraderVersionType == 2">
+                            <span v-text="detail.upgraderVersionIndustry"></span>
+                            <span v-text="detail.upgraderVersionColor"></span>
+                        </p>
+                        <div class="mstore-content-star" v-if="detail != ''">
+                            <img v-for="n in detail.upgraderVersionStart" src="../templets/86/cms/images/star.png" />
+                            <img v-for="n in (5-detail.upgraderVersionStart)" src="../templets/86/cms/images/star-empty.png" />
+                        </div>
+                    </div>
+                    <div class="mstore-content-details mstore-content-classify"  v-text="detail.upgraderVersionDescription"></div>
+                    <div class="mstore-content-cost" v-if="detail.upgraderVersionPrice == 0">免费</div>
+                    <div class="mstore-content-cost" v-else>￥{{detail.upgraderVersionPrice}}</div>
+                    <div class="mstore-content-classify" v-show="detail != ''">
+                        <span class="mstore-content-status" v-if="detail.upgraderVersionStatus == -1">下架</span>
+                        <span class="mstore-content-status" v-if="detail.upgraderVersionStatus == 0">停止维护</span>
+                        <span class="mstore-content-down" @click="pay" v-if="detail.upgraderVersionStatus == 1 && detail.upgraderVersionType == 2">下载模板</span>
+                        <span style="cursor: pointer;background-color: white;color: #a9a4a4;width: 220px;display: block;text-align: center;line-height:30px;font-size:12px" @click="view" v-if="detail.upgraderVersionStatus == 1 && detail.upgraderVersionType == 2">点击查看演示</span>
+                        <span class="mstore-content-down" @click="pay" v-if="detail.upgraderVersionStatus == 1 && detail.upgraderVersionType == 1">在线安装</span>
+                        <span class="mstore-content-down" @click="pay" v-if="detail.upgraderVersionStatus == 1 && detail.upgraderVersionType == 1 && detail.upgraderVersionTypeupgraderVersionPrice > 0">下载插件</span>
+                        <span class="mstore-content-status" v-if="detail.upgraderVersionStatus == 2">研发中</span>
+                        <span class="mstore-content-status" v-if="detail.upgraderVersionStatus == 3">近期上线</span>
+                    </div>
+                </div>
+                <!-- <div class="mstore-content-comments ms-white-background ms-position-relative">
+                    <ul>
+                        <li class="mstore-content-classify">
+                            <div class="mstore-content-comment">
+                                <img class="mstore-content-comment-header" src="http://wx.qlogo.cn/mmopen/fbGR46BSRo53YmrUlwBVaSpDf7vtbIGfoLdOjpwORpmfOqKzOSAcL8PGkB0mGvXPVwuDYS9xlZGlAFRMmJldoibIn0NOYetfR/0">
+                                <span class="mstore-content-comment-name">暮光薄凉</span>
+                                <img class="mstore-content-comment-icon ms-cursor" src="../templets/86/cms/images/comment.png" />
+                                <img class="mstore-content-comment-icon ms-cursor" src="../templets/86/cms/images/thumbs-up.png" />
+                            </div>
+                            <p class="mstore-content-details mstore-content-comment-details">很喜欢这个模板</p>
+                        </li>
+                        <li class="mstore-content-classify">
+                            <div class="mstore-content-comment">
+                                <img class="mstore-content-comment-header" src="http://wx.qlogo.cn/mmopen/fbGR46BSRo53YmrUlwBVaSpDf7vtbIGfoLdOjpwORpmfOqKzOSAcL8PGkB0mGvXPVwuDYS9xlZGlAFRMmJldoibIn0NOYetfR/0">
+                                <span class="mstore-content-comment-name">暮光薄凉</span>
+                                <img class="mstore-content-comment-icon ms-cursor" src="../templets/86/cms/images/comment.png" />
+                                <img class="mstore-content-comment-icon ms-cursor" src="../templets/86/cms/images/thumbs-up.png" />
+                            </div>
+                            <p class="mstore-content-details mstore-content-comment-details">很喜欢这个模板</p>
+                        </li>
+                    </ul>
+                    <div class="mstore-content-comment-form">
+                        <textarea name="comment" placeholder="我有话说{ms:global.host/}." v-model="comment"></textarea>
+                        <div class="mstore-content-comment-save">
+                            <img class="ms-cursor" src="../templets/86/cms/images/smile.png" />
+                            <span class="mstore-content-details" :class="{'mstore-content-comment-save-active':isActivation}">提交</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header mstore-content-modal-head">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body mstore-content-modal-body" v-html="win" >
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ms-hover-button">
+	          <a class="ms-top ms-hover-button-icon" style="letter-spacing: 1px;" href="javascript:location.href=mstoreHost+'/people/mstore.do'">返回</a>
+				    <a class="ms-top ms-hover-button-icon" href="javaScript:;" onclick="$('html,body').animate({scrollTop:0},600)">
+				        <i class="iconfont">&#xe821;</i>
+				    </a>
+				    <a class="ms-hover-button-icon" href="tencent://message/?uin=942770163&Site=-&Menu=yes">
+				        <i class="iconfont">&#xe7a8;</i>
+				    </a>
+				</div>
+    </body>
+    <script>
+     try {
+        var u = $(parent.document)[0].location.href.split("\?")[0];
+        if(u.indexOf("store.do") > 0 || u.indexOf("Store.do") > 0 || u.indexOf("Content.do") > 0) {
+          location.href = "http://ms.mingsoft.net";
+        } 
+      } catch(e) {}  
+        ms.load(["ms", js], function(ms, mmstore) {
+            var content = new Vue({
+            el:'.mstore-content',
+            data:{
+                loading:true,//加载
+                comment:"",//评论内容
+                isActivation:false,
+                detail:"",//详情
+                classificationList:['全部模板', '互联网', '通讯-数码', '广告-传媒', '建材-家居', '酒店-旅游','食品-果蔬','服装-礼品','摄像-婚庆','运动健身','教育-培训','保健-医疗','金融-投资','法律-政府','汽车-汽配','机械-设备','化工-能源','农业-养殖','门户','商城'],//分类
+                colorList:['no','红色','橙色','蓝色','黑色','灰色','绿色'],//颜色
+                picList:[],//图片列表
+                win:"",//提示
+                type:1,//类型
+            },
+            watch: {
+                comment: function() {
+                    var content = this.comment.replace(/\s/g, "");
+                    if(!validator.isNull(content)) {
+                        this.isActivation = true;
+                    } else {
+                        this.isActivation = false;
+                    }
+                }
+            },
+            methods:{
+                formatSolution(s) {
+                　　if (s) {
+                　　　　return s.replace(/\s/g,'<br/>')
+                　　} else return ''
+                },
+                  view:function() {
+                	  var form = $('<form action='+this.detail.upgraderVersionUrl+'></form>');
+                	  form.attr('target', '_blank');
+                      $(document.body).append(form);
+                      form.submit();
+                  },
+                  pay:function(){
+                     var target = this;
+                      $.ajax({
+                         type:"get",
+                         url: mstoreHost+"/people/mstore/" + "{detailId/}" + "/pay.do",
+                         success:function(json){
+                            if(json.result){ //免费
+                                if(target.detail.upgraderVersionType == 2){ //下载模板
+                                     var form = $('<form><input name="id" value="{detailId/}"/></form>');
+                                     form.attr('action', mstoreHost+"/people/mstore/down.do"); 
+                                     form.attr('method', 'post');        // 设置Form表单的method属性
+                                     form.attr('target', '_blank');       // 设置Form表单的target属性
+                                     $(document.body).append(form);
+                                     form.submit();
+                                }else{ //安装、
+                                    var data = JSON.parse(json.resultData);
+                                    target.win = '<iframe src="'+data.url+'/upgrader/setup.do?id={detailId/}&cookie='+data.cookie+'&t='+Math.random()+'" width="100%" height="100%" frameborder="0" style="background: url(http://cdn.mingsoft.net/global/images/loading.gif) no-repeat center;" scrolling="no"></iframe>';
+                                    $('#myModal').modal('show');
+                                }
+                                 
+                             }else{ //收费
+                                var form = $('<form><input name="host" value="'+mstoreHost+'"/></form>');      
+                                form.attr('action', mstoreHost+"/people/mstore/{detailId/}/pay.do");        // 设置Form表单的action属性
+                                form.attr('method', 'post');        // 设置Form表单的method属性
+                                form.attr('target', '_blank');       // 设置Form表单的target属性
+                                $(document.body).append(form);
+                                form.submit();
+                             }
+                         },
+                     })
+                },
+            },
+            mounted:function(){
+                var target = this;
+                var data = "id=" + "{detailId/}";
+                mmstore.people.detail(data, function(json) {
+                    target.detail = json;
+                    var classifyIndex = json.upgraderVersionIndustry;
+                    var colorIndex = json.upgraderVersionColor;
+                    target.detail.upgraderVersionIndustry = target.classificationList[classifyIndex];
+                    target.detail.upgraderVersionColor = target.colorList[classifyIndex];
+                });
+                var url = "{modelUrl/}";
+                var subjectBasicId = "subjectBasicId=" + url.replace(/[^0-9]/ig,"");
+                if(subjectBasicId == "subjectBasicId=") {
+                    target.picList = [
+                        {
+                            img:"",
+                            error:true,
+                        }
+                    ];
+                } else {
+                    mmstore.mstore.img(subjectBasicId, function(json) {
+                        if (json.length == 0) {
+                            target.picList = [
+                                {
+                                    img:"",
+                                    error:true,
+                                }
+                            ];
+                        }
+                        for(i=0;i<json.length;i++){
+                            var pic = new Array();
+                            var img = json[i].split('/');
+                            img = img[img.length-1];
+                            if(img == "404.png"){
+                                pic={
+                                    img:json[i],
+                                    error:true,
+                                }
+                            }else{
+                                pic={
+                                    img:json[i],
+                                    error:false,
+                                }
+                            }
+                            target.picList.push(pic);
+                        }
+                    })
+                }
+                setTimeout(function() {
+                    if($('.mstore-content-img').height() < $('.mstore-content-detail').height() && content.detail.upgraderVersionType == 1){
+                        $('.mstore-content-img').height($('.mstore-content-detail').height());
+                    }
+                    if($('.mstore-content-img').height() < 1040) {
+                        $('.mstore-content').height("auto");
+                    }
+                },150)
+                target.loading = false;
+            }
+        })
+        })
+    </script>
+</html>

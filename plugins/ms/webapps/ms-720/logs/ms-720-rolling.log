@@ -1,0 +1,8 @@
+[2016-07-03 08:07:49,006] 360.ming-soft.com-startStop-1 org.hibernate.cfg.SettingsFactory INFO  - Structured second-level cache entries: disabled
+[2016-07-03 08:07:49,016] 360.ming-soft.com-startStop-1 org.hibernate.cfg.SettingsFactory INFO  - Echoing all SQL to stdout
+[2016-07-03 08:07:49,016] 360.ming-soft.com-startStop-1 org.hibernate.cfg.SettingsFactory INFO  - Statistics: disabled
+[2016-07-03 08:07:49,016] 360.ming-soft.com-startStop-1 org.hibernate.cfg.SettingsFactory INFO  - Deleted entity synthetic identifier rollback: disabled
+[2016-07-03 08:07:49,017] 360.ming-soft.com-startStop-1 org.hibernate.cfg.SettingsFactory INFO  - Default entity-mode: pojo
+[2016-07-03 08:07:49,017] 360.ming-soft.com-startStop-1 org.hibernate.cfg.SettingsFactory INFO  - Named query checking : enabled
+[2016-07-03 08:07:49,134] 360.ming-soft.com-startStop-1 org.hibernate.impl.SessionFactoryImpl INFO  - building session factory
+[2016-07-03 08:07:49,745] 360.ming-soft.com-startStop-1 org.hibernate.impl.SessionFactoryObjectFactory INFO  - Not binding factory to JNDI, no JNDI name configured

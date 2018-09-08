@@ -1,0 +1,1823 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <!--线上jquery文件-->
+    <script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <!--线上bootstrap文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--线上tmpl文件-->
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.tmpl/1.4.2/jquery.tmpl.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/ms.manager.js"></script>
+</head>
+
+<body style="overflow-y: auto">
+    <div class="ms-content-body">
+        <div class="ms-content-body-title" style="text-align: left;">
+            <!--strong>周边环境</strong-->
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+            </div>
+        </div>
+
+        <div class="ms-content-body-panel">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center" width="40">ID</th>
+                        <th class="text-left">栏目名</th>
+                        <th class="text-center" width="50">属性</th>
+                        <th class="text-left">栏目管理链接标签</th>
+                        <th class="text-left">列表地址</th>
+                        <th class="text-left">内容地址</th>
+                        <th class="text-left">封面地址</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">1123</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">周边环境</a></span></td>
+                        <td class="text-center">列表</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left">user_order_list.html</td>
+                        <td class="text-left">user_order_list.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">223</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2123</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2131</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1232</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1232</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2212</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3132</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <nav class="pageNav">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <!--线上jquery文件-->
+    <script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <!--线上bootstrap文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--线上tmpl文件-->
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.tmpl/1.4.2/jquery.tmpl.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/ms.manager.js"></script>
+</head>
+
+<body style="overflow-y: auto">
+    <div class="ms-content-body">
+        <div class="ms-content-body-title" style="text-align: left;">
+            <!--strong>周边环境</strong-->
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+            </div>
+        </div>
+
+        <div class="ms-content-body-panel">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center" width="40">ID</th>
+                        <th class="text-left">栏目名</th>
+                        <th class="text-center" width="50">属性</th>
+                        <th class="text-left">栏目管理链接标签</th>
+                        <th class="text-left">列表地址</th>
+                        <th class="text-left">内容地址</th>
+                        <th class="text-left">封面地址</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">1123</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">周边环境</a></span></td>
+                        <td class="text-center">列表</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left">user_order_list.html</td>
+                        <td class="text-left">user_order_list.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">223</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2123</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2131</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1232</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1232</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2212</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3132</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递3333333</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                        <td class="text-center">     
+                            <a class="btn btn-xs red tooltips editclumnTree" onclick="editclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="编辑">                
+                                <i class="glyphicon glyphicon-pencil"></i>              
+                            </a>     
+                            <a class="btn btn-xs red tooltips deleteclumnTree" onclick="deleteclumnTree(this)" data-toggle="tooltip" data-id="2121" data-original-title="删除">                
+                                <i class="glyphicon glyphicon-trash"></i>              
+                            </a>    
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <nav class="pageNav">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
+>>>>>>> commit

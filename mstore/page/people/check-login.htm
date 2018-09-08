@@ -1,0 +1,25 @@
+<script type="text/javascript">
+	$(function() {
+		/*我要分享的步奏宽度分布*/
+		var stepLi = $(".shareSteptxt li").length;
+		$(".shareSteptxt li").width(858 / stepLi + "px");
+		/*左侧菜单选中样式的添加*/
+		var url = window.location.href;
+		if(url.indexOf("share") > 0) {
+			$(".user_sharemenu").addClass("user_menuOn");
+		} else if(url.indexOf("bindEmail") > 0) {
+			$(".user_peopleInfoMenu").addClass("user_menuOn");
+		}
+		else if(url.indexOf("mcode") > 0) {
+			$(".user_mcodeMenu").addClass("user_menuOn");
+		}
+		ms.load(["ms", "ms.people"], function(ms, people) {
+			//确认是否登录，没有登录则退到首页
+			people.checkLoginStatus(function(json) {
+				if(!json.result) {
+					location.href = ms.base + "/mbbs/main.do"
+				}
+			})
+		})
+	})
+</script>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>{ms:global.name/}-我的用户</title>
+    {ms:include filename=head-file-people.htm/} {ms:include filename=people/check-login.htm/}
+    <link rel="stylesheet" type="text/css" href="http://mstore.mingsoft.net/templets/86/cms//less/user.center.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap-table/1.11.1/bootstrap-table.css">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+    <script src="http://cdn.mingsoft.net/plugins//bootstrap-table/1.11.0/locale/bootstrap-table-zh-CN.min.js"></script>
+  </head>
+  <body>
+    <div id="head"></div>
+    <div class="user_center">
+      <!--公用左边菜单部分开始-->
+      {ms:include filename=people/menu.htm/}
+      <!--公用左边菜单部分结束-->
+      <div class="user_centent">
+        <!--个人中心内容部分头部固定数据-->
+        {ms:include filename=people/data.htm/}
+        <!--公用左边菜单部分结束-->
+        <div id="vue-user-list">
+          <div class="loading-pic" v-show="loading"></div>
+          <!--更新提示-->
+          <div class="user_cententbody" v-show="!loading" style="display:none">
+            <!--我的用户数-->
+            <div class="user_cententbodynav" style="margin: 0;">我的用户</div>
+            <p class="tip">提示：用户越多表示您分享的作品非常受欢迎，分享收益RMB更多、接私活的几率更高！</p>
+            <div class="alert alert-info listNone hide-default" role="alert">
+              <p>分享才能收获更多用户粉丝哦！快快分享一个吧。
+                <a class="label label-primary" href="http://mstore.mingsoft.net/people/share.do">立即分享</a>
+              </p>
+              <p>温馨提示：用户越多表示您分享的作品非常受欢迎，同时获得分享收益RMB更多、接私活的几率更高！</p>
+            </div>
+            <div>
+              <template v-for="item in userList">
+                <div class="ms-people-div">
+                  <img class="ms-people-icon" onerror="this.src='http://cdn.mingsoft.net/global/images/msheader.png'" v-if="item.upgraderPeopleVersionPeopleIcon != '' && item.upgraderPeopleVersionPeopleIcon != undefined" :src="item.upgraderPeopleVersionPeopleIcon" />
+                  <img class="ms-people-icon" v-else src="http://cdn.mingsoft.net/global/images/msheader.png" />
+                  <span class="ms-people-name" v-if="item.upgraderPeopleVersionPeopleNickName != '' && item.upgraderPeopleVersionPeopleNickName != undefined" v-text="item.upgraderPeopleVersionPeopleNickName"></span>
+                  <span class="ms-people-name" v-else>匿名用户</span>
+                </div>
+              </template>
+            </div>
+            <div :class="{'ms-list-down-load-text':listDownLoadText == '无'}" v-show="listDownLoadText != '无'" class="ms-down-load-div">
+							<i v-show="listDownLoadText =='下滑加载更多....'" class="iconfont">&#xe744;</i>
+							<i v-show="listDownLoadText =='已经浏览完了，去看看别的'" class="iconfont">&#xe737;</i>
+							<img v-show="listDownLoadText =='正在载入....'" src="http://cdn.mingsoft.net/global/images/loading.gif" />
+							<span v-text="listDownLoadText"></span>
+						</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>
+<script src="http://mstore.mingsoft.net/templets/86/cms//js/headAndFoter.js"></script>
+<script>
+  var vueUserList;
+  ms.load("ms.mstore.min", function(mmstore) { //ms.mstore.min
+    vueUserList = new Vue({
+      el: "#vue-user-list",
+      data: {
+        userList: new Array(), //我的用户列表
+        loading: false, //加载
+        pageNo: 1, //当前加载分页
+        saveList: new Array(), //我的用户列表储存
+        listDownLoadText:"下滑加载更多....",//下拉显示文本
+      },
+      methods: {
+        //懒加载用户列表
+        userListLoad: function(num) {
+          this.loading = true;
+          var target = this;
+          $.ajax({
+            type: "post",
+            data: "pageSize=40&pageNo=" + eval(num),
+            url: "http://mstore.mingsoft.net/people/mstore/userList.do",
+            async: false,
+            success: function(data) {
+            	if(data.total<=0){
+            		target.listDownLoadText = "无";
+            		return
+            	}
+              if(num == 1) {
+                target.userList = data.rows;
+              }
+              if(data.total > target.saveList.length) {
+                target.userList = target.saveList.concat(data.rows)
+              } else {
+              	target.listDownLoadText = "已经浏览完了，去看看别的";
+              	setTimeout(function(){
+									target.listDownLoadText = "无";
+								},1500)
+                target.pageNo = "no";
+             	  target.loading = false;
+                return
+              }
+              target.saveList = target.userList;
+              target.loading = false;
+              target.listDownLoadText = "下滑加载更多....";
+            },
+          });
+        }
+      },
+      //获取我的用户列表
+      mounted: function() {
+        this.userListLoad(this.pageNo);
+      },
+    })
+  })
+  //滚动到底部
+  $(window).scroll(function() {
+    var scrollTop = $(this).scrollTop();
+    var scrollHeight = $(document).height();
+    var windowHeight = $(this).height();
+    if(vueUserList.listDownLoadText == "无") return;
+    if(scrollTop + windowHeight == scrollHeight) {
+      if(vueUserList.pageNo == "no") return;
+      vueUserList.listDownLoadText = "正在载入....";
+      setTimeout(function(){
+      	vueUserList.userListLoad(vueUserList.pageNo += 1);
+      },100)
+    }
+  });
+</script>

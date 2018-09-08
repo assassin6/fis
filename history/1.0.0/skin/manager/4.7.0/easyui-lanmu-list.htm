@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <!--线上特殊字体文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/iconfont/1.0.0/iconfont.css" />
+    <!--线上jquery文件-->
+    <script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <!--线上bootstrap文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--线上tmpl文件-->
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.tmpl/1.4.2/jquery.tmpl.min.js"></script>
+
+    <!--easyUI-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/icon.css">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/jquery.easyui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/ms.manager.js"></script>
+</head>
+<body>
+    <table id="test" title="Folder Browser" class="easyui-treegrid" style="width:100%"
+        url="data/treegrid_data.json"
+        rownumbers="true"
+        idField="id" treeField="name">
+    <thead>
+        <tr>
+            <th field="name" width="160">Name</th>
+            <th field="size" width="60" align="right">Size</th>
+            <th field="date" width="100">Modified Date</th>
+        </tr>
+    </thead>
+</table>
+ 
+</body>
+</html>

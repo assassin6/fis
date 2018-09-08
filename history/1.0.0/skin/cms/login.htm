@@ -1,0 +1,195 @@
+<<<<<<< HEAD
+<!--微信扫码登录-->
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">欢迎登录铭飞平台</h4>
+      </div>
+      <div class="modal-body">
+        <div id="login_container"></div>
+        <p class="text-center"><a data-dismiss="modal" aria-label="Close"  data-toggle="modal" data-target="#user-login" style="cursor: pointer;">返回账号登录</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+ var obj = new WxLogin({
+   id:"login_container", //第三方页面显示二维码的容器id
+   appid: "wx8c96aa3db4611395",  //应用唯一标识，在微信开放平台提交应用审核通过后获得
+   scope: "snsapi_login", //应用授权作用域，拥有多个作用域用逗号（,）分隔，网页应用目前仅填写snsapi_login即可
+   redirect_uri: "http%3A%2F%2Fms.mingsoft.net%2Fweixin%2Fopen%2Flogin%2FgetUser.do%3Fid%3D6", //重定向地址，需要进行UrlEncode,授权回调获取用户信息
+   state:window.location.href, //用于保持请求和回调的状态，授权请求后原样带回给第三方。该参数可用于防止csrf攻击（跨站请求伪造攻击），建议第三方带上该参数，可设置为简单的随机数加session进行校验
+   style: "black", //提供"black"、"white"可选，默认为黑色文字描述。详见文档底部FAQ
+   href: "" //自定义样式链接，第三方可根据实际需求覆盖默认样式。详见文档底部FAQ
+ });
+</script>
+
+
+
+
+<!--账号登录-->
+<div class="modal fade" id="user-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">欢迎登录铭飞平台</h4>
+      </div>
+      <div class="modal-body">
+        <div class="email-login">
+          <div class="title">账号登录</div>
+          <form class="form-horizontal" role="form" name="login">
+            <div class="alert alert-danger email-login-tit" role="alert">账号或者密码错误</div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="邮箱" name="peopleName"required="true" data-bv-notempty-message="邮箱不能为空">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="密码" name="peoplePassword" required="true" data-bv-notempty-message="密码不能为空">
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9" style="padding-left:0px">
+                  <input type="text" class="form-control" placeholder=验证码 name="rand_code" required="true" data-bv-notempty-message="验证码不能为空">
+                </div>
+                <img id="loginCode" style="height: 34px;" /> 
+            </div>
+            
+            <div class="form-group">
+                <button type="button" class="btn btn-success col-sm-12">登 录</button>
+            </div>
+            <div class="alert alert-success email-login-tit" role="alert"><span class="glyphicon glyphicon-hand-right"></span>温馨提示：账号登录为绑定成功的邮箱号与您在个人中心设置的密码</div>
+            <p class="text-center"><a data-dismiss="modal" aria-label="Close"  data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><i class="icon iconfont" style="margin-right: 5px;font-size: 15px;">&#xe834;</i>微信登录</a></p>
+
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function(){
+
+    $(".form-horizontal").bootstrapValidator();
+
+    ms.load(["ms","ms.people"],function(ms,people) {
+      ms.code("loginCode");
+      $("#loginCode").click(function(){
+        ms.code("loginCode");
+      });
+
+      $(".form-horizontal .btn-success").click(function(){
+        var valid = $(".form-horizontal").data('bootstrapValidator').isValid();
+        if (valid) {
+          var data = $("form[name='login']").serialize();
+          people.checkLogin(data,function(returnJson){
+            if (returnJson.result) {
+              alert("登录成功");
+            }
+          });
+        }
+      })
+    });
+  })
+</script>
+
+=======
+<!--微信扫码登录-->
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">欢迎登录铭飞平台</h4>
+      </div>
+      <div class="modal-body">
+        <div id="login_container"></div>
+        <p class="text-center"><a data-dismiss="modal" aria-label="Close"  data-toggle="modal" data-target="#user-login" style="cursor: pointer;">返回账号登录</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+ var obj = new WxLogin({
+   id:"login_container", //第三方页面显示二维码的容器id
+   appid: "wx8c96aa3db4611395",  //应用唯一标识，在微信开放平台提交应用审核通过后获得
+   scope: "snsapi_login", //应用授权作用域，拥有多个作用域用逗号（,）分隔，网页应用目前仅填写snsapi_login即可
+   redirect_uri: "http%3A%2F%2Fms.mingsoft.net%2Fweixin%2Fopen%2Flogin%2FgetUser.do%3Fid%3D6", //重定向地址，需要进行UrlEncode,授权回调获取用户信息
+   state:window.location.href, //用于保持请求和回调的状态，授权请求后原样带回给第三方。该参数可用于防止csrf攻击（跨站请求伪造攻击），建议第三方带上该参数，可设置为简单的随机数加session进行校验
+   style: "black", //提供"black"、"white"可选，默认为黑色文字描述。详见文档底部FAQ
+   href: "" //自定义样式链接，第三方可根据实际需求覆盖默认样式。详见文档底部FAQ
+ });
+</script>
+
+
+
+
+<!--账号登录-->
+<div class="modal fade" id="user-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">欢迎登录铭飞平台</h4>
+      </div>
+      <div class="modal-body">
+        <div class="email-login">
+          <div class="title">账号登录</div>
+          <form class="form-horizontal" role="form" name="login">
+            <div class="alert alert-danger email-login-tit" role="alert">账号或者密码错误</div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="邮箱" name="peopleName"required="true" data-bv-notempty-message="邮箱不能为空">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="密码" name="peoplePassword" required="true" data-bv-notempty-message="密码不能为空">
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9" style="padding-left:0px">
+                  <input type="text" class="form-control" placeholder=验证码 name="rand_code" required="true" data-bv-notempty-message="验证码不能为空">
+                </div>
+                <img id="loginCode" style="height: 34px;" /> 
+            </div>
+            
+            <div class="form-group">
+                <button type="button" class="btn btn-success col-sm-12">登 录</button>
+            </div>
+            <div class="alert alert-success email-login-tit" role="alert"><span class="glyphicon glyphicon-hand-right"></span>温馨提示：账号登录为绑定成功的邮箱号与您在个人中心设置的密码</div>
+            <p class="text-center"><a data-dismiss="modal" aria-label="Close"  data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><i class="icon iconfont" style="margin-right: 5px;font-size: 15px;">&#xe834;</i>微信登录</a></p>
+
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function(){
+
+    $(".form-horizontal").bootstrapValidator();
+
+    ms.load(["ms","ms.people"],function(ms,people) {
+      ms.code("loginCode");
+      $("#loginCode").click(function(){
+        ms.code("loginCode");
+      });
+
+      $(".form-horizontal .btn-success").click(function(){
+        var valid = $(".form-horizontal").data('bootstrapValidator').isValid();
+        if (valid) {
+          var data = $("form[name='login']").serialize();
+          people.checkLogin(data,function(returnJson){
+            if (returnJson.result) {
+              alert("登录成功");
+            }
+          });
+        }
+      })
+    });
+  })
+</script>
+
+>>>>>>> commit

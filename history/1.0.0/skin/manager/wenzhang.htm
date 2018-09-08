@@ -1,0 +1,553 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <link rel="stylesheet" type="text/css" href="http://v.ming-soft.net/js/mobile/iconfont.css" />
+    <link href="plugins/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ms.manager.js"></script>
+</head>
+
+<body style="overflow:hidden">
+    <div class="ms-content-menu">
+        sad
+    </div>
+    <div class="ms-content-body" style="width:85%;margin-top:40px;">
+        
+        <div class="ms-content-body-title"><span>文章管理</span> 查询全部结果</div>
+        <div class="ms-content-body-panel">
+            <div class="ms-rg-contentButton">
+                <button type="button" class="btn btn-default">新增文章 <span class="glyphicon glyphicon-plus openMenu"></span></button>
+                <button type="button" class="btn btn-danger">批量删除 <span class="glyphicon glyphicon-trash openMenu"></span></button>
+                <select class="form-control" value="as">
+                    <option value="" selected="selected">[默认属性]</option>
+                    <option value="">幻灯</option>
+                    <option value="">图片</option>
+                    <option value="">推荐</option>
+                    <option value="">跳转</option>
+                    <option value="">头条</option>
+                </select>
+                <div class="input-group form-seach">
+                    <input type="text" class="form-control form-seach" placeholder="输入关键字" aria-describedby="basic-addon2">
+                </div>
+                <button class="btn btn-default" id="basic-addon2">搜索</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <!--<tr>
+                            <td colspan="7"><i class="glyphicon glyphicon-pushpin"></i> 栏目名 > 文章列表</td>
+                        </tr>-->
+                    <tr>
+                        <th class="text-center">
+                            <input type="checkbox" id="allCheck" value="全选" data-original-title="点击全选" data-toggle="tooltip">
+                        </th>
+                        <th class="col-md-1 text-center">ID</th>
+                        <th class="col-md-3 text-left">栏目名</th>
+                        <th class="col-md-5 text-left">文章标题</th>
+                        <th class="col-md-1 text-center">作者</th>
+                        <th class="col-md-1 text-center">点击</th>
+                        <th class="col-md-1 text-center">排序</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <link rel="stylesheet" type="text/css" href="http://v.ming-soft.net/js/mobile/iconfont.css" />
+    <link href="plugins/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ms.manager.js"></script>
+</head>
+
+<body style="overflow:hidden">
+    <div class="ms-content-menu">
+        sad
+    </div>
+    <div class="ms-content-body" style="width:85%;margin-top:40px;">
+        
+        <div class="ms-content-body-title"><span>文章管理</span> 查询全部结果</div>
+        <div class="ms-content-body-panel">
+            <div class="ms-rg-contentButton">
+                <button type="button" class="btn btn-default">新增文章 <span class="glyphicon glyphicon-plus openMenu"></span></button>
+                <button type="button" class="btn btn-danger">批量删除 <span class="glyphicon glyphicon-trash openMenu"></span></button>
+                <select class="form-control" value="as">
+                    <option value="" selected="selected">[默认属性]</option>
+                    <option value="">幻灯</option>
+                    <option value="">图片</option>
+                    <option value="">推荐</option>
+                    <option value="">跳转</option>
+                    <option value="">头条</option>
+                </select>
+                <div class="input-group form-seach">
+                    <input type="text" class="form-control form-seach" placeholder="输入关键字" aria-describedby="basic-addon2">
+                </div>
+                <button class="btn btn-default" id="basic-addon2">搜索</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <!--<tr>
+                            <td colspan="7"><i class="glyphicon glyphicon-pushpin"></i> 栏目名 > 文章列表</td>
+                        </tr>-->
+                    <tr>
+                        <th class="text-center">
+                            <input type="checkbox" id="allCheck" value="全选" data-original-title="点击全选" data-toggle="tooltip">
+                        </th>
+                        <th class="col-md-1 text-center">ID</th>
+                        <th class="col-md-3 text-left">栏目名</th>
+                        <th class="col-md-5 text-left">文章标题</th>
+                        <th class="col-md-1 text-center">作者</th>
+                        <th class="col-md-1 text-center">点击</th>
+                        <th class="col-md-1 text-center">排序</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left">学院动态</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip">通知</span></td>
+                        <td class="text-center">admin</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
+>>>>>>> commit

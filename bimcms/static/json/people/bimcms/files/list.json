@@ -1,0 +1,25 @@
+{
+        "createBy": 2,
+        "createDate": "2018-08-14 14:06:59",
+        "delFlag": 0,
+        "filesCode": "541236",
+        "filesName": "地图1232",
+        "filesSize": "3",
+        "filesState": 1,
+        "folderId": 2,
+        "id": "4",
+        "updateBy": 0
+    },
+    {
+        "createBy": 2,
+        "createDate": "2018-08-10 17:37:24",
+        "delFlag": 0,
+        "filesCode": "541236",
+        "filesName": "地图123",
+        "filesSize": "3",
+        "filesState": 1,
+        "folderId": 1,
+        "id": "3",
+        "updateBy": 2,
+        "updateDate": "2018-08-14 13:59:48"
+    }

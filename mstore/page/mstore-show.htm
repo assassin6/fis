@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>价值源自分享！铭飞MStore</title>
+        {ms:include filename=head-file.htm/}
+        <script src="http://cdn.mingsoft.net/plugins/less/2.5.3/less.min.js"></script>
+    </head>
+    <body>
+        <div id="head"></div>
+        <div class="mstore-show" id="mstore">
+            <!-- 幻灯 -->
+            <div class="ms-white-background" id="mstore-banner">
+                {ms:include filename=mstore-banner.htm/}
+            </div>
+            <!-- 标签页 -->
+            <div class="mstore-tabs">
+                {ms:include filename=mstore-classify.htm/}
+                <div class="tab-content ms-mstore-list ms-overflow-hidden ms-width-show">
+                    {ms:include filename=mstore-show-list.htm/}
+                </div>
+            </div>
+            <div class="ms-mstore-guide" v-show="guide" style="display: none;">
+                <div class="ms-position-relative">
+                    <img class="ms-cursor" src="../templets/86/cms/images/close.png" @click="showGuide" />
+                    <p class="ms-mstore-guide-title">MSTORE流程引导</p>
+                    <p class="ms-mstore-guide-one">1.下载并启动铭飞系统并登录管理员账号</p>
+                    <p class="ms-mstore-guide-two">2.进入后台主界面，点击右上角MSTORE图标</p>
+                    <p class="ms-mstore-guide-three">3.输入MS社区账号密码并点击登录</p>
+                    <p class="ms-mstore-guide-four">4.模板直接下载、插件在线安装，点击查看模板教程</p>
+                </div>
+            </div>
+            {ms:include filename=mstore-hover-button.htm/}
+        </div>
+        <div id="footer"></div>
+        <script src="http://mstore.mingsoft.net/templets/86/cms//js/headAndFoter.js"></script>
+    </body>
+    <script>
+        var mstore = new Vue({
+            el: '.ms-mstore-guide',
+            data: {
+                loading: false, //加载
+                guide: false, //显示引导页
+            },
+            methods: {
+                showGuide: function() {
+                    this.guide = !this.guide;
+                    if(this.guide) {
+                        document.body.style.overflow = "hidden";
+                        $('#mstore-banner').addClass("ms-background-vague");
+                        $('.mstore-tabs').addClass("ms-background-vague");
+                    } else {
+                        document.body.style.overflow = "auto";
+                        $('#mstore-banner').removeClass("ms-background-vague");
+                        $('.mstore-tabs').removeClass("ms-background-vague");
+                    }
+
+                },
+            },
+            mounted: function() {
+                var width = document.body.clientWidth;
+                width = Number(Number(width) - Number(1200)) / Number(2);
+                width = Number(width) - Number(45);
+                if(width > 30) {
+                    $(".ms-hover-button").css({
+                        right: width + "px",
+                    });
+                }
+            },
+        })
+        window.onscroll = function() { //绑定scroll事件
+            var currentHeight = document.documentElement.scrollTop || document.body.scrollTop; //获取滚动距离
+            var currentHeightY = $(".mstore-banner").height();
+            if(currentHeight >= 400) {
+                $(".ms-top").fadeIn()
+            } else {
+                $(".ms-top").fadeOut()
+            }
+            if(currentHeight >= currentHeightY) { //判断
+                $('.ms-classification').addClass("ms-classift-fixed");
+                if(classification.upgraderVersionType == 2) {
+                    $('.ms-mstore-list').addClass("ms-model-margin");
+                } else {
+                    $('.ms-mstore-list').addClass("ms-plug-margin");
+                }
+            } else {
+                $('.ms-classification').removeClass("ms-classift-fixed");
+                if(classification.upgraderVersionType == 2) {
+                    $('.ms-mstore-list').removeClass("ms-model-margin");
+                } else {
+                    $('.ms-mstore-list').removeClass("ms-plug-margin");
+                }
+            }
+            var scrollHeight = $(document).height();
+            var windowHeight = $(this).height();
+            if(classification.pageNo == "no") {
+                return;
+            }
+            if(!vueList.loadNum){return}
+            if(Math.abs(parseInt(currentHeight) + windowHeight - scrollHeight) < 3) {
+                if(vueList.listDownLoadText == "无") {
+                    return;
+                }
+                vueList.loadNum = false;
+                vueList.listDownLoadText = "正在载入....";
+                vueList.mstoreListLoad();
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,47 @@
+[
+  {
+    "modelIcon": null,
+    "modelId": 212,
+    "modelModelId": 209,
+    "modelParentIds": "209",
+    "modelLv":2,
+    "modelTitle": "交易记录管理",
+    "modelUrl": "/mpay/payLog/index.do"
+  },
+  {
+    "modelIcon": null,
+    "modelId": 211,
+    "modelModelId": 209,
+    "modelParentIds": "209",
+    "modelLv":2,
+    "modelTitle": "支付宝设置",
+    "modelUrl": "/mpay/pay/alipay.do"
+  },
+  {
+    "modelIcon": null,
+    "modelId": 210,
+    "modelModelId": 209,
+    "modelParentIds": "209",
+    "modelLv":2,
+    "modelTitle": "微信支付设置",
+    "modelUrl": "/mpay/pay/weixin.do"
+  },
+  {
+    "modelIcon": "&#xe971;",
+    "modelId": 209,
+    "modelModelId": 0,
+    "modelParentIds": null,
+    "modelLv":1,
+    "modelTitle": "支付交易",
+    "modelUrl": null
+  },
+  {
+    "modelIcon": null,
+    "modelId": 222,
+    "modelModelId": 210,
+    "modelParentIds": "209",
+    "modelLv":2,
+    "modelTitle": "微信支付设置",
+    "modelUrl": "/mpay/pay/weixin.do"
+  }
+]

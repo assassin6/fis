@@ -1,0 +1,35 @@
+[
+    {
+        "createBy": 2,
+        "createDate": "2018-08-14 14:32:48",
+        "delFlag": 0,
+        "folderIsModel": 1,
+        "folderName": "文件夹",
+        "folderPid": 2,
+        "id": "6",
+        "projectId": 1,
+        "updateBy": 0
+    },
+    {
+        "createBy": 2,
+        "createDate": "2018-08-10 18:21:47",
+        "delFlag": 0,
+        "folderIsModel": 541236,
+        "folderName": "测绘",
+        "folderPid": 1,
+        "id": "4",
+        "projectId": 1,
+        "updateBy": 0
+    },
+    {
+        "createBy": 0,
+        "createDate": "2018-08-10 15:04:04",
+        "delFlag": 0,
+        "folderIsModel": 1,
+        "folderName": "测试",
+        "id": "1",
+        "projectId": 1,
+        "updateBy": 2,
+        "updateDate": "2018-08-10 16:18:45"
+    }
+]

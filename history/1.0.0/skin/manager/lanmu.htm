@@ -1,0 +1,459 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <link rel="stylesheet" type="text/css" href="http://v.ming-soft.net/js/mobile/iconfont.css" />
+    <link href="plugins/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ms.manager.js"></script>
+</head>
+
+<body style="overflow:hidden">
+    <div class=" ms-content-body " style="width:100%;margin-top:40px;">
+        <div class="ms-content-body-title">
+            <span>周边环境</span>
+            <button type="button" class="btn btn-default">返回文章列表 <span class="glyphicon glyphicon-share-alt openMenu"></span></button>
+        </div>
+        <div class="ms-content-body-panel">
+            <div class="ms-content-body-panel-nav">
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus openMenu"></span></button>
+                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash openMenu"></span></button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default">操作</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <!--筛选按钮组开始-->
+                <div style="float:right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">筛选</button>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" style="left:-94px;">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--筛选按钮组开始-->
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <!--<tr>
+                        <td colspan="7"><i class="glyphicon glyphicon-pushpin"></i> 栏目管理列表</td>
+                    </tr>-->
+                    <tr>
+                        <th class="text-center">
+                            <input type="checkbox" id="allCheck" value="全选" data-original-title="点击全选" data-toggle="tooltip">
+                        </th>
+                        <th class="col-md-1 text-center">ID</th>
+                        <th class="col-md-1 text-left">栏目名</th>
+                        <th class="col-md-1 text-center">属性</th>
+                        <th class="col-md-3 text-left">栏目管理链接标签</th>
+                        <th class="col-md-2 text-left">列表地址</th>
+                        <th class="col-md-2 text-left">内容地址</th>
+                        <th class="col-md-2 text-left">封面地址</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">周边环境</a></span></td>
+                        <td class="text-center">列表</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left">user_order_list.html</td>
+                        <td class="text-left">user_order_list.html</td>
+                        <td class="text-left"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <nav class="pageNav">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <link rel="stylesheet" type="text/css" href="http://v.ming-soft.net/js/mobile/iconfont.css" />
+    <link href="plugins/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ms.manager.js"></script>
+</head>
+
+<body style="overflow:hidden">
+    <div class=" ms-content-body " style="width:100%;margin-top:40px;">
+        <div class="ms-content-body-title">
+            <span>周边环境</span>
+            <button type="button" class="btn btn-default">返回文章列表 <span class="glyphicon glyphicon-share-alt openMenu"></span></button>
+        </div>
+        <div class="ms-content-body-panel">
+            <div class="ms-content-body-panel-nav">
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus openMenu"></span></button>
+                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash openMenu"></span></button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default">操作</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <!--筛选按钮组开始-->
+                <div style="float:right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">筛选</button>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" style="left:-94px;">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--筛选按钮组开始-->
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <!--<tr>
+                        <td colspan="7"><i class="glyphicon glyphicon-pushpin"></i> 栏目管理列表</td>
+                    </tr>-->
+                    <tr>
+                        <th class="text-center">
+                            <input type="checkbox" id="allCheck" value="全选" data-original-title="点击全选" data-toggle="tooltip">
+                        </th>
+                        <th class="col-md-1 text-center">ID</th>
+                        <th class="col-md-1 text-left">栏目名</th>
+                        <th class="col-md-1 text-center">属性</th>
+                        <th class="col-md-3 text-left">栏目管理链接标签</th>
+                        <th class="col-md-2 text-left">列表地址</th>
+                        <th class="col-md-2 text-left">内容地址</th>
+                        <th class="col-md-2 text-left">封面地址</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">周边环境</a></span></td>
+                        <td class="text-center">列表</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left">user_order_list.html</td>
+                        <td class="text-left">user_order_list.html</td>
+                        <td class="text-left"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-left"><span data-original-title="点击编辑" data-toggle="tooltip"><a href="">快递</a></span></td>
+                        <td class="text-center">封面</td>
+                        <td class="text-left">{ms:global.url/}/1951/index.html</td>
+                        <td class="text-left"></td>
+                        <td class="text-left"></td>
+                        <td class="text-left">express_status.html</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <nav class="pageNav">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
+>>>>>>> commit

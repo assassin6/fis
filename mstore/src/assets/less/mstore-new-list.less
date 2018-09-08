@@ -1,0 +1,106 @@
+.ms-list-new {
+    .ms-list-new-title {
+        padding-top: 20px;
+        padding-bottom: 5px;
+        color: #555555;
+        font-size: 16px;
+        margin: 0;
+    }
+    .ms-mobile-images {
+        right: 5.5% !important;
+        .ms-mobile-div {
+            width: 114px !important;
+            height: 191px !important;
+        }
+    }
+    .ms-user-list {
+        width: 100%;
+        height: 503px;
+        background-color: #ffffff;
+        padding: 20px 15px;
+    }
+    .ms-drop-down-button {
+		cursor: pointer;
+        .glyphicon {
+            color: #adadad;
+        }
+    }
+}
+.ms-list-new .col-sm-8,
+.ms-list-new .col-md-8,
+.ms-list-new .col-sm-4,
+.ms-list-new .col-md-4 {
+  padding: 0;
+}
+.ms-list-new .col-sm-6,
+.ms-list-new .col-md-6 {
+  	padding-left: 0;
+  	padding-right: 20px;
+	cursor: pointer;
+}
+.ms-list-new .ms-user-share,
+.ms-list-new .ms-user-pay {
+  margin-bottom: 10px;
+}
+.ms-list-new .ms-user-list .ms-user-share-list,#people-list .ms-user-share-list {
+    width: 20%;
+    margin-bottom: 20px;
+    height: 72px;
+}
+.ms-list-new .ms-user-list img,#people-list .ms-user-share-list img {
+    margin: auto;
+    display: block;
+    width: 70%;
+    border-radius: 50%;
+}
+.ms-list-new .ms-user-list p,#people-list .ms-user-share-list p {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #999999;
+    font-size: 12px;
+    padding: 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ms-list-new .ms-drop-down-button,#people-list .ms-drop-down-button {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    bottom: -14px;
+    left: 47%;
+    text-align: center;
+    line-height: 30px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 4px solid #fafafa;
+}
+#people-list {
+    position: fixed;
+	z-index: 99999;
+    top: 0 !important;
+    box-shadow: 0 0 17px #666666;
+    ul {
+        padding: 20px;
+        overflow-y: auto;
+    }
+    .ms-drop-down-button {
+        box-shadow: 0px 2px 10px #666666;
+    }
+}
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+#people {
+    &::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: #f5f5f5;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #ffffff;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #eeeeee;
+    }
+}

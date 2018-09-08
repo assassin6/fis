@@ -1,0 +1,914 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://v.ming-soft.net/js/mobile/iconfont.css" /> <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all" /> 
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css" media="all" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-table.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="js/bootstrap-table.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-editable.css">
+    <script src="js/bootstrap-editable.js"></script>
+</head>
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+
+    })
+    
+</script>
+<body style="overflow:hidden">
+    <div class="ms-content">
+
+        <div class="ms-content-menu">
+            <div class="col-md-2 categoryTree" style="height: 626px;"></div>
+        </div>
+        <div class="ms-content-body" style="width:85%;overflow-y: hidden;">
+            <div class="ms-content-body-panel" style="margin:0;padding:0;overflow-y: hidden;"> 
+
+                <!--右边开始-->
+                <div class="ms-content">
+                    <div class="ms-content-body" style="width: 100%;">
+
+                        <div class="ms-content-body-title">
+                            <span>商品编辑</span>
+                            <button type="button" class="btn btn-success" title="" data-toggle="tooltip" data-target="bottom" id="saveButton20160825101001" data-placement="bottom" data-original-title="保存">
+                                保存 
+                                <span class="glyphicon glyphicon-floppy-saved" style="margin-right:5px"></span>
+                            </button>
+                            <button type="button" class="btn btn-default" title="" onclick="javascript:history.go(-1)" data-toggle="tooltip" data-target="bottom" id="backButton20160825101001" data-placement="bottom" data-original-title="返回">
+                                返回
+                                <span class="glyphicon glyphicon-share-alt" style="margin-right:5px"></span>
+                            </button>    
+                        </div>
+
+                        <div class="ms-content-body-panel"> 
+                            <form role="form" method="post" action="/m-admin/mall/product/update.do" target="_self" id="productForm" name="productForm" class="form-horizontal bv-form" style="width: 100%; background-color: white;" novalidate="novalidate">
+
+                                <div class="form-group ms-form-group has-feedback"> 
+                                    <label for="basicTitle" class="col-sm-2  control-label ">
+                                        商品名称
+                                    </label>
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input" style="width:500px;">       
+                                        <input type="text" autocomplete="off" name="basicTitle" class="form-control" placeholder="请输入商品标题" maxlength="50" required="true">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group ms-form-group has-feedback">   
+                                    <label class="col-sm-2 control-label">
+                                        所属栏目
+                                    </label>        
+                                    <div class="col-sm-9 ms-from-group-input" style="width:300px;">       
+                                        <input type="text" autocomplete="off" name="basicTitle" class="form-control" placeholder="请选择商品栏目" maxlength="50" required="true">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group ms-form-group has-feedback">   
+                                    <label class="col-sm-2 control-label">
+                                        品牌
+                                    </label>        
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input" style="width:300px;">       
+                                        <input type="text" autocomplete="off" name="basicTitle" class="form-control" placeholder="请输入商品品牌" maxlength="50" required="true">
+
+                                    </div>
+                                </div>
+
+
+
+                                <!--规格设置-->
+                                <div class="form-group ms-form-group has-feedback"> 
+                                    <label for="basicSort" class="col-sm-2  control-label ">
+                                        规格
+                                    </label>
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input">       
+                                        <div class="goods-norms">
+                                            <div class="norms-group" data-specificationsId="属性ID" data-productSpecificationsFatherId="父级ID">
+                                                <div class="norms-title">
+                                                    <select class="js-example-theme-single js-states form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" style="width: 100px;">
+                                                        <option value="AK">颜色</option>
+                                                        <option value="HI">内存</option>  
+                                                        <option value="HI">版本</option>   
+                                                    </select>
+                                                    <span class="delete-norms">×</span>
+                                                </div>
+                                                <div class="norms-list">
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">白色</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">黑色</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+
+                                                    <span class="add-norms">+添加</span>
+                                                    <div class="add-norms-content">
+                                                        <div class="norms-select">
+                                                            <select id="sel_menu1" multiple="multiple">
+                                                                <option value="1">白色</option>
+                                                                <option value="2">灰色</option>
+                                                                <option value="3">黑色</option>
+                                                                <option value="4">香槟色</option>
+                                                            </select>
+                                                            <button type="button" class="btn btn-primary save-norms">确定</button>
+                                                            <button type="button" class="btn btn-default cancel-save">取消</button>
+                                                        </div>
+                                                        <div class="arrow"></div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="norms-group" data-specificationsId="属性ID" data-productSpecificationsFatherId="父级ID">
+                                                <div class="norms-title">
+                                                    <select class="js-example-theme-single js-states form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" style="width: 100px;">
+                                                        <option value="HI">版本</option> 
+                                                        <option value="AK">颜色</option>
+                                                        <option value="HI">内存</option>    
+                                                    </select>
+                                                    <span class="delete-norms">×</span>
+                                                </div>
+                                                <div class="norms-list">
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">电信版</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">联通版</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+
+                                                    <span class="add-norms">+添加</span>
+                                                    <div class="add-norms-content">
+                                                        <div class="norms-select">
+                                                            <select id="sel_menu1" multiple="multiple">
+                                                            </select>
+                                                            <button type="button" class="btn btn-primary save-norms">确定</button>
+                                                            <button type="button" class="btn btn-default cancel-save">取消</button>
+                                                        </div>
+                                                        <div class="arrow"></div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="norms-group" data-specificationsId="属性ID" data-productSpecificationsFatherId="父级ID">
+                                                <div class="norms-title">
+                                                    <select class="js-example-theme-single js-states form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" style="width: 100px;">
+                                                        <option value="HI">内存</option>   
+                                                        <option value="AK">颜色</option>
+                                                        <option value="HI">版本</option>  
+                                                    </select>
+                                                    <span class="delete-norms">×</span>
+                                                </div>
+                                                <div class="norms-list">
+
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">16G</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+                                                    <span class="add-norms">+添加</span>
+                                                    <div class="add-norms-content">
+                                                        <div class="norms-select">
+                                                            <select id="sel_menu2" multiple="multiple">
+                                                            </select>
+                                                            <button type="button" class="btn btn-primary save-norms">确定</button>
+                                                            <button type="button" class="btn btn-default cancel-save">取消</button>
+                                                        </div>
+                                                        <div class="arrow"></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="norms-group">
+                                                <div class="norms-title">
+                                                    <button type="button" class="btn btn-default">添加规格项目</button>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group ms-form-group has-feedback"> 
+                                    <label for="basicSort" class="col-sm-2  control-label ">
+                                        商品库存
+                                    </label>
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input">  
+                                        <div style="padding:7px;font-size: 12px;border:1px #ddd solid;">批量设置：<a>价格</a> <a>库存</a></div>
+                                        <table class="table table-bordered norms-table">
+                                            <thead>
+                                                <tr class="base-nav">
+                                                    <!--th data-id="1">颜色</th-->
+                                                    <th style="width:130px;" class="base-nav-th">价格(元)</th>
+                                                    <th style="width:120px;">库存</th>
+                                                    <th style="width:150px;">商品编码</th>
+                                                    <th>销量</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="norms-table-tr">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="form-group ms-form-group has-feedback"> 
+                                    <label for="basicSort" class="col-sm-2  control-label ">
+                                        总库存
+                                    </label>
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input" style="width:150px;">       
+                                        <input type="text" autocomplete="off" maxlength="10" name="basicSort" class="form-control">
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+
+        </html>
+
+<script type="text/javascript">
+    $("select").select2({
+        tags: true,
+    });
+    $(".js-example-theme-single").select2({
+        tags: true,
+        theme: "classic"
+    });
+
+    //鼠标移到每组规格设置区域，将显示删除按钮
+    $(".goods-norms").delegate(".norms-group","mouseover",function(){
+        $(this).find(".norms-title .delete-norms").show()
+    })
+    $(".goods-norms").delegate(".norms-group","mouseout",function(){
+        $(this).find(".norms-title .delete-norms").hide()
+    });
+    $(".goods-norms").delegate(".norms-detail","mouseover",function(){
+        $(this).find(".delete-norms").show()
+    })
+    $(".goods-norms").delegate(".norms-detail","mouseout",function(){
+        $(this).find(".delete-norms").hide()
+    });
+    
+    //显示添加规格的下拉框
+    $(".goods-norms").delegate(".add-norms","click",function(){
+        $(this).next(".add-norms-content").show();
+    })
+    //规格属性“取消”按钮
+    $(".goods-norms").delegate(".cancel-save","click",function(){
+        $(this).siblings("select").empty();
+        $(this).parent().parent().hide();
+    })
+
+
+
+    //获取规格菜单的属性组成List json数据
+    var normsJson = [];
+    //var jsonDataTree;
+    function normsJsonList(){
+        normsJson = [];
+        if($(".goods-norms .norms-group").length > 0){
+            var indexFrist = $(".norms-group:first-child").find(".norms-detail").length;
+            var prevChild = $(".goods-norms .norms-group");
+
+            for(i=0;i<prevChild.length;i++){
+                $(".norms-group:eq("+i+")").attr("pid",i+1);
+            }
+
+            $(".goods-norms .norms-group").each(function(){
+                var obj = $(this);
+                var objChild = obj.find(".norms-text");
+
+                objChild.each(function(){
+                    var 
+                    var normData = {
+                        "pid" : parseInt(obj.attr("pid")),
+                        "childProductSpecifications" : [],
+                        "specificationsField" : $(this).text(),
+                        "specifications" : {
+                            "specificationsName" : obj.find(".norms-title select option:selected").text(),
+                        }
+                    };
+
+                    if(obj.index() == 0){
+                        normsJson.push(normData);
+                    }else{
+                        //用递归加入子集
+                        for (var menu in normsJson) {
+                            normsJson[menu].childProductSpecifications.push(normData);
+                            console.log(normsJson)
+                        }
+                        
+                    };
+                    
+                });    
+            });
+        }
+
+    };
+    normsJsonList();
+    console.log(normsJson)
+
+    /*模拟的规格json数据
+    jsonDataTree = transData(eval(normsJson), 'id', 'pid', 'childProductSpecifications'); 
+    console.log(jsonDataTree)
+    // 每次设置的规格List json转树状结构  
+    function transData(a, idStr, pidStr, chindrenStr){ 
+        var r = [], hash = {}, id = idStr, pid = pidStr, children = chindrenStr, i = 0, j = 0, len = a.length; 
+        for(; i < len; i++){ 
+            hash[a[i][id]] = a[i]; 
+        } 
+        for(; j < len; j++){ 
+            var aVal = a[j], hashVP = hash[aVal[pid]]; 
+            if(hashVP){ 
+                !hashVP[children] && (hashVP[children] = []); 
+                hashVP[children].push(aVal); 
+                for(x=0;x<hashVP[children].length;x++){
+                    hashVP[children][x].childProductSpecifications=[];
+                }
+            }else{
+
+                r.push(aVal); 
+            } 
+        } 
+        return r; 
+    } 
+
+    */
+    //规格增加，将对应的值获取追加到List json中，并显示到页面
+    $(".save-norms").click(function(){
+        //获取属性填选框的值
+        var selectVal = $(this).siblings("select").select2({
+            tags: true,
+        });
+        //追加属性
+        for(i=0;i<selectVal.val().length;i++){
+            $(this).parent().parent().prev().before($('<div class="norms-detail"><span class="">'+selectVal.val()[i]+'</span><span class="delete-norms">×</span></div>'))
+        }
+        normsJsonList();
+        //jsonDataTree = transData(eval(normsJson), 'id', 'pid', 'childProductSpecifications'); 
+        normsTable();
+        //console.log(jsonDataTree)
+        //清空隐藏下拉框
+        $(this).siblings("select").empty();
+        $(this).parent().parent().hide();
+    })
+
+    //删除整个规格组
+    $(".goods-norms").delegate(".delete-norms","click",function(){
+        $(this).parent().parent(".norms-group").remove();
+        normsJsonList();
+        //jsonDataTree = transData(eval(normsJson), 'id', 'pid', 'childProductSpecifications'); 
+        normsTable();
+    })
+    //删除某个规格的属性
+    $(".goods-norms").delegate(".norms-detail .delete-norms","click",function(){
+        $(this).parent().remove();
+        normsJsonList();
+        //jsonDataTree = transData(eval(normsJson), 'id', 'pid', 'childProductSpecifications'); 
+        normsTable();
+    })
+
+    
+
+    //基础列的设置
+    var normsTitle="";
+    var baseTh = '<td class="base-td"><input type="text" class="form-control"></td><td><input type="text" class="form-control"></td><td><input type="text" class="form-control"></td><td>0</td></tr>';
+
+    //执行json数据绘制规格表
+    function normsTable() {
+        //初始化表格内容
+        $(".base-nav .base-nav-th").prevAll().remove();
+        $(".norms-table-tr").html("");
+        //执行规格表格绘制
+        showall(normsJson, $(".norms-table-tr"));
+        $(".norms-table").append($(".norms-table-tr"));
+    };
+    normsTable();
+
+    //用数组存储每个规格应该垮行的数
+    var rowSpan = [];
+    var i = 0;
+    var x = normsJson[0].childProductSpecifications;
+    coutRow(x);
+    function coutRow(x){
+        if(x.length != 0){
+            rowSpan[i] = 1;
+            for(var j = 0; j <= i; j++){
+                rowSpan[j] = rowSpan[j] * x.length ;
+            }
+            i ++;
+            x = x[0].childProductSpecifications;
+            coutRow(x);
+        }
+    }
+    //规格数据绘制表格方法
+    function showall(menu_list, parent) {
+        for (var menu in menu_list) {
+            //获取表头标题内容并存为数组
+            var arrTh = [];
+            $(".base-nav").find("th").each(function(i){
+                arrTh[i] = $(this).text();
+            });
+            //判断当前的规格名是否在已有的表格中，没有的话加上
+            if($.inArray(menu_list[menu].specifications.specificationsName,arrTh) == -1){
+
+                $(".base-nav-th").before('<th data-normsId='+menu_list[menu].specificationsId+'>'+menu_list[menu].specifications.specificationsName+'</th>');
+            }
+            //创建一个表格行,作为规格行进行承接规格参数绘制表格
+            var tr = $("<tr data-normsId="+menu_list[menu].productSpecificationsId+"></tr>");
+            //如果该节点有子节点，即为非最后一个规格，保存到单独的单元格，在最后组合进去
+            if (menu_list[menu].childProductSpecifications.length > 0) {
+
+                //设置一个表格单元格装有子节点的父节点内容
+                $("<td rowspan='1' data-normsId="+menu_list[menu].productSpecificationsId+">"+menu_list[menu].specificationsField+"</td>").appendTo(parent);
+                //下一个递归遍历的父亲节点传入
+                showall(menu_list[menu].childProductSpecifications,parent);
+            }
+            //如果没有子节点，即为最后一个规格，则该节点加上基础列部分，再通过把之前的父节点追加到当前行，组成一条完整规格行
+            else {
+                //将最后一个子节点的规格保存到单元格并加上基础列组成一个规格行
+                var _tr = $(tr).append("<td data-normsId="+menu_list[menu].productSpecificationsFatherId+">"+menu_list[menu].specificationsField+"</td>"+baseTh);
+                //将父节点的内容加到最终子节点的行内，并追加到表格中
+                parent.children("td").prependTo(_tr);
+                _tr.appendTo(parent);
+            }
+        }
+    }
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://v.ming-soft.net/js/mobile/iconfont.css" /> <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all" /> 
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css" media="all" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-table.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="js/bootstrap-table.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-editable.css">
+    <script src="js/bootstrap-editable.js"></script>
+</head>
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+
+    })
+    
+</script>
+<body style="overflow:hidden">
+    <div class="ms-content">
+
+        <div class="ms-content-menu">
+            <div class="col-md-2 categoryTree" style="height: 626px;"></div>
+        </div>
+        <div class="ms-content-body" style="width:85%;overflow-y: hidden;">
+            <div class="ms-content-body-panel" style="margin:0;padding:0;overflow-y: hidden;"> 
+
+                <!--右边开始-->
+                <div class="ms-content">
+                    <div class="ms-content-body" style="width: 100%;">
+
+                        <div class="ms-content-body-title">
+                            <span>商品编辑</span>
+                            <button type="button" class="btn btn-success" title="" data-toggle="tooltip" data-target="bottom" id="saveButton20160825101001" data-placement="bottom" data-original-title="保存">
+                                保存 
+                                <span class="glyphicon glyphicon-floppy-saved" style="margin-right:5px"></span>
+                            </button>
+                            <button type="button" class="btn btn-default" title="" onclick="javascript:history.go(-1)" data-toggle="tooltip" data-target="bottom" id="backButton20160825101001" data-placement="bottom" data-original-title="返回">
+                                返回
+                                <span class="glyphicon glyphicon-share-alt" style="margin-right:5px"></span>
+                            </button>    
+                        </div>
+
+                        <div class="ms-content-body-panel"> 
+                            <form role="form" method="post" action="/m-admin/mall/product/update.do" target="_self" id="productForm" name="productForm" class="form-horizontal bv-form" style="width: 100%; background-color: white;" novalidate="novalidate">
+
+                                <div class="form-group ms-form-group has-feedback"> 
+                                    <label for="basicTitle" class="col-sm-2  control-label ">
+                                        商品名称
+                                    </label>
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input" style="width:500px;">       
+                                        <input type="text" autocomplete="off" name="basicTitle" class="form-control" placeholder="请输入商品标题" maxlength="50" required="true">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group ms-form-group has-feedback">   
+                                    <label class="col-sm-2 control-label">
+                                        所属栏目
+                                    </label>        
+                                    <div class="col-sm-9 ms-from-group-input" style="width:300px;">       
+                                        <input type="text" autocomplete="off" name="basicTitle" class="form-control" placeholder="请选择商品栏目" maxlength="50" required="true">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group ms-form-group has-feedback">   
+                                    <label class="col-sm-2 control-label">
+                                        品牌
+                                    </label>        
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input" style="width:300px;">       
+                                        <input type="text" autocomplete="off" name="basicTitle" class="form-control" placeholder="请输入商品品牌" maxlength="50" required="true">
+
+                                    </div>
+                                </div>
+
+
+
+                                <!--规格设置-->
+                                <div class="form-group ms-form-group has-feedback"> 
+                                    <label for="basicSort" class="col-sm-2  control-label ">
+                                        规格
+                                    </label>
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input">       
+                                        <div class="goods-norms">
+                                            <div class="norms-group" data-specificationsId="属性ID" data-productSpecificationsFatherId="父级ID">
+                                                <div class="norms-title">
+                                                    <select class="js-example-theme-single js-states form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" style="width: 100px;">
+                                                        <option value="AK">颜色</option>
+                                                        <option value="HI">内存</option>  
+                                                        <option value="HI">版本</option>   
+                                                    </select>
+                                                    <span class="delete-norms">×</span>
+                                                </div>
+                                                <div class="norms-list">
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">白色</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">黑色</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+
+                                                    <span class="add-norms">+添加</span>
+                                                    <div class="add-norms-content">
+                                                        <div class="norms-select">
+                                                            <select id="sel_menu1" multiple="multiple">
+                                                                <option value="1">白色</option>
+                                                                <option value="2">灰色</option>
+                                                                <option value="3">黑色</option>
+                                                                <option value="4">香槟色</option>
+                                                            </select>
+                                                            <button type="button" class="btn btn-primary save-norms">确定</button>
+                                                            <button type="button" class="btn btn-default cancel-save">取消</button>
+                                                        </div>
+                                                        <div class="arrow"></div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="norms-group" data-specificationsId="属性ID" data-productSpecificationsFatherId="父级ID">
+                                                <div class="norms-title">
+                                                    <select class="js-example-theme-single js-states form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" style="width: 100px;">
+                                                        <option value="HI">版本</option> 
+                                                        <option value="AK">颜色</option>
+                                                        <option value="HI">内存</option>    
+                                                    </select>
+                                                    <span class="delete-norms">×</span>
+                                                </div>
+                                                <div class="norms-list">
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">电信版</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">联通版</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+
+                                                    <span class="add-norms">+添加</span>
+                                                    <div class="add-norms-content">
+                                                        <div class="norms-select">
+                                                            <select id="sel_menu1" multiple="multiple">
+                                                            </select>
+                                                            <button type="button" class="btn btn-primary save-norms">确定</button>
+                                                            <button type="button" class="btn btn-default cancel-save">取消</button>
+                                                        </div>
+                                                        <div class="arrow"></div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="norms-group" data-specificationsId="属性ID" data-productSpecificationsFatherId="父级ID">
+                                                <div class="norms-title">
+                                                    <select class="js-example-theme-single js-states form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" style="width: 100px;">
+                                                        <option value="HI">内存</option>   
+                                                        <option value="AK">颜色</option>
+                                                        <option value="HI">版本</option>  
+                                                    </select>
+                                                    <span class="delete-norms">×</span>
+                                                </div>
+                                                <div class="norms-list">
+
+                                                    <div class="norms-detail">
+                                                        <span class="norms-text">16G</span>
+                                                        <span class="delete-norms">×</span>
+                                                    </div>
+                                                    <span class="add-norms">+添加</span>
+                                                    <div class="add-norms-content">
+                                                        <div class="norms-select">
+                                                            <select id="sel_menu2" multiple="multiple">
+                                                            </select>
+                                                            <button type="button" class="btn btn-primary save-norms">确定</button>
+                                                            <button type="button" class="btn btn-default cancel-save">取消</button>
+                                                        </div>
+                                                        <div class="arrow"></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="norms-group">
+                                                <div class="norms-title">
+                                                    <button type="button" class="btn btn-default">添加规格项目</button>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group ms-form-group has-feedback"> 
+                                    <label for="basicSort" class="col-sm-2  control-label ">
+                                        商品库存
+                                    </label>
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input">  
+                                        <div style="padding:7px;font-size: 12px;border:1px #ddd solid;">批量设置：<a>价格</a> <a>库存</a></div>
+                                        <table class="table table-bordered norms-table">
+                                            <thead>
+                                                <tr class="base-nav">
+                                                    <!--th data-id="1">颜色</th-->
+                                                    <th style="width:130px;" class="base-nav-th">价格(元)</th>
+                                                    <th style="width:120px;">库存</th>
+                                                    <th style="width:150px;">商品编码</th>
+                                                    <th>销量</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="norms-table-tr">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="form-group ms-form-group has-feedback"> 
+                                    <label for="basicSort" class="col-sm-2  control-label ">
+                                        总库存
+                                    </label>
+                                    <div class="col-sm-9 ms-from-group-input ms-form-input" style="width:150px;">       
+                                        <input type="text" autocomplete="off" maxlength="10" name="basicSort" class="form-control">
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+
+        </html>
+
+<script type="text/javascript">
+    $("select").select2({
+        tags: true,
+    });
+    $(".js-example-theme-single").select2({
+        tags: true,
+        theme: "classic"
+    });
+
+    //鼠标移到每组规格设置区域，将显示删除按钮
+    $(".goods-norms").delegate(".norms-group","mouseover",function(){
+        $(this).find(".norms-title .delete-norms").show()
+    })
+    $(".goods-norms").delegate(".norms-group","mouseout",function(){
+        $(this).find(".norms-title .delete-norms").hide()
+    });
+    $(".goods-norms").delegate(".norms-detail","mouseover",function(){
+        $(this).find(".delete-norms").show()
+    })
+    $(".goods-norms").delegate(".norms-detail","mouseout",function(){
+        $(this).find(".delete-norms").hide()
+    });
+    
+    //显示添加规格的下拉框
+    $(".goods-norms").delegate(".add-norms","click",function(){
+        $(this).next(".add-norms-content").show();
+    })
+    //规格属性“取消”按钮
+    $(".goods-norms").delegate(".cancel-save","click",function(){
+        $(this).siblings("select").empty();
+        $(this).parent().parent().hide();
+    })
+
+
+
+    //获取规格菜单的属性组成List json数据
+    var normsJson = [];
+    //var jsonDataTree;
+    function normsJsonList(){
+        normsJson = [];
+        if($(".goods-norms .norms-group").length > 0){
+            var indexFrist = $(".norms-group:first-child").find(".norms-detail").length;
+            var prevChild = $(".goods-norms .norms-group");
+
+            for(i=0;i<prevChild.length;i++){
+                $(".norms-group:eq("+i+")").attr("pid",i+1);
+            }
+
+            $(".goods-norms .norms-group").each(function(){
+                var obj = $(this);
+                var objChild = obj.find(".norms-text");
+
+                objChild.each(function(){
+                    var 
+                    var normData = {
+                        "pid" : parseInt(obj.attr("pid")),
+                        "childProductSpecifications" : [],
+                        "specificationsField" : $(this).text(),
+                        "specifications" : {
+                            "specificationsName" : obj.find(".norms-title select option:selected").text(),
+                        }
+                    };
+
+                    if(obj.index() == 0){
+                        normsJson.push(normData);
+                    }else{
+                        //用递归加入子集
+                        for (var menu in normsJson) {
+                            normsJson[menu].childProductSpecifications.push(normData);
+                            console.log(normsJson)
+                        }
+                        
+                    };
+                    
+                });    
+            });
+        }
+
+    };
+    normsJsonList();
+    console.log(normsJson)
+
+    /*模拟的规格json数据
+    jsonDataTree = transData(eval(normsJson), 'id', 'pid', 'childProductSpecifications'); 
+    console.log(jsonDataTree)
+    // 每次设置的规格List json转树状结构  
+    function transData(a, idStr, pidStr, chindrenStr){ 
+        var r = [], hash = {}, id = idStr, pid = pidStr, children = chindrenStr, i = 0, j = 0, len = a.length; 
+        for(; i < len; i++){ 
+            hash[a[i][id]] = a[i]; 
+        } 
+        for(; j < len; j++){ 
+            var aVal = a[j], hashVP = hash[aVal[pid]]; 
+            if(hashVP){ 
+                !hashVP[children] && (hashVP[children] = []); 
+                hashVP[children].push(aVal); 
+                for(x=0;x<hashVP[children].length;x++){
+                    hashVP[children][x].childProductSpecifications=[];
+                }
+            }else{
+
+                r.push(aVal); 
+            } 
+        } 
+        return r; 
+    } 
+
+    */
+    //规格增加，将对应的值获取追加到List json中，并显示到页面
+    $(".save-norms").click(function(){
+        //获取属性填选框的值
+        var selectVal = $(this).siblings("select").select2({
+            tags: true,
+        });
+        //追加属性
+        for(i=0;i<selectVal.val().length;i++){
+            $(this).parent().parent().prev().before($('<div class="norms-detail"><span class="">'+selectVal.val()[i]+'</span><span class="delete-norms">×</span></div>'))
+        }
+        normsJsonList();
+        //jsonDataTree = transData(eval(normsJson), 'id', 'pid', 'childProductSpecifications'); 
+        normsTable();
+        //console.log(jsonDataTree)
+        //清空隐藏下拉框
+        $(this).siblings("select").empty();
+        $(this).parent().parent().hide();
+    })
+
+    //删除整个规格组
+    $(".goods-norms").delegate(".delete-norms","click",function(){
+        $(this).parent().parent(".norms-group").remove();
+        normsJsonList();
+        //jsonDataTree = transData(eval(normsJson), 'id', 'pid', 'childProductSpecifications'); 
+        normsTable();
+    })
+    //删除某个规格的属性
+    $(".goods-norms").delegate(".norms-detail .delete-norms","click",function(){
+        $(this).parent().remove();
+        normsJsonList();
+        //jsonDataTree = transData(eval(normsJson), 'id', 'pid', 'childProductSpecifications'); 
+        normsTable();
+    })
+
+    
+
+    //基础列的设置
+    var normsTitle="";
+    var baseTh = '<td class="base-td"><input type="text" class="form-control"></td><td><input type="text" class="form-control"></td><td><input type="text" class="form-control"></td><td>0</td></tr>';
+
+    //执行json数据绘制规格表
+    function normsTable() {
+        //初始化表格内容
+        $(".base-nav .base-nav-th").prevAll().remove();
+        $(".norms-table-tr").html("");
+        //执行规格表格绘制
+        showall(normsJson, $(".norms-table-tr"));
+        $(".norms-table").append($(".norms-table-tr"));
+    };
+    normsTable();
+
+    //用数组存储每个规格应该垮行的数
+    var rowSpan = [];
+    var i = 0;
+    var x = normsJson[0].childProductSpecifications;
+    coutRow(x);
+    function coutRow(x){
+        if(x.length != 0){
+            rowSpan[i] = 1;
+            for(var j = 0; j <= i; j++){
+                rowSpan[j] = rowSpan[j] * x.length ;
+            }
+            i ++;
+            x = x[0].childProductSpecifications;
+            coutRow(x);
+        }
+    }
+    //规格数据绘制表格方法
+    function showall(menu_list, parent) {
+        for (var menu in menu_list) {
+            //获取表头标题内容并存为数组
+            var arrTh = [];
+            $(".base-nav").find("th").each(function(i){
+                arrTh[i] = $(this).text();
+            });
+            //判断当前的规格名是否在已有的表格中，没有的话加上
+            if($.inArray(menu_list[menu].specifications.specificationsName,arrTh) == -1){
+
+                $(".base-nav-th").before('<th data-normsId='+menu_list[menu].specificationsId+'>'+menu_list[menu].specifications.specificationsName+'</th>');
+            }
+            //创建一个表格行,作为规格行进行承接规格参数绘制表格
+            var tr = $("<tr data-normsId="+menu_list[menu].productSpecificationsId+"></tr>");
+            //如果该节点有子节点，即为非最后一个规格，保存到单独的单元格，在最后组合进去
+            if (menu_list[menu].childProductSpecifications.length > 0) {
+
+                //设置一个表格单元格装有子节点的父节点内容
+                $("<td rowspan='1' data-normsId="+menu_list[menu].productSpecificationsId+">"+menu_list[menu].specificationsField+"</td>").appendTo(parent);
+                //下一个递归遍历的父亲节点传入
+                showall(menu_list[menu].childProductSpecifications,parent);
+            }
+            //如果没有子节点，即为最后一个规格，则该节点加上基础列部分，再通过把之前的父节点追加到当前行，组成一条完整规格行
+            else {
+                //将最后一个子节点的规格保存到单元格并加上基础列组成一个规格行
+                var _tr = $(tr).append("<td data-normsId="+menu_list[menu].productSpecificationsFatherId+">"+menu_list[menu].specificationsField+"</td>"+baseTh);
+                //将父节点的内容加到最终子节点的行内，并追加到表格中
+                parent.children("td").prependTo(_tr);
+                _tr.appendTo(parent);
+            }
+        }
+    }
+>>>>>>> commit
+</script>

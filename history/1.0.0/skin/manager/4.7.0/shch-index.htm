@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>铭飞后台框架页面</title>
+    <!--线上特殊字体文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/iconfont/1.0.0/iconfont.css" />
+    <!--线上jquery文件-->
+    <script src="http://cdn.mingsoft.net/plugins/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <!--线上bootstrap文件-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap.min.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-switch.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrapValidator.css" media="all"> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/css/bootstrap-notify.css" media="all">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-switch.min.js"></script>   
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/bootstrap/3.3.5/js/bootstrap-notify.js"></script>
+    <!--线上tmpl文件-->
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.tmpl/1.4.2/jquery.tmpl.min.js"></script>
+
+    <!--easyUI-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/themes/icon.css">
+    <script type="text/javascript" src="http://cdn.mingsoft.net/plugins/jquery.easyui/1.5/jquery.easyui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ms.manager.css">
+    <script src="js/ms.manager.js"></script>
+</head>
+<body>
+    <!--右边开始-->
+    <div class="ms-content-body">
+        <div class="ms-content-body-title">
+            <div class="btn-topgroup">
+                <button type="button" class="btn btn-success">生成主页</button>
+                <button type="button" class="btn btn-primary">预览主页</button>
+            </div>
+        </div>
+        
+        <div class="ms-content-body-panel">
+            <p class="alert alert-info" role="alert">
+                <span class="glyphicon glyphicon-pushpin text-lef "></span>
+                <a class="alert-link text-lef" style="margin-left: 12px;">
+                    更新主页，如果系统存在引导页面可以手动修改主页位置文件名,default.html引导页面index.html主页。
+                </a>
+            </p>
+            <form role="form" method="post" action="" target="_self" id="generateIndex" name="generateIndex" class="form-horizontal" style="width: 100%; background-color: white;">
+                <input type="hidden" name="redirect">
+                <div class="form-group">    
+                    <label class="col-sm-3 control-label">
+                        选择主页模板
+                    </label>        
+                    <div class="col-sm-9 ms-from-group-input" style="line-height:30px; width:200px;">     
+                        <select class="form-control" id="select_id">
+                            <option value="news-list.htm">news-list.htm</option>
+                            <option value="news-show.htm">news-show.htm</option>
+                            <option value="product-show.htm">product-show.htm</option>
+                            <option value="product-list.htm">product-list.htm</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group ms-form-group">  
+                    <label for="position" class="col-sm-3  control-label ">
+                        <span tabindex="0" class="glyphicon glyphicon-question-sign" data-toggle="popover" role="button" data-trigger="focus" data-container="body" data-placement="" title="提示" data-content="注:主页位置htm文件名一般为index.html或default.html"></span>
+                        选择主页位置
+                    </label>
+                    <div class="col-sm-9 ms-from-group-input ms-form-input" style="width:200px;">       
+                        <input type="text" autocomplete="off" id="position" value="index.html" name="position" class="form-control" placeholder="输入主页位置">   
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
